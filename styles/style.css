@@ -9,6 +9,7 @@
 
 html, body {
     font-family: var(--font-sans);
+    background-color: var(--color-secondary);
 }
 
 .header-container {
@@ -33,21 +34,22 @@ html, body {
     color: var(--color-secondary);
     font-weight: bold;
     font-size: large;
+    word-wrap: break-word;
 }
 
-.nav-container {
-    align-items: ;
-}
-
-.nav-button {
+.burger {
     border-style: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-/* .nav-buttons a {
+.nav-container a {
     text-decoration: none;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-weight: 900;
-    font-size: small;
-} */
+    font-size: medium;
+}
+
+.nav-container {
+    display: none;
+}
