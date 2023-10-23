@@ -52,3 +52,28 @@ html, body {
     font-weight: 900;
     font-size: small;
 }
+
+.donation-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.amount-input {
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+.vol-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
