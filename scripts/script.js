@@ -1,5 +1,11 @@
+const burger = document.querySelector('.burger');
+const body = document.querySelector('.body');
 
-/* Start About script*/
+burger.addEventListener('click', () => {
+    body.classList.toggle('menu-open');
+})
+
+/* Start About */
 
 /*hideContent hides the about content when the faq button is clicked*/
 function hideAboutContent() {
@@ -32,8 +38,9 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
-
 /* End About script */
+
+/* Start Get Involved */
 const donateButton = document.getElementById('donate-button');
         const volunteerButton = document.getElementById('volunteer-button');
         const donationBox = document.querySelector('.donation-box');
