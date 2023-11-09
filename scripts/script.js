@@ -1,3 +1,5 @@
+const burger = document.querySelector('.burger');
+const body = document.querySelector('.body');
 
 /* Start About script*/
 /*hideContent hides the about content when the faq button is clicked*/
@@ -31,8 +33,9 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
-
 /* End About script */
+
+/* Start Get Involved */
 const donateButton = document.getElementById('donate-button');
         const volunteerButton = document.getElementById('volunteer-button');
         const donationBox = document.querySelector('.donation-box');
