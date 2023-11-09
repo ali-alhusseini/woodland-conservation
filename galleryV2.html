@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    <html>
+<head>
+    <title>Image Upload Form</title>
+</head>
+<body>
+    <h2>Upload Your Photo</h2>
+    <!--this forms forwards the data to the getform server-->
+    <form action="https://getform.io/f/47cbb6c8-e28c-42d0-844b-95dadd2cc5b4" method="POST" enctype="multipart/form-data">
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required> <br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required> <br>
+        
+        <label for="description">Description:</label> <br>
+        <textarea name="description" id="description" rows="4" required></textarea><br>
+
+        <input type="file" name="file" id="file" accept="image/*" required><br>
+
+        <input type="checkbox" name="terms" id="terms" required>
+        <label for="terms">I accept the <a href = "https://www.goldenbeltbank.com/home/fiFiles/static/documents/Photo_Submission_Terms_and_Conditions.pdf" target ="_blank">Terms and Conditions </a></label>
+
+        <input type="checkbox" name="terms" value="yes" checked>
+        <input type="hidden" name="terms" value="no">
+
+        <br><input type="submit" value="Submit for Review">
+    </form>
+</body>
+</html>
+</body>
+</html>
