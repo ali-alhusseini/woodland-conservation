@@ -14,6 +14,8 @@ html, body {
     background-color: var(--color-secondary);
 }
 
+/* Header - Start */
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -83,30 +85,12 @@ html, body {
         text-decoration: none;
         cursor: pointer;
     }
-
-    .nav-menu a:hover 
 }
+/* Header - End */
 
-.getinvolved {
-    text-align: center;
-    position: relative;
-    border-width: 10px;
-    border-style: double;
-    border-color: #0E3F27;
-    margin: 50px;
-    background-color: var(--color-secondary);
-}
 
-.getinvolved p {
-    font-size: large;
-    margin: 20px;
-}
 
-.getinvolved button {
-    margin: 50px;
-}
-
-/* Start about section styling*/
+/* About Section - Start */
 
 .about-container {
     width: 100%;
@@ -331,7 +315,29 @@ form .btn2 {
     margin-top: 20px;
     cursor: pointer;
  }
-/* End about section styling */
+/* About Section - End */
+
+
+/* Get Involved Section - Start */
+
+.getinvolved {
+    text-align: center;
+    position: relative;
+    border-width: 10px;
+    border-style: double;
+    border-color: #0E3F27;
+    margin: 50px;
+    background-color: var(--color-secondary);
+}
+
+.getinvolved p {
+    font-size: large;
+    margin: 20px;
+}
+
+.getinvolved button {
+    margin: 50px;
+}
 
 .donation-box {
     background-color: #fff;
@@ -352,12 +358,15 @@ form .btn2 {
 }
 
 .amount-input {
-    margin: 20px 0;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .hidden {
     display: none;
 }
+
 .vol-box {
     background-color: #fff;
     border-radius: 10px;
@@ -446,8 +455,4 @@ form .btn2 {
     display: inline;
     font-weight: normal;
 }
-
-
-
-
-
+/* Get Involved Section - End */
