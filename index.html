@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.svg" />
+    <link rel="stylesheet" href="styles/style.css" />
 
-    <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <script defer src="scripts/script.js"></script>
     <script src="https://kit.fontawesome.com/cb2cc6f1d8.js" crossorigin="anonymous"></script>
 
-    <title>Woodland Conservation</title>
-</head>
 
+    <title>Woodland Conservation</title>
+  </head>
+  
 <body>
     <div class="header-container">
         <span class="logo">
@@ -43,6 +43,38 @@
             </button>
         </span>
     </div>
+
+    <header aria="banner">
+        <div class="header-container">
+            <div class="title-container">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="main-title">
+                    <a href="/index.html">
+                        Woodland </br> Conservation
+                    </a>
+                </div>
+            </div>
+            <div class="menu-container">
+                <div class="burger-button">
+                    <button>
+                        <img src="assets/images/burger.svg" alt="open menu">
+                    </button>
+                </div>
+                <div class="nav-menu">
+                    <nav>
+                        <a href="#">About</a>
+                        <a href="#">Get Involved</a>
+                        <a href="#">Map</a>
+                        <a href="#">Gallery</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="about-container" id="aboutContent">
         <div class="about-header">
@@ -132,15 +164,52 @@
             <span id="message"></span>
         </div>
     </div>
+
     <!-- Get Involved section -->
-     <div id="getinvolved">
-        <h1>Get Involved</h1>
-        <p>This section is dedicated towards individuals who want to become part of the Conservation Woodland Project. See below a few ways you can get involved.</p>
-        <button class="nav-buttons" id="donate-button">
-            <a href="#">Donate to the Project!</a>
+    <div class="getinvolved">
+      <h1>Get Involved</h1>
+      <p>
+        This section is dedicated towards individuals who want to become part of
+        the Conservation Woodland Project. See below a few ways you can get
+        involved.
+      </p>
+      <button class="nav-buttons" id="donate-button">
+        <a href="#">Donate to the Project!</a>
+      </button>
+      <button class="nav-buttons" id="volunteer-button">
+        <a href="#">Become a Volunteer!</a>
+      </button>
+      <button class="nav-buttons" id="feedback-button">
+        <a href="#">Send us Feedback!</a>
+      </button>
+      <div class="donation-box hidden">
+        <h1>Support Our Cause</h1>
+        <p>
+          Your donation will go directly towards the Woodland Conservation
+          Project!
+        </p>
+        <div class="amount-input">
+          <input
+            type="number"
+            id="donation-amount"
+            placeholder="Enter amount (CAD)"
+          />
+        </div>
+        <button class="nav-buttons" id="donate-button-2">
+          <a href="#">Donate</a>
         </button>
-        <button class="nav-buttons" id="volunteer-button">
-            <a href="#">Become a Volunteer!</a>
+      </div>
+      <div class="vol-box hidden">
+        <h1>Volunteer Opportunities</h1>
+        <ul>
+          <li>Trail maintenance</li>
+          <li>Tree planting</li>
+          <li>Wildlife monitoring</li>
+          <li>Education programs</li>
+          <li>Tour Guide</li>
+        </ul>
+        <button class="nav-buttons" id="apply-button">
+          <a href="#">Apply to be a Volunteer</a>
         </button>
         <div class="donation-box hidden">
             <h1>Support Our Cause</h1>
@@ -161,7 +230,65 @@
                 <li>Education programs</li>
             </ul>
         </div>
-     </div> 
-</body>
-
+        <form class="hidden" id="vol-app">
+          <p>
+            Fill out the following application to be considered for a volunteer
+            position:
+          </p>
+          <label>Preferred Position:</label>
+          <select class ="app-input" id="dropdown" required>
+            <option value="" disabled selected>Select a Preferred Position</option>
+            <option value="option1">Trail Maintenance</option>
+            <option value="option2">Tree Planting</option>
+            <option value="option3">Wildlife Monitoring</option>
+            <option value="option4">Education Programs</option>
+            <option value="option5">Tour Guide</option>
+          </select>
+          <label>First Name:</label>
+          <input type="text" class="app-input" id="fname-for-app" required />
+          <br />
+          <label>Last Name:</label>
+          <input type="text" class="app-input" id="lname-for-app" required />
+          <br />
+          <label>Phone Number:</label>
+          <input type="tel" class="app-input" id="phone-for-app" required />
+          <br />
+          <label>Email:</label>
+          <input type="email" class="app-input" id="email-for-app" required />
+          <br />
+          <label>Address:</label>
+          <input type="text" class= "app-input" id="address-for-app" required>
+          <br />
+          <label>Available Start Date:</label>
+          <input type="date" class="app-input" id="sdate-for-app" required />
+          <br />
+          <label>Eligible to work in Canada:</label>
+          <label for="eligible-for-app-yes">Yes</label>
+          <input
+            type="checkbox"
+            class="app-input"
+            id="eligible-for-app-yes"
+            required
+          />
+          <label for="eligible-for-app-no">No</label>
+          <input
+            type="checkbox"
+            class="app-input"
+            id="eligible-for-app-no"
+            required
+          />
+          <br/>
+          <label>References:</label>
+          <input type="text" class="app-input" id="ref1-for-app" required />
+          <br />
+          <input type="text" class="app-input" id="ref2-for-app" required />
+          <br />
+          <input type="text" class="app-input" id="ref3-for-app" required />
+          <button class="nav-buttons" id="submit-button">
+            <a href="#"> Submit Application </a>
+          </button>
+        </form>
+      </div>
+     </div>
+  </body>
 </html>
