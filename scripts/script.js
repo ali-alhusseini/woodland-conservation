@@ -1,17 +1,31 @@
 const burger = document.querySelector('.burger');
 const body = document.querySelector('.body');
 
-/* Start About script*/
+/*
+* Start About script
+* Author: Riley O'Keefe
+*/
 /*hideContent hides the about content when the faq button is clicked*/
+
 function hideAboutContent() {
-   let about = document.getElementsByClassName("about-container")[0]
-   let faq = document.getElementsByClassName("faq-container")[0]
-   if (faq.style.display === "none" || faq.style.display === ""){
-    faq.style.display = "block"
-    about.style.display = "none"
-   } else {
-    faq.style.display = "none"
-   }
+    const faqButton = document.getElementById('faq-button')
+    const aboutContent = document.querySelector('.about-container')
+    const faqContent = document.querySelector('.faq-container')
+    faqButton.addEventListener('click', () => {
+             faqContent.classList.remove('hidden');
+             aboutContent.classList.add('hidden')
+         });
+}
+
+/* shows about content when about back button is clicked */
+function showAboutContent() {
+    const aboutButton = document.getElementById("back-button")
+    const aboutContent = document.querySelector('.about-container')
+    const faqContent = document.querySelector('.faq-container')
+    aboutButton.addEventListener('click', () => {
+        faqContent.classList.add('hidden')
+        aboutContent.classList.remove('hidden')
+    });
 }
 
 // Code obtained from W3 schools
@@ -33,6 +47,29 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const message = document.getElementById("message")
+  
+    // form.addEventListener('submit', e => {
+    //     e.preventDefault()
+    //     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    //       .then(response => console.log('Success!', response))
+    //       .catch(error => console.error('Error!', error.message))
+    //   })
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          message.innerHTML = "Message sent successfully!"
+          setTimeout(function() {
+            message.innerHTML= ""
+          }, 5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
 /* End About script */
 
 /* Start Get Involved */

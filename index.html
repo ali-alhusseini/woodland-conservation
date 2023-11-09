@@ -4,21 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/images/logo.svg"
-    />
-
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.svg" />
     <link rel="stylesheet" href="styles/style.css" />
+
     <script defer src="scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/cb2cc6f1d8.js" crossorigin="anonymous"></script>
 
 
     <title>Woodland Conservation</title>
   </head>
   
 <body>
+    <div class="header-container">
+        <span class="logo">
+            <img src="assets/images/logo.svg" alt="logo">
+        </span>
+        <span class="title">Woodland </br> Conservation</span>
+        <span class="navigatoin">
+            <button class="nav-buttons" id="about-Button">
+                <a onclick="showAboutContent()" href="#aboutContent">
+                    About
+                </a>
+            </button>
+            <button class="nav-buttons">
+                <a href="#">
+                    Get Involved
+                </a>
+            </button>
+            <button class="nav-buttons">
+                <a href="#">
+                    Gallery
+                </a>
+            </button>
+            <button class="nav-buttons">
+                <a href="#">
+                    Map
+                </a>
+            </button>
+        </span>
+    </div>
+
     <header aria="banner">
         <div class="header-container">
             <div class="title-container">
@@ -52,31 +77,40 @@
     </header>
 
     <div class="about-container" id="aboutContent">
-        <h1 class="about-title">About</h1>
-        <div class="main-container">
-            <h2>HISTORY</h2>
-            <p>"In 20xx, the French Village Forest Preservation was discovered by
-                X Y who noticed some flora and flauna on the premises that have a
-                deserve to be preserved for future generations. After much
-                community driven work we are left with a majestic piece of history
-                that we can preserve for our community and the life that thrives
-                within the ecosystem here."</p>
+        <div class="about-header">
+            <h1>About Woodland Conservation</h1>
         </div>
-        <div class="main-container">
-            <h2>MISSION</h2>
-            <p>"To preserve a dynamic and unique system of natural and cultural
+        <div class="mission-container">
+            <img src="https://images.unsplash.com/photo-1427434991195-f42379e2139d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80">
+            <div class="overlay-text">
+                <h1>Our Mission</h1>
+                <p>"to preserve a dynamic and unique system of natural and cultural
                 resources, and to develop innovative educational, recreational and
                 cultural opportunities of regional value, while exercising
                 environmental and fiscal responsibility."</p>
+            </div>
         </div>
-        <div class="timeline-container">
-            <h2>TIMELINE</h2>
-            <p>
-            <ul>
-                <li>website development started</li>
-                <li>blah blah blah</li>
-            </ul>
-            </p>
+        <div class="about-content-container">
+            <!-- <img src="assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg"> -->
+                <div class="history-container">
+                        <h2>HISTORY</h2>
+                    <p>"In 20xx, the French Village Forest Preservation was discovered by
+                    X Y who noticed some flora and flauna on the premises that have a
+                    deserve to be preserved for future generations. After much
+                    community driven work we are left with a majestic piece of history
+                    that we can preserve for our community and the life that thrives
+                    within the ecosystem here."</p>
+                </div>
+                <div class="timeline-container">
+                    <h2>TIMELINE</h2>
+                    <p>
+                        <li>website development started</li>
+                        <li>Park pathway developement started</li>
+                        <li>blah blah blah</li>
+                        <li>blah blah blah</li>
+                        <li>blah blah blah</li>
+                    </p>
+                </div>
         </div>
         <div class="main-container">
             <h2>ORDINANCES, RULES & REGULATIONS</h2>
@@ -89,11 +123,17 @@
             </p>
         </div>
         <div class="faq-button-container">
-            <p>Have Questions? take a look at our <a onclick="hideAboutContent()" href="#faq">FAQ</a></p>
+            <p>Have Questions? take a look at our 
+                <button class="nav-buttons" id="faq-button">
+                <a onclick="hideAboutContent()" href="#">FAQ</a>
+                </button>    
+            </p>
         </div>
     </div>
-    <div class="faq-container" id="faqContent">
-        <!-- <a onclick="showAboutContent()" href="#about">back</a> -->
+    <div class="faq-container hidden" id="faqContent" >
+        <button class="nav-buttons">
+            <a onclick="showAboutContent()" href="#about" id="back-button">back</a>
+        </button>
         <h2 class="faq-title">Frequently Asked Questions</h2>
         <button class="accordion">What is being reserved in the park?</button>
         <div class="panel">
@@ -111,9 +151,21 @@
         <div class="panel">
             <p>....</p>
         </div>
-
-        <p>Still haven't answered your question, feel free to send us one below.</p>
+        <div class="additional-questions-container">
+            <p>Still haven't answered your question, feel free to send us one below.</p>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
+              <textarea name="Question" rows="6" placeholder="Your Question"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="message"></span>
+        </div>
     </div>
+
+    <!-- Get Involved section -->
     <div class="getinvolved">
       <h1>Get Involved</h1>
       <p>
@@ -159,6 +211,25 @@
         <button class="nav-buttons" id="apply-button">
           <a href="#">Apply to be a Volunteer</a>
         </button>
+        <div class="donation-box hidden">
+            <h1>Support Our Cause</h1>
+            <p>Your donation will go directly towards the Woodland Conservation Project!</p>
+            <div class="amount-input">
+                <input type="number" id="donation-amount" placeholder="Enter amount (CAD)">
+            </div>
+            <button class="nav-buttons" id="donate-button">
+                <a href="#">Donate</a>
+            </button>
+        </div>
+        <div class="vol-box hidden">
+            <h1>Volunteer Opportunities</h1>
+            <ul>
+                <li>Trail maintenance</li>
+                <li>Tree planting</li>
+                <li>Wildlife monitoring</li>
+                <li>Education programs</li>
+            </ul>
+        </div>
         <form class="hidden" id="vol-app">
           <p>
             Fill out the following application to be considered for a volunteer
@@ -220,5 +291,4 @@
       </div>
      </div>
   </body>
-
 </html>
