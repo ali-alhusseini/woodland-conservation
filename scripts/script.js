@@ -1,9 +1,14 @@
-const burger = document.querySelector('.burger');
-const body = document.querySelector('.body');
+/* Header - Start */
+const burgerButton = document.querySelector('.burger-button button');
+const overlay = document.querySelector('#overlay');
+const navMenu = document.querySelector('.nav-menu');
 
-burger.addEventListener('click', () => {
-    body.classList.toggle('menu-open');
-})
+burgerButton.addEventListener('click', () => {
+    const isOverlayVisible = overlay.style.display === 'block';
+    overlay.style.display = isOverlayVisible ? 'none' : 'block';
+});
+
+/* Header - End */
 
 /* Start About */
 
