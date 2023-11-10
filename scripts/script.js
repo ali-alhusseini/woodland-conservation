@@ -1,11 +1,11 @@
 /* Header - Start */
 const burgerButton = document.querySelector('.burger-button button');
 const overlay = document.querySelector('#overlay');
-const navMenu = document.querySelector('.nav-menu');
 
 burgerButton.addEventListener('click', () => {
     const isOverlayVisible = overlay.style.display === 'block';
     overlay.style.display = isOverlayVisible ? 'none' : 'block';
+    document.body.style.overflow = isOverlayVisible ? 'auto' : 'hidden';
 });
 
 /* Header - End */
