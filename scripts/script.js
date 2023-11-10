@@ -1,12 +1,17 @@
-const burger = document.querySelector('.burger');
-const body = document.querySelector('.body');
+/* Header - Start */
+const burgerButton = document.querySelector('.burger-button button');
+const overlay = document.querySelector('#overlay');
 
-/*
-* Start About script
-* Author: Riley O'Keefe
-*/
-/*hideContent hides the about content when the faq button is clicked*/
+burgerButton.addEventListener('click', () => {
+    const isOverlayVisible = overlay.style.display === 'block';
+    overlay.style.display = isOverlayVisible ? 'none' : 'block';
+    document.body.style.overflow = isOverlayVisible ? 'auto' : 'hidden';
+});
+/* Header - End */
 
+/* Start About */
+
+/* hideContent hides the about content when the faq button is clicked */
 function hideAboutContent() {
     const faqButton = document.getElementById('faq-button')
     const aboutContent = document.querySelector('.about-container')
