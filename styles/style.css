@@ -9,8 +9,12 @@
 
 html, body {
     font-family: var(--font-sans);
+    background-color: #0e3f27;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%23f5f5f5' fill-opacity='0.52' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
     background-color: var(--color-secondary);
 }
+
+/* Header - Start */
 
 .header-container {
     display: flex;
@@ -120,7 +124,7 @@ html, body {
         font-weight: bold;
         border-radius: 0;
     }
-
+  
     .nav-menu a:hover {
         border-bottom: solid 3px var(--color-secondary);
         transition: border-bottom 0.2s ease-in-out;
@@ -131,80 +135,139 @@ html, body {
         background-color: var(--color-secondary);
     }
 }
+/* Header - End */
 
-/* Start about section styling*/
+
+
+/* About Section - Start */
 
 .about-container {
     width: 100%;
     height: 100%;
-    display: flexbox;
+    /* display: flex; */
+    flex-direction: column;
     /* background-color: #0E3F27; */
 }
 
-.about-title {
-    display: flexbox;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
+.about-header h1 {
+    text-align: center;
+    font-family:var(--font-sans);
+    color: var(--color-primary);
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.mission-container {
     height: fit-content;
-    flex-shrink: 0;
-    color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.mission-container img {
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.4rem;
+}
+.overlay-text {
+  position:absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 20px;
+  inline-size: 500px;
+  overflow-wrap: break-word;
+  font-size-adjust: 0.5; 
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align:center;
+}
+.overlay-text h1 {
     font-family: var(--font-sans);
-    font-size: 96px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    border-radius: 10px;
-    background-color: var(--color-accent);
+    font-size: 48px;
     text-align: center;
+}
+.about-content-container {
+    display: inline-flex;
+    padding: 10px;
+    height: fit-content;
+    width: 100%;
+    background-image: url("/assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg");
+    background-size:100%;
+}
+
+.about-content-container img{
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.4rem;
 }
 
+.history-container {
+    margin-top: 5px;
+    width: 70%;
+    padding: 0.4rem;
+    color: rgb(255, 255, 255);
+}
+
+.history-container h2 {
+    font-family: var(--font-sans);
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 48px;
+    text-align: left;
+}
 .main-container {
-    display: flexbox;
     margin-top: 5px;
     width:100%;
     height: fit-content;
     padding: 0.4rem;
-    border-radius: 10px;
-    flex-shrink: 0;
-    color: rgb(255, 255, 255);
-    background-color: var(--color-primary);
+    color: rgb(26, 26, 26);
     text-align: center; 
 }
 
 .main-container h2 {
     font-family: var(--font-sans);
+    color: var(--color-primary);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
     font-size: 48px;
     text-align: center;
 }
 
 .timeline-container {
-    display: flexbox;
     margin:0px;
     margin-top: 5px;
-    width: 100%;
-    height: fit-content;
     padding: 0.4rem;
-    border-radius: 10px;
     color: rgb(255, 255, 255);
-    background-color: var(--color-primary);
-    text-align: center;
 }
 
 .timeline-container h2 {
     font-family: var(--font-sans);
+    color: white;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
     font-size: 48px;
-    text-align: center;
+    text-align: left;
 }
 .timeline-container p{
-    text-align: center;
+    text-align: left;
 }
 
 .faq-button-container {
@@ -222,11 +285,7 @@ html, body {
     background-color: black;
 }
 
-.faq-container {
-    display: none;
-}
 .faq-title {
-    display: flexbox;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
@@ -246,7 +305,7 @@ html, body {
 
 .accordion {
     background-color: var(--color-primary);
-    color: black;
+    color: white;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -266,7 +325,68 @@ html, body {
     display: none;
     overflow: hidden;
 }
-/* End about section styling */
+
+.additional-questions-container p{
+    text-align: center;
+    font-size: 24px;
+    font-family: var(--font-sans);
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+.btn.btn2 {
+    display: inline-block;
+    background: var(--color-black);
+}
+
+.btn.btn2:hover {
+    background: var(--color-grey);
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: rgb(182, 181, 181);
+    padding: 15px;
+    margin: 15px 0;
+    color: black;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+ }
+/* About Section - End */
+
+
+/* Get Involved Section - Start */
+
+.getinvolved {
+    text-align: center;
+    position: relative;
+    border-width: 10px;
+    border-style: double;
+    border-color: #0E3F27;
+    margin: 50px;
+    background-color: var(--color-secondary);
+}
+
+.getinvolved p {
+    font-size: large;
+    margin: 20px;
+}
+
+.getinvolved button {
+    margin: 50px;
+}
 
 .donation-box {
     background-color: #fff;
@@ -275,15 +395,27 @@ html, body {
     padding: 20px;
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.donation-box p {
+    text-align: left;
+}
+
+#donate-button-2 {
+    margin: 5px;
 }
 
 .amount-input {
-    margin: 20px 0;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .hidden {
     display: none;
 }
+
 .vol-box {
     background-color: #fff;
     border-radius: 10px;
@@ -291,4 +423,85 @@ html, body {
     padding: 20px;
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
+
+.vol-box li {
+    text-align: left;
+}
+
+#apply-button {
+    margin: 5px;
+}
+
+#vol-app {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#vol-app label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+#vol-app input {
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+#vol-app p {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#vol-app input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#vol-app select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 3em; /* Set the height to match other input elements */
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+#vol-app input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#vol-app input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+}
+/* Get Involved Section - End */
