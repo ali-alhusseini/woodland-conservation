@@ -131,7 +131,31 @@ html, body {
     margin: 10px 0 0 2px
 }
 
+.nav-buttons {
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 15px;
+    border-radius: 5px;
+}
 
+.nav-buttons a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-buttons::after {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+.video-container {
+    margin: 20px;
+    border-radius: 7px;
+    height: 500px;
+    overflow: hidden;
+}
 
 /* Header & Homepage Desktop - Start */
 @media screen and (min-width: 768px) {
@@ -174,9 +198,24 @@ html, body {
         background-color: var(--color-secondary);
     }
 
-    /* Homepage */
+    /* Homepage */ 
     .homepage-title {
         font-size: large;
+    }
+
+    .homepage-text {
+        font-size: large;
+    }
+
+    .nav-buttons {
+        padding: 20px;
+        font-size: medium;
+    }
+
+    .video-container {
+        margin: 50px;
+        height: 500px;
+        border-radius: 7px;
     }
 }
 /* Header & Homepage Desktop - End */
