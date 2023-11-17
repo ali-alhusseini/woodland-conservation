@@ -231,6 +231,7 @@ html, body {
     background-size:100%;
     color: rgb(255, 255, 255);
     text-align: left;
+    padding-left: 20px;
 }
 .timeline-container img {
     height: fit-content;
