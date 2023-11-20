@@ -129,3 +129,67 @@ applyButton.addEventListener("click", function (event) {
     volunteerForm.style.display = "none";
   }
 });
+
+
+/* Map Scripts - Start */
+/**
+ * This function is called by the Lost and Talking Trees buttons.  The button
+ * that is pressed is replaced by a button to return to the main map page.
+ * 
+ * @param {*} id ref to either the Lost or Talking Trees button
+ * 
+ * Author: Alexander Jaques
+ */
+function goToMapSubs(id) {
+  document.getElementById("mapMain").style.display = "none";
+
+  if (id === "lost") {
+      document.getElementById(id).style.display = "none";
+      document.getElementById("mapPage1").style.display = "block";
+      document.getElementById("mapLost").style.display = "block"
+
+      // If coming from talking trees page, display button and hide contents
+      if (document.getElementById("talkingTrees").style.display == "none") {
+          document.getElementById("mapTT").style.display = "none";
+          document.getElementById("talkingTrees").style.display = "block";
+          document.getElementById("mapPage2").style.display = "none";
+      }
+  }
+
+  if (id === "talkingTrees") {
+      document.getElementById(id).style.display = "none";
+      document.getElementById("mapPage2").style.display = "block";
+      document.getElementById("mapTT").style.display = "block"
+
+      // If coming from lost page, display button and hide contents
+      if (document.getElementById("lost").style.display == "none") {
+          document.getElementById("mapLost").style.display = "none";
+          document.getElementById("lost").style.display = "block";
+          document.getElementById("mapPage1").style.display = "none";
+      }
+  }
+}
+
+/**
+* This function is called by the map buttons to show the original buttons
+* 
+* @param {*} id ref to either of the map buttons
+* 
+* Author: Alexander Jaques
+*/
+function goToMapMain(id) {
+  document.getElementById("mapMain").style.display = "block";
+
+  if (id === "mapPage1") {
+      document.getElementById("mapLost").style.display = "none";
+      document.getElementById(id).style.display = "none";
+      document.getElementById("lost").style.display = "block";
+  }
+
+  if (id === "mapPage2") {
+      document.getElementById("mapTT").style.display = "none";
+      document.getElementById(id).style.display = "none";
+      document.getElementById("talkingTrees").style.display = "block";
+  }
+}
+/* Map Scripts - End */
