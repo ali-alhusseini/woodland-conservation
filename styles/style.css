@@ -383,7 +383,7 @@ form .btn2 {
 /* About Section - End */
 
 
-/* Get Involved Section - Start */
+/*-------------------------------------------------------------- Get Involved section start --------------------------------------------------*/
 
 .getinvolved {
     text-align: center;
@@ -402,6 +402,15 @@ form .btn2 {
 
 .getinvolved button {
     margin: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    color: var(--color-secondary);
 }
 
 .donation-box {
@@ -514,6 +523,7 @@ form .btn2 {
 #vol-app input[type="checkbox"] {
     margin-right: 5px;
     vertical-align: middle;
+    display: inline;
 }
 
 #vol-app input[type="checkbox"] + label {
@@ -627,3 +637,4 @@ div#map {
     /* Mobile Stylings - End */
 }
 /* Map Section - End */
+
