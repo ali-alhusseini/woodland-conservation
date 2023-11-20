@@ -10,7 +10,8 @@
 html, body {
     font-family: var(--font-sans);
     background-color: #0e3f27;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -19,8 +20,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Header - Start */
-
+/* Header Mobile - Start */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -29,12 +29,12 @@ html, body {
     align-items: center;
     align-content: center;
     gap: 10px;
-    width: auto;
-    height: 3rem;
-    margin: 0;
+    width: 100%;
+    height: 3.5rem;
     padding: 0;
     background-color: var(--color-primary);
-    border-radius: 5px;
+    position: fixed;
+    z-index: 1000;
 }
 
 .title-container {
@@ -99,9 +99,107 @@ html, body {
     border-radius: 5px;
     font-weight: bold;
 }
+/* Header Mobile - End */
 
-/* Header Desktop */
+/* Homepage Mobile - Start */
+.homepage-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 3.5rem;
+}
+
+.homepage-content {
+    margin: 20px;
+}
+
+.homepage-title {
+    font-weight: bold;
+    line-height: 1;
+}
+
+.homepage-title h1 {
+    margin-bottom: 0;
+}
+
+.homepage-title h3 {
+    margin: 10px 0 0 2px
+}
+
+.nav-buttons {
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.nav-buttons a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-buttons::after {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+.video-container {
+    margin: 0 20px;
+    border-radius: 7px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: var(--color-primary);
+}
+
+.footer-social {
+    margin: 20px;
+}
+
+.footer-buttons {
+    border: none;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.footer-buttons a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-title {
+    margin: 20px;
+}
+
+.footer-text {
+    margin: 20px;
+    font-size: small;
+}
+
+/* Header & Homepage Desktop - Start */
 @media screen and (min-width: 768px) {
+    /* Header */
     .main-title a:hover {
         background-color: var(--color-accent);
         border-radius: 5px;
@@ -139,13 +237,32 @@ html, body {
         color: var(--color-primary);
         background-color: var(--color-secondary);
     }
+
+    /* Homepage */ 
+    .homepage-title {
+        font-size: large;
+    }
+
+    .homepage-text {
+        font-size: large;
+    }
+
+    .nav-buttons {
+        padding: 20px;
+        font-size: medium;
+    }
+
+    .video-container {
+        margin: 50px;
+        height: 400px;
+        border-radius: 7px;
+    }
 }
-/* Header - End */
+/* Header & Homepage Desktop - End */
 
 
 
 /* About Section - Start */
-
 .about-container {
     width: 100%;
     height: 100%;
@@ -530,4 +647,111 @@ form .btn2 {
     display: inline;
     font-weight: normal;
 }
-/*-------------------------------------------------------------- Get Involved section end --------------------------------------------------*/
+/* Get Involved Section - End */
+
+/* Map Section */
+/* Add padding above weather widgets */
+/* a.weatherwidget-io {
+    padding-top: 20px;
+} */
+
+/* Center map header */
+h1#mapHeader {
+    text-align: center;
+}
+
+/* Change cursor over buttons */
+button:hover {
+    cursor: pointer;
+}
+
+/* Stylings for map buttons */
+button#lost,
+button#talkingTrees,
+button#mapPage1,
+button#mapPage2 {
+    height: 100px;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+}
+
+div#map {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* Map Desktop stylings */
+@media only screen and (min-width: 768px) {
+    /* Map Desktop Stylings - Start */
+    img#satMap {
+        display: block;
+        width: 50%;
+        margin: auto;
+        border-radius: 15px;
+        float: left;
+    }
+
+    /* Styling for map buttons */
+    div#mapButtons {
+        clear: right;
+    }
+
+    /* Control size of map buttons relative to viewport */
+    div#mapButtons>button {
+        /* Add stuff for buttons? */
+        width: 30%;
+    }
+
+    /* Limit display size of desktop weather widget */
+    div#weatherD {
+        width: 80%;
+    }
+
+    /* Remove display of mobile weather widget on desktop */
+    div#weatherM {
+        display: none;
+    }
+
+    /* Should line up on map */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 50%;
+    }
+    /* Map Desktop Stylings - End */
+}
+
+/* Mobile stylings */
+@media only screen and (max-width: 767px) {
+    /* Mobile Map Stylings */
+    img#satMap {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    /* Controls size of map buttons relative to viewport */
+    div#mapButtons>button {
+        width: 100%;
+    }
+
+    /* Remove display of desktop weather widget on mobile */
+    div#weatherD {
+        display: none;
+    }
+
+    /* Should line up on map, if not tweak top and left */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 100%;
+    }
+    /* Mobile Stylings - End */
+}
+/* Map Section - End */
+
