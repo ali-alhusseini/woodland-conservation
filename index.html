@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.svg" />
     <link rel="stylesheet" href="styles/style.css" />
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <script defer src="scripts/script.js"></script>
-    <script src="https://kit.fontawesome.com/cb2cc6f1d8.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/cb2cc6f1d8.js" crossorigin="anonymous"></script>  
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+    <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script> 
 
     <title>Woodland Conservation</title>
-  </head>
-  
+</head>
+
 <body>
     <!-- Header Section -->
     <header aria="banner">
@@ -39,17 +40,17 @@
                 <!-- Mobile Navigation Menu -->
                 <div id="overlay">
                     <div class="nav-menu-mobile">
-                            <a href="#">About</a>
-                            <a href="#">Get Involved</a>
-                            <a href="#">Map</a>
-                            <a href="#">Gallery</a>
+                        <a href="#">About</a>
+                        <a href="#">Get Involved</a>
+                        <a href="#">Map</a>
+                        <a href="#">Gallery</a>
                     </div>
                 </div>
                 <!-- Desktop Navigation Menu -->
                 <div class="nav-menu">
                     <nav>
-                        <a href="#">About</a>
-                        <a href="#">Get Involved</a>
+                        <a href="#" id="aboutButton" onclick="showContent()">About</a>
+                        <a href="#" id="getInvolvedButton" onclick="showContent()">Get Involved</a>
                         <a href="#">Map</a>
                         <a href="#">Gallery</a>
                     </nav>
@@ -57,7 +58,6 @@
             </div>
         </div>
     </header>
-
     <!-- Homepage Section -->
     <div class="homepage-container">
         <div class="homepage-content">
@@ -90,36 +90,35 @@
             <h1>About Woodland Conservation</h1>
         </div>
         <div class="mission-container">
-            <img src="https://images.unsplash.com/photo-1427434991195-f42379e2139d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1427434991195-f42379e2139d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80">
             <div class="overlay-text">
                 <h1>Our Mission</h1>
                 <p>"to preserve a dynamic and unique system of natural and cultural
-                resources, and to develop innovative educational, recreational and
-                cultural opportunities of regional value, while exercising
-                environmental and fiscal responsibility."</p>
+                    resources, and to develop innovative educational, recreational and
+                    cultural opportunities of regional value, while exercising
+                    environmental and fiscal responsibility."</p>
             </div>
         </div>
-        <div class="about-content-container">
-            <!-- <img src="assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg"> -->
-                <div class="history-container">
-                        <h2>HISTORY</h2>
-                    <p>"In 20xx, the French Village Forest Preservation was discovered by
-                    X Y who noticed some flora and flauna on the premises that have a
-                    deserve to be preserved for future generations. After much
-                    community driven work we are left with a majestic piece of history
-                    that we can preserve for our community and the life that thrives
-                    within the ecosystem here."</p>
-                </div>
-                <div class="timeline-container">
-                    <h2>TIMELINE</h2>
-                    <p>
-                        <li>website development started</li>
-                        <li>Park pathway developement started</li>
-                        <li>blah blah blah</li>
-                        <li>blah blah blah</li>
-                        <li>blah blah blah</li>
-                    </p>
-                </div>
+        <div class="main-container">
+            <h2>HISTORY</h2>
+            <p>"In 20xx, the French Village Forest Preservation was discovered by
+                X Y who noticed some flora and flauna on the premises that have a
+                deserve to be preserved for future generations. After much
+                community driven work we are left with a majestic piece of history
+                that we can preserve for our community and the life that thrives
+                within the ecosystem here."
+            </p>
+        </div>
+        <div class="timeline-container">
+            <h2>TIMELINE</h2>
+            <p>
+                <li>website development started</li>
+                <li>Park pathway developement started</li>
+                <li>blah blah blah</li>
+                <li>blah blah blah</li>
+                <li>blah blah blah</li>
+            </p>
         </div>
         <div class="main-container">
             <h2>ORDINANCES, RULES & REGULATIONS</h2>
@@ -132,16 +131,16 @@
             </p>
         </div>
         <div class="faq-button-container">
-            <p>Have Questions? take a look at our 
-                <button class="nav-buttons" id="faq-button">
-                <a onclick="hideAboutContent()" href="#">FAQ</a>
-                </button>    
+            <p>Have Questions? take a look at our
+                <button class="faq-button" id="faq-button">
+                    <a onclick="hideAboutContent()" href="#">FAQ</a>
+                </button>
             </p>
         </div>
     </div>
     <div class="faq-container hidden" id="faqContent">
         <button class="nav-buttons">
-            <a onclick="showAboutContent()" href="#about" id="back-button">back</a>
+            <a onclick="showAboutContent()" href="#aboutContent" id="back-button">back to About</a>
         </button>
         <h2 class="faq-title">Frequently Asked Questions</h2>
         <button class="accordion">What is being reserved in the park?</button>
@@ -165,68 +164,42 @@
         </div>
         <div class="contact-right">
             <form name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required>
-              <input type="email" name="Email" placeholder="Your Email" required>
-              <textarea name="Question" rows="6" placeholder="Your Question"></textarea>
-              <button type="submit" class="btn btn2">Submit</button>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Question" rows="6" placeholder="Your Question"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
             </form>
             <span id="message"></span>
         </div>
     </div>
-
+    <!-------------------------------------------------------------- About section - end --------------------------------------------------------->
     <!-- Get Involved section -->
-    <div class="getinvolved" style="display: none;">
-      <h1>Get Involved</h1>
-      <p>
-        This section is dedicated towards individuals who want to become part of
-        the Conservation Woodland Project. See below a few ways you can get
-        involved.
-      </p>
-      <button class="nav-buttons" id="donate-button">
-        <a href="#">Donate to the Project!</a>
-      </button>
-      <button class="nav-buttons" id="volunteer-button">
-        <a href="#">Become a Volunteer!</a>
-      </button>
-      <button class="nav-buttons" id="feedback-button">
-        <a href="#">Send us Feedback!</a>
-      </button>
-      <div class="donation-box hidden">
-        <h1>Support Our Cause</h1>
+    <div class="getinvolved hidden" id="getInvolved">
+        <h1>Get Involved</h1>
         <p>
-          Your donation will go directly towards the Woodland Conservation
-          Project!
+            This section is dedicated towards individuals who want to become part of
+            the Conservation Woodland Project. See below a few ways you can get
+            involved.
         </p>
-        <div class="amount-input">
-          <input
-            type="number"
-            id="donation-amount"
-            placeholder="Enter amount (CAD)"
-          />
-        </div>
-        <button class="nav-buttons" id="donate-button-2">
-          <a href="#">Donate</a>
+        <button class="nav-buttons" id="donate-button">
+            <a href="#">Donate to the Project!</a>
         </button>
-      </div>
-      <div class="vol-box hidden">
-        <h1>Volunteer Opportunities</h1>
-        <ul>
-          <li>Trail maintenance</li>
-          <li>Tree planting</li>
-          <li>Wildlife monitoring</li>
-          <li>Education programs</li>
-          <li>Tour Guide</li>
-        </ul>
-        <button class="nav-buttons" id="apply-button">
-          <a href="#">Apply to be a Volunteer</a>
+        <button class="nav-buttons" id="volunteer-button">
+            <a href="#">Become a Volunteer!</a>
+        </button>
+        <button class="nav-buttons" id="feedback-button">
+            <a href="#">Send us Feedback!</a>
         </button>
         <div class="donation-box hidden">
             <h1>Support Our Cause</h1>
-            <p>Your donation will go directly towards the Woodland Conservation Project!</p>
+            <p>
+                Your donation will go directly towards the Woodland Conservation
+                Project!
+            </p>
             <div class="amount-input">
-                <input type="number" id="donation-amount" placeholder="Enter amount (CAD)">
+                <input type="number" id="donation-amount" placeholder="Enter amount (CAD)" />
             </div>
-            <button class="nav-buttons" id="donate-button">
+            <button class="nav-buttons" id="donate-button-2">
                 <a href="#">Donate</a>
             </button>
         </div>
@@ -237,7 +210,118 @@
                 <li>Tree planting</li>
                 <li>Wildlife monitoring</li>
                 <li>Education programs</li>
+                <li>Tour Guide</li>
             </ul>
+            <button class="nav-buttons" id="apply-button">
+                <a href="#">Apply to be a Volunteer</a>
+            </button>
+            <!-- <div class="donation-box hidden">
+            <h1>Support Our Cause</h1>
+            <p>Your donation will go directly towards the Woodland Conservation Project!</p>
+            <div class="amount-input">
+                <input type="number" id="donation-amount" placeholder="Enter amount (CAD)">
+            </div>
+            <button class="nav-buttons" id="donate-button">
+                <a href="#">Donate</a>
+            </button>
+        </div> -->
+            <div class="vol-box hidden">
+                <h1>Volunteer Opportunities</h1>
+                <ul>
+                    <li>Trail maintenance</li>
+                    <li>Tree planting</li>
+                    <li>Wildlife monitoring</li>
+                    <li>Education programs</li>
+                </ul>
+            </div>
+            <form class="hidden" id="vol-app">
+                <p>
+                    Fill out the following application to be considered for a volunteer
+                    position:
+                </p>
+                <label>Preferred Position:</label>
+                <select class="app-input" id="dropdown" required>
+                    <option value="" disabled selected>Select a Preferred Position</option>
+                    <option value="option1">Trail Maintenance</option>
+                    <option value="option2">Tree Planting</option>
+                    <option value="option3">Wildlife Monitoring</option>
+                    <option value="option4">Education Programs</option>
+                    <option value="option5">Tour Guide</option>
+                </select>
+                <label>First Name:</label>
+                <input type="text" class="app-input" id="fname-for-app" required />
+                <br />
+                <label>Last Name:</label>
+                <input type="text" class="app-input" id="lname-for-app" required />
+                <br />
+                <label>Phone Number:</label>
+                <input type="tel" class="app-input" id="phone-for-app" required />
+                <br />
+                <label>Email:</label>
+                <input type="email" class="app-input" id="email-for-app" required />
+                <br />
+                <label>Address:</label>
+                <input type="text" class="app-input" id="address-for-app" required>
+                <br />
+                <label>Available Start Date:</label>
+                <input type="date" class="app-input" id="sdate-for-app" required />
+                <br />
+                <label>Eligible to work in Canada:</label>
+                <label for="eligible-for-app-yes">Yes</label>
+                <input type="checkbox" class="app-input" id="eligible-for-app-yes" required />
+                <label for="eligible-for-app-no">No</label>
+                <input type="checkbox" class="app-input" id="eligible-for-app-no" required />
+                <br />
+                <label>References:</label>
+                <input type="text" class="app-input" id="ref1-for-app" required />
+                <br />
+                <input type="text" class="app-input" id="ref2-for-app" required />
+                <br />
+                <input type="text" class="app-input" id="ref3-for-app" required />
+                <button class="nav-buttons" id="submit-button">
+                    <a href="#"> Submit Application </a>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="map">
+        <h1 id="mapHeader">Map</h1>
+
+        <!-- Container for main map content -->
+        <div id="mapMain">
+            <!-- Mobile Weather Widget -->
+            <div id="weatherM">
+                <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
+                    data-label_1="FRENCH VILLAGE" data-label_2="WEATHER" data-font="Arial" data-mode="Current"
+                    data-theme="original" data-basecolor="#125c39" data-accent="#0e3f27" data-textcolor="#f5f5f5">FRENCH
+                    VILLAGE
+                    WEATHER</a>
+                <script>
+                    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+                </script>
+            </div>
+
+            <!-- Desktop Weather Widget -->
+            <div id="weatherD">
+                <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
+                    data-label_1="FRENCH VILLAGE" data-label_2="WEATHER" data-font="Arial" data-theme="original"
+                    data-basecolor="#125c39" data-accent="#0e3f27" data-textcolor="#f5f5f5">FRENCH VILLAGE WEATHER</a>
+                <script>
+                    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+                </script>
+            </div>
+            <!-- Map -->
+            <div>
+                <img src="./assets/images/satMap.png" alt="satMap" id="satMap">
+                <!-- Test different color line for mobile visibility-->
+                <!-- svg for the path -->
+                <svg version="1.1" viewBox="0 0 550 323" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m132.29 100.54 2.6328-3.7581 2.6782-0.5541-0.21934 4.2828 11.671 10.586 16.208 9.2351 4.0717 11.959 4.1937 15.054 9.7892 15.33 3.4796 0.0429 17.624 0.11396 0.63179 2.2673 4.5015 13.794-0.3248 2.3547-2.8538 15.866 11.994 4.1783 9.1723 0.84875 5.7818 15.183 19.354 2.2796v0l11.861 6.5361 9.306 6.6931 2.5914 5.0052 4.1015 17.688 21.088 9.0572 2.7001 4.285 23.608 2.722 3.7348-2.155-3.5847-7.4979"
+                        fill="none" stroke="#f5f5f5" opacity="0.75" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1" id="path" />
+                </svg>
+            </div>
         </div>
         <form class="hidden" id="vol-app">
           <p>
@@ -299,6 +383,39 @@
         </form>
       </div>
     </div>
+    <!-- Get Involved - End -->
+
+
+
+    <!-- Gallery - Start -->
+    <div style="display: none;">
+      <button id="upload_widget" class="cloudinary-button">Upload Photo for Review</button>
+      <div id="my-gallery" style="max-width:80%;margin:auto"></div>
+    </div>
+    <!-- Gallery - End -->
+
+        <!-- Container for lost section -->
+        <!-- Change to directions? -->
+        <div id="mapLost" style="display: none;">
+            <h1>UNDER CONSTRUCTION</h1>
+        </div>
+
+        <!-- Container for talking trees section -->
+        <!-- Placeholder section maybe -->
+        <div id="mapTT" style="display: none;">
+            <h1>UNDER CONSTRUCTION</h1>
+        </div>
+
+
+        <!-- Buttons section for navigating within map section -->
+        <div id="mapButtons">
+            <!-- Place holder buttons -->
+            <button id="lost" onclick="goToMapSubs(id)">Lost?</button>
+            <!-- Maybe try to combine map btns into 1 button, and swap others -->
+            <button id="mapPage1" style="display: none;" onclick="goToMapMain(id)">Map</button>
+            <button id="mapPage2" style="display: none;" onclick="goToMapMain(id)">Map</button>
+            <button id="talkingTrees" onclick="goToMapSubs(id)">Talking Trees</button>
+        </div>
 
     <!-- Footer Section -->
     <footer>

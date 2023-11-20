@@ -266,16 +266,15 @@ html, body {
 .about-container {
     width: 100%;
     height: 100%;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
-    /* background-color: #0E3F27; */
 }
 
 .about-header h1 {
     text-align: center;
     font-family:var(--font-sans);
     color: var(--color-primary);
-    font-size: 48px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -287,124 +286,108 @@ html, body {
 }
 
 .mission-container img {
-    height: fit-content;
+    height: 100%;
     width: 100%;
-    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0.4rem;
 }
 .overlay-text {
-  position:absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  color: #fff; 
-  padding: 10px 20px; 
-  font-size: 20px;
-  inline-size: 500px;
-  overflow-wrap: break-word;
-  font-size-adjust: 0.5; 
-  font-family: var(--font-sans);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align:center;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    padding: 10px 20px; 
+    font-size: 10px;
+    inline-size: 350px;
+    /*overflow-wrap: break-word;
+    font-size-adjust: 0.5; 
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center; */
 }
+
 .overlay-text h1 {
     font-family: var(--font-sans);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    font-size: 48px;
+    font-size: 15px;
     text-align: center;
 }
-.about-content-container {
-    display: inline-flex;
-    padding: 10px;
-    height: fit-content;
-    width: 100%;
-    background-image: url("/assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg");
-    background-size:100%;
-}
-
-.about-content-container img{
-    height: fit-content;
-    width: 100%;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.4rem;
-}
-
-.history-container {
-    margin-top: 5px;
-    width: 70%;
-    padding: 0.4rem;
-    color: rgb(255, 255, 255);
-}
-
-.history-container h2 {
-    font-family: var(--font-sans);
-    color: white;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 48px;
-    text-align: left;
-}
 .main-container {
-    margin-top: 5px;
     width:100%;
-    height: fit-content;
-    padding: 0.4rem;
+    height: 100%;
     color: rgb(26, 26, 26);
-    text-align: center; 
+    text-align: center;
 }
 
 .main-container h2 {
     font-family: var(--font-sans);
     color: var(--color-primary);
     font-style: normal;
-    font-weight: 500;
+    font-weight: 450;
     line-height: normal;
-    font-size: 48px;
+    font-size: 15px;
     text-align: center;
 }
 
-.timeline-container {
-    margin:0px;
-    margin-top: 5px;
-    padding: 0.4rem;
-    color: rgb(255, 255, 255);
+.main-container p{
+    font-family: var(--font-sans);
+    text-align: center;
+    padding: 0 20px;
+    font-size: 18px;
 }
 
+.timeline-container {
+    height: fit-content;
+    width: 100%;
+    background-image: url("/assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg");
+    background-size:100%;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding-left: 20px;
+}
+.timeline-container img {
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .timeline-container h2 {
     font-family: var(--font-sans);
     color: white;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 450;
     line-height: normal;
-    font-size: 48px;
+    font-size: 15px;
     text-align: left;
 }
 .timeline-container p{
-    text-align: left;
+    text-align: center;
 }
 
 .faq-button-container {
     color: rgb(0, 0, 0);
     text-align: center;
 }
+.faq-button{
+    font-family: var(--font-serif);
+    font-weight:bold;
+    border-radius: 5px; 
+    border: black;
+    border-style: solid;
+    background-color: var(--color-primary);
+}
 
-.faq-button-container a {
+.faq-button a{
     color: white;
     font-family: var(--font-serif);
     font-weight:bold;
-    border-radius: 5px;
-    border: black;
-    border-style: solid;
-    background-color: black;
+    text-decoration: solid;
 }
 
 .faq-title {
@@ -412,17 +395,13 @@ html, body {
     margin-bottom: 5px;
     width: 100%;
     height: fit-content;
-    flex-shrink: 0;
-    color: rgb(255, 255, 255);
+    color: var(--color-primary);
     font-family: var(--font-sans);
-    font-size: 40px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 450;
     line-height: normal;
-    border-radius: 10px;
-    background-color: var(--color-accent);
     text-align: center;
-    padding: 0.4rem;
 }
 
 .accordion {
@@ -467,7 +446,11 @@ html, body {
 }
 
 .contact-right form{
-    width: 100%;
+    width: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 form input, form textarea {
     width: 100%;
@@ -481,15 +464,43 @@ form input, form textarea {
     border-radius: 6px;
 }
 form .btn2 {
-    padding: 14px 60px;
+    /* padding: 14px 60px; */
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
  }
+
+
+ @media screen and (min-width: 768px) {
+    .about-header h1 {
+        font-size: 48px;
+        font-weight: 500;
+    }
+    .overlay-text {
+        font-size: 20px;
+        inline-size: 450px;
+    }
+
+    .overlay-text h1 {
+        font-weight: 400;
+        font-size: 48px;
+    }
+    .main-container h2 {
+        font-size: 48px;
+    }
+
+    .timeline-container h2 {
+        font-size: 48px;
+    }
+
+    .faq-title {
+        font-size: 56px;
+    }
+ }
 /* About Section - End */
 
 
-/* Get Involved Section - Start */
+/*-------------------------------------------------------------- Get Involved section start --------------------------------------------------*/
 
 .getinvolved {
     text-align: center;
@@ -508,6 +519,15 @@ form .btn2 {
 
 .getinvolved button {
     margin: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    color: var(--color-secondary);
 }
 
 .donation-box {
@@ -620,6 +640,7 @@ form .btn2 {
 #vol-app input[type="checkbox"] {
     margin-right: 5px;
     vertical-align: middle;
+    display: inline;
 }
 
 #vol-app input[type="checkbox"] + label {
@@ -627,3 +648,110 @@ form .btn2 {
     font-weight: normal;
 }
 /* Get Involved Section - End */
+
+/* Map Section */
+/* Add padding above weather widgets */
+/* a.weatherwidget-io {
+    padding-top: 20px;
+} */
+
+/* Center map header */
+h1#mapHeader {
+    text-align: center;
+}
+
+/* Change cursor over buttons */
+button:hover {
+    cursor: pointer;
+}
+
+/* Stylings for map buttons */
+button#lost,
+button#talkingTrees,
+button#mapPage1,
+button#mapPage2 {
+    height: 100px;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+}
+
+div#map {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* Map Desktop stylings */
+@media only screen and (min-width: 768px) {
+    /* Map Desktop Stylings - Start */
+    img#satMap {
+        display: block;
+        width: 50%;
+        margin: auto;
+        border-radius: 15px;
+        float: left;
+    }
+
+    /* Styling for map buttons */
+    div#mapButtons {
+        clear: right;
+    }
+
+    /* Control size of map buttons relative to viewport */
+    div#mapButtons>button {
+        /* Add stuff for buttons? */
+        width: 30%;
+    }
+
+    /* Limit display size of desktop weather widget */
+    div#weatherD {
+        width: 80%;
+    }
+
+    /* Remove display of mobile weather widget on desktop */
+    div#weatherM {
+        display: none;
+    }
+
+    /* Should line up on map */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 50%;
+    }
+    /* Map Desktop Stylings - End */
+}
+
+/* Mobile stylings */
+@media only screen and (max-width: 767px) {
+    /* Mobile Map Stylings */
+    img#satMap {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    /* Controls size of map buttons relative to viewport */
+    div#mapButtons>button {
+        width: 100%;
+    }
+
+    /* Remove display of desktop weather widget on mobile */
+    div#weatherD {
+        display: none;
+    }
+
+    /* Should line up on map, if not tweak top and left */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 100%;
+    }
+    /* Mobile Stylings - End */
+}
+/* Map Section - End */
+
