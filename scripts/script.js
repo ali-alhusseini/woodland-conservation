@@ -35,6 +35,7 @@ function showAboutContent() {
 
 // Code obtained from W3 schools
 // link: https://www.w3schools.com/howto/howto_js_accordion.asp
+/* This code is for the faq questions and hides/shows each panel when clicked */
 var acc = document.getElementsByClassName("accordion")
 var i;
 
@@ -76,6 +77,25 @@ for (i = 0; i < acc.length; i++) {
         .catch(error => console.error('Error!', error.message))
     })
 /* End About script */
+
+/* code for hiding and showing content when nav menu buttons are clicked */
+function showContent() {
+  const aboutButton = document.getElementById('aboutButton')
+  const aboutContent = document.querySelector('.about-container')
+  const getInvolvedButton = document.getElementById('getInvolvedButton')
+  const getInvolved = document.querySelector('.getinvolved')
+  const faqContent = document.querySelector('.faq-container')
+  const allContent = [aboutContent, getInvolved, faqContent]
+  aboutButton.addEventListener('click', () => {
+          aboutContent.classList.remove('hidden');
+          getInvolved.classList.add('hidden')
+        });
+  getInvolvedButton.addEventListener('click', () => {
+          getInvolved.classList.remove('hidden')
+          aboutContent.classList.add('hidden');
+          faqContent.classList.add('hidden')
+        });
+    }
 
 /* Start Get Involved */
 const donateButton = document.getElementById("donate-button");
