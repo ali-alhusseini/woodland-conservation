@@ -521,3 +521,109 @@ form .btn2 {
     font-weight: normal;
 }
 /* Get Involved Section - End */
+
+/* Map Section */
+/* Add padding above weather widgets */
+/* a.weatherwidget-io {
+    padding-top: 20px;
+} */
+
+/* Center map header */
+h1#mapHeader {
+    text-align: center;
+}
+
+/* Change cursor over buttons */
+button:hover {
+    cursor: pointer;
+}
+
+/* Stylings for map buttons */
+button#lost,
+button#talkingTrees,
+button#mapPage1,
+button#mapPage2 {
+    height: 100px;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+}
+
+div#map {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* Map Desktop stylings */
+@media only screen and (min-width: 768px) {
+    /* Map Desktop Stylings - Start */
+    img#satMap {
+        display: block;
+        width: 50%;
+        margin: auto;
+        border-radius: 15px;
+        float: left;
+    }
+
+    /* Styling for map buttons */
+    div#mapButtons {
+        clear: right;
+    }
+
+    /* Control size of map buttons relative to viewport */
+    div#mapButtons>button {
+        /* Add stuff for buttons? */
+        width: 30%;
+    }
+
+    /* Limit display size of desktop weather widget */
+    div#weatherD {
+        width: 80%;
+    }
+
+    /* Remove display of mobile weather widget on desktop */
+    div#weatherM {
+        display: none;
+    }
+
+    /* Should line up on map */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 50%;
+    }
+    /* Map Desktop Stylings - End */
+}
+
+/* Mobile stylings */
+@media only screen and (max-width: 767px) {
+    /* Mobile Map Stylings */
+    img#satMap {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    /* Controls size of map buttons relative to viewport */
+    div#mapButtons>button {
+        width: 100%;
+    }
+
+    /* Remove display of desktop weather widget on mobile */
+    div#weatherD {
+        display: none;
+    }
+
+    /* Should line up on map, if not tweak top and left */
+    div#mapMain svg {
+        position: absolute;
+        z-index: 1;
+        top: 2;
+        left: 0;
+        width: 100%;
+    }
+    /* Mobile Stylings - End */
+}
+/* Map Section - End */
