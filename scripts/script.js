@@ -9,7 +9,77 @@ burgerButton.addEventListener('click', () => {
 });
 /* Header - End */
 
-/* Start About */
+/* Navigation - Start */
+var aboutButton = document.querySelector('.about-button');
+var getInvolvedButton = document.querySelector('.getinvolved-button');
+var mapButton = document.querySelector('.map-button');
+var galleryButton = document.querySelector('.gallery-button');
+const homepage = document.querySelector('.homepage-container');
+const aboutContent = document.querySelector('.about-container');
+const getInvolved = document.querySelector('.getinvolved');
+const gallery = document.querySelector('.gallery-container');
+
+aboutButton.addEventListener('click', () => {
+    homepage.classList.add('hidden');
+    aboutContent.classList.remove('hidden');
+    getInvolved.classList.add('hidden');
+    gallery.classList.add('hidden');
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+getInvolvedButton.addEventListener('click', () => {
+    homepage.classList.add('hidden');
+    getInvolved.classList.remove('hidden');
+    aboutContent.classList.add('hidden');
+    gallery.classList.add('hidden');
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+mapButton.addEventListener('click', () => {
+    homepage.classList.add('hidden');
+    getInvolved.classList.add('hidden');
+    aboutContent.classList.add('hidden');
+    gallery.classList.add('hidden');
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+galleryButton.addEventListener('click', () => {
+    homepage.classList.add('hidden');
+    getInvolved.classList.add('hidden');
+    aboutContent.classList.add('hidden');
+    gallery.classList.remove('hidden');
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+
+/* code for hiding and showing content when nav menu buttons are clicked */
+// function showContent() {
+//   const aboutButton = document.getElementById('aboutButton')
+//   const aboutContent = document.querySelector('.about-container')
+//   const getInvolvedButton = document.getElementById('getInvolvedButton')
+//   const getInvolved = document.querySelector('.getinvolved')
+//   const faqContent = document.querySelector('.faq-container')
+//   const allContent = [aboutContent, getInvolved, faqContent]
+//   aboutButton.addEventListener('click', () => {
+//           aboutContent.classList.remove('hidden');
+//           getInvolved.classList.add('hidden')
+//         });
+//   getInvolvedButton.addEventListener('click', () => {
+//           getInvolved.classList.remove('hidden')
+//           aboutContent.classList.add('hidden');
+//           faqContent.classList.add('hidden')
+//         });
+//     }
+
+
+
+
+
+/* About - Start */
 
 /* hideContent hides the about content when the faq button is clicked */
 function hideAboutContent() {
@@ -54,48 +124,28 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const message = document.getElementById("message")
-  
-    // form.addEventListener('submit', e => {
-    //     e.preventDefault()
-    //     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    //       .then(response => console.log('Success!', response))
-    //       .catch(error => console.error('Error!', error.message))
-    //   })
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          message.innerHTML = "Message sent successfully!"
-          setTimeout(function() {
-            message.innerHTML= ""
-          }, 5000)
-          form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec'
+const form = document.forms['submit-to-google-sheet']
+const message = document.getElementById("message")
+// form.addEventListener('submit', e => {
+//     e.preventDefault()
+//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//       .then(response => console.log('Success!', response))
+//       .catch(error => console.error('Error!', error.message))
+//   })
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      message.innerHTML = "Message sent successfully!"
+      setTimeout(function() {
+        message.innerHTML= ""
+      }, 5000)
+      form.reset()
     })
+    .catch(error => console.error('Error!', error.message))
+})
 /* End About script */
-
-/* code for hiding and showing content when nav menu buttons are clicked */
-function showContent() {
-  const aboutButton = document.getElementById('aboutButton')
-  const aboutContent = document.querySelector('.about-container')
-  const getInvolvedButton = document.getElementById('getInvolvedButton')
-  const getInvolved = document.querySelector('.getinvolved')
-  const faqContent = document.querySelector('.faq-container')
-  const allContent = [aboutContent, getInvolved, faqContent]
-  aboutButton.addEventListener('click', () => {
-          aboutContent.classList.remove('hidden');
-          getInvolved.classList.add('hidden')
-        });
-  getInvolvedButton.addEventListener('click', () => {
-          getInvolved.classList.remove('hidden')
-          aboutContent.classList.add('hidden');
-          faqContent.classList.add('hidden')
-        });
-    }
 
 /* Start Get Involved */
 document.addEventListener('DOMContentLoaded', function () {
@@ -177,40 +227,40 @@ function goToMapMain(id) {
 /* Map Scripts - End */
 
 /* Gallery - Start */
-const myGallery = cloudinary.galleryWidget({
-  container: "#my-gallery",
-  //cloud name is a unique ID associated with a cloudinary account
-  cloudName: "dxmmwd2wz",
-  aspectRatio: "20:9",
-  //must tag photo in cloudinary to gallery-image to display in gallery
-  mediaAssets: [
-    { tag: "rvd" },
-    // {tag: 'gallery-videos', mediaType: 'video'},
-  ],
+// const myGallery = cloudinary.galleryWidget({
+//   container: "#my-gallery",
+//   //cloud name is a unique ID associated with a cloudinary account
+//   cloudName: "dxmmwd2wz",
+//   aspectRatio: "20:9",
+//   //must tag photo in cloudinary to gallery-image to display in gallery
+//   mediaAssets: [
+//     { tag: "rvd" },
+//     // {tag: 'gallery-videos', mediaType: 'video'},
+//   ],
 
-  //comment out these two lines for a different view with small pictures on the side
-  carouselStyle: "indicators",
-  carouselLocation: "bottom",
-});
+//   //comment out these two lines for a different view with small pictures on the side
+//   carouselStyle: "indicators",
+//   carouselLocation: "bottom",
+// });
 
-myGallery.render();
+// myGallery.render();
 
-var myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: "dxmmwd2wz",
-    uploadPreset: "rvwtest",
-  },
-  (error, result) => {
-    if (!error && result && result.event === "success") {
-      console.log("Done! Here is the image info: ", result.info);
-    }
-  }
-);
+// var myWidget = cloudinary.createUploadWidget(
+//   {
+//     cloudName: "dxmmwd2wz",
+//     uploadPreset: "rvwtest",
+//   },
+//   (error, result) => {
+//     if (!error && result && result.event === "success") {
+//       console.log("Done! Here is the image info: ", result.info);
+//     }
+//   }
+// );
 
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function () {
-    myWidget.open();
-  },
-  false
-);
+// document.getElementById("upload_widget").addEventListener(
+//   "click",
+//   function () {
+//     myWidget.open();
+//   },
+//   false
+// );

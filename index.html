@@ -46,19 +46,19 @@
                 <!-- Mobile Navigation Menu -->
                 <div id="overlay">
                     <div class="nav-menu-mobile">
-                        <a href="#">About</a>
-                        <a href="#">Get Involved</a>
-                        <a href="#">Map</a>
-                        <a href="#">Gallery</a>
+                        <a href="#" class="about-button">About</a>
+                        <a href="#" class="getinvolved-button">Get Involved</a>
+                        <a href="#" class="map-button">Map</a>
+                        <a href="#" class="gallery-button">Gallery</a>
                     </div>
                 </div>
                 <!-- Desktop Navigation Menu -->
                 <div class="nav-menu">
                     <nav>
-                        <a href="#" id="aboutButton" onclick="showContent()">About</a>
-                        <a href="#" id="getInvolvedButton" onclick="showContent()">Get Involved</a>
-                        <a href="#">Map</a>
-                        <a href="#">Gallery</a>
+                        <a href="#" class="about-button">About</a>
+                        <a href="#" class="getinvolved-button">Get Involved</a>
+                        <a href="#" class="map-button">Map</a>
+                        <a href="#" class="gallery-button">Gallery</a>
                     </nav>
                 </div>
             </div>
@@ -93,7 +93,7 @@
     <!-- Homepage - End -->
 
     <!-- About Section - Start -->
-    <div class="about-container" id="aboutContent" style="display: none;">
+    <div class="about-container hidden" id="aboutContent">
         <div class="about-header">
           <h1>About Woodland Conservation</h1>
         </div>
@@ -183,7 +183,7 @@
     <!-- About Section - End -->
 
     <!-- Get Involved section - Start -->
-    <div class="getinvolved" id="getInvolved">
+    <div class="getinvolved hidden" id="getInvolved">
       <div class="getinvolved-intro">
         <h1>Get Involved</h1>
         <p>
@@ -266,7 +266,7 @@
     <!-- Get Involved - End -->
 
     <!-- Gallery - Start -->
-    <div style="display: none;">
+    <div class="gallery-container" style="display: none;">
       <button id="upload_widget" class="cloudinary-button">Upload Photo for Review</button>
       <div id="my-gallery" style="max-width:80%;margin:auto"></div>
     </div>
