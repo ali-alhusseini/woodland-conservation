@@ -24,6 +24,7 @@ body {
 /* Header Mobile - Start */
 .header-container {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -34,7 +35,6 @@ body {
   height: 3.5rem;
   padding: 0;
   background-color: var(--color-primary);
-  position: fixed;
   z-index: 1000;
 }
 

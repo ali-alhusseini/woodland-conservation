@@ -16,6 +16,7 @@ const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-container");
 const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-container");
+const headerContainer = document.querySelector(".header-container");
 
 aboutButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -25,6 +26,7 @@ aboutButtons.forEach(function (button) {
     gallery.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
+    headerContainer.style.position = "relative";
   });
 });
 
@@ -36,6 +38,7 @@ getInvolvedButtons.forEach(function (button) {
     gallery.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
+    headerContainer.style.position = "relative";
   });
 });
 
@@ -47,6 +50,7 @@ mapButtons.forEach(function (button) {
     gallery.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
+    headerContainer.style.position = "relative";
   });
 });
 
@@ -58,6 +62,7 @@ galleryButtons.forEach(function (button) {
     gallery.classList.remove("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
+    headerContainer.style.position = "relative";
   });
 });
 /* Header - End */
