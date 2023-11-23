@@ -12,8 +12,8 @@ var aboutButtons = document.querySelectorAll(".about-button");
 var getInvolvedButtons = document.querySelectorAll(".getinvolved-button");
 var mapButtons = document.querySelectorAll(".map-button");
 var galleryButtons = document.querySelectorAll(".gallery-button");
-const homepage = document.querySelector(".homepage-container");
-const aboutContent = document.querySelector(".about-container");
+const homepage = document.querySelector(".homepage-main-container");
+const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-container");
 const headerContainer = document.querySelector(".header-container");
@@ -71,7 +71,7 @@ galleryButtons.forEach(function (button) {
 /* hideContent hides the about content when the faq button is clicked */
 function hideAboutContent() {
   const faqButton = document.getElementById("faq-button");
-  const aboutContent = document.querySelector(".about-container");
+  const aboutContent = document.querySelector(".about-main-container");
   const faqContent = document.querySelector(".faq-container");
   faqButton.addEventListener("click", () => {
     faqContent.classList.remove("hidden");
@@ -82,7 +82,7 @@ function hideAboutContent() {
 /* shows about content when about back button is clicked */
 function showAboutContent() {
   const aboutButton = document.getElementById("back-button");
-  const aboutContent = document.querySelector(".about-container");
+  const aboutContent = document.querySelector(".about-main-container");
   const faqContent = document.querySelector(".faq-container");
   aboutButton.addEventListener("click", () => {
     faqContent.classList.add("hidden");

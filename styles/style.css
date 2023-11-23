@@ -429,6 +429,7 @@ body {
 .panel {
   padding: 0 18px;
   background-color: var(--color-secondary);
+  color: black;
   display: none;
   overflow: hidden;
 }
