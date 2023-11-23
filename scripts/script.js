@@ -214,40 +214,40 @@ function goToMapMain(id) {
 /* Map Scripts - End */
 
 /* Gallery - Start */
-// const myGallery = cloudinary.galleryWidget({
-//   container: "#my-gallery",
-//   //cloud name is a unique ID associated with a cloudinary account
-//   cloudName: "dxmmwd2wz",
-//   aspectRatio: "20:9",
-//   //must tag photo in cloudinary to gallery-image to display in gallery
-//   mediaAssets: [
-//     { tag: "rvd" },
-//     // {tag: 'gallery-videos', mediaType: 'video'},
-//   ],
+const myGallery = cloudinary.galleryWidget({
+  container: "#my-gallery",
+  //cloud name is a unique ID associated with a cloudinary account
+  cloudName: "dxmmwd2wz",
+  aspectRatio: "20:9",
+  //must tag photo in cloudinary to gallery-image to display in gallery
+  mediaAssets: [
+    { tag: "rvd" },
+    // {tag: 'gallery-videos', mediaType: 'video'},
+  ],
 
-//   //comment out these two lines for a different view with small pictures on the side
-//   carouselStyle: "indicators",
-//   carouselLocation: "bottom",
-// });
+  //comment out these two lines for a different view with small pictures on the side
+  carouselStyle: "indicators",
+  carouselLocation: "bottom",
+});
 
-// myGallery.render();
+myGallery.render();
 
-// var myWidget = cloudinary.createUploadWidget(
-//   {
-//     cloudName: "dxmmwd2wz",
-//     uploadPreset: "rvwtest",
-//   },
-//   (error, result) => {
-//     if (!error && result && result.event === "success") {
-//       console.log("Done! Here is the image info: ", result.info);
-//     }
-//   }
-// );
+var myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: "dxmmwd2wz",
+    uploadPreset: "rvwtest",
+  },
+  (error, result) => {
+    if (!error && result && result.event === "success") {
+      console.log("Done! Here is the image info: ", result.info);
+    }
+  }
+);
 
-// document.getElementById("upload_widget").addEventListener(
-//   "click",
-//   function () {
-//     myWidget.open();
-//   },
-//   false
-// );
+document.getElementById("upload_widget").addEventListener(
+  "click",
+  function () {
+    myWidget.open();
+  },
+  false
+);
