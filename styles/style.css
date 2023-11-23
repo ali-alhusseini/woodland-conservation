@@ -349,7 +349,6 @@ body {
   background-size: 100%;
   color: var(--color-secondary);
   text-align: left;
-  padding-left: 20px;
 }
 
 .timeline-container img {
@@ -368,6 +367,7 @@ body {
   line-height: normal;
   font-size: 15px;
   text-align: left;
+  padding-left: 20px;
 }
 
 .timeline-container p {
