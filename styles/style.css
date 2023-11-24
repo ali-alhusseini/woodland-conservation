@@ -528,12 +528,12 @@ form .btn2 {
 .getinvolved {
   margin: 20px;
   text-align: left;
+  height: fit-content;
 }
 
 .getinvolved h1 {
   font-family: var(--font-sans);
   padding-left: 1%;
-  font-size: 300%;
   font-weight: bolder;
 }
 
@@ -546,6 +546,7 @@ form .btn2 {
 .getinvolved button {
   margin: 1%;
   padding: 15px 25px;
+  margin: 10px 20px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -576,9 +577,18 @@ form .btn2 {
   justify-content: space-between;
   flex-direction: row;
   gap: 20px;
-  height: 100%;
+  height: fit-content;
   padding: 0;
   margin: 0;
+}
+
+.flex-box h1 {
+  margin: 10px 20px;
+  font-size: 25px;
+}
+
+.flex-box p {
+  margin: 10px 20px;
 }
 
 /* Donation and Volunteer boxes for mobile */
@@ -587,8 +597,8 @@ form .btn2 {
   color: var(--color-accent);
   border-radius: 10px;
   width: 100%;
-  padding: 10px 20px;
   height: fit-content;
+  padding: 5px;
 }
 
 .vol-box {
@@ -596,12 +606,17 @@ form .btn2 {
   color: var(--color-accent);
   border-radius: 10px;
   width: 100%;
-  padding: 10px 20px;
   height: fit-content;
+  padding: 5px;
 }
 
 /* Donation and Volunteer boxes for desktop */
 @media screen and (min-width: 768px) {
+  .getinvolved h1 {
+    font-size: 300%;
+    margin: 20px;
+  }
+
   .flex-box {
     display: flex;
     flex-direction: row;
