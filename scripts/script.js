@@ -141,19 +141,175 @@ form.addEventListener("submit", (e) => {
 /* End About script */
 
 /* Start Get Involved */
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the "Apply to be a Volunteer" button
-  var applyButton = document.getElementById("apply-button");
+var dropdown = document.getElementById('dropdown');
+var fname = document.getElementById('fname-for-app');
+var lname = document.getElementById('lname-for-app');
+var phone = document.getElementById('phone-for-app');
+var email = document.getElementById('email-for-app');
+var address = document.getElementById('address-for-app');
+var sdate = document.getElementById('sdate-for-app');
+var eligibledropdown = document.getElementById('eligible-dropdown');
+var ref1name = document.getElementById('ref1-name');
+var ref1relation = document.getElementById('ref1-relation');
+var ref1phone = document.getElementById('ref1-phone');
+var ref1email = document.getElementById('ref1-email');
+var ref2name = document.getElementById('ref2-name');
+var ref2relation = document.getElementById('ref2-relation');
+var ref2phone = document.getElementById('ref2-phone');
+var ref2email = document.getElementById('ref2-email');
+var volAppForm = document.getElementById('vol-app');
+var donorboxContainer = document.getElementById('donorbox-container');
 
-  // Get the volunteer application form
-  var volAppForm = document.getElementById("vol-app");
-
-  // Add click event listener to the button
-  applyButton.addEventListener("click", function () {
-    // Toggle the 'hidden' class on the volunteer application form
-    volAppForm.classList.toggle("hidden");
-  });
+document.getElementById('apply-button').addEventListener('click', function () {
+  volAppForm.classList.toggle('hidden');
 });
+
+document.getElementById('donate-button').addEventListener('click', function() {
+  donorboxContainer.classList.toggle('hidden');
+});
+
+document.getElementById('close-button').addEventListener('click', function() {
+  donorboxContainer.classList.toggle('hidden');
+});
+
+document.getElementById('submit-button').addEventListener('click', function (event) {
+  event.preventDefault();
+  var pass = true;
+  removeErrorMessages();
+
+  if (dropdown.value === "") {
+      showError(dropdown, "Please select a preferred position.");
+      pass = false;
+  }
+
+  if (!validateContents(fname, "First Name")) {
+    pass = false;
+  }
+
+  if (!validateContents(lname, "Last Name")) {
+    pass = false;
+  }
+  
+  if (!validatePhoneNumber(phone.value)) {
+    showError(phone, "Please enter a 10-digit phone number.");
+    pass = false;
+  }
+
+  if (!validateEmail(email.value)) {
+    showError(email, "Please enter a valid email.");
+    pass = false;
+  }
+
+  if (!validateContents(address, "Address")) {
+    pass = false;
+  }
+
+  if (!validateDate(sdate, "Start Date")) {
+    pass = false;
+  }
+
+  if (eligibledropdown.value === "") {
+    showError(eligibledropdown, "Please select an option.");
+    pass = false;
+  }
+
+  if (eligibledropdown.value === "No") {
+    showError(eligibledropdown, "You are not eligible to volunteer.");
+    pass = false;
+  }
+
+  if (!validateContents(ref1name, "Reference 1 name")) {
+    pass = false;
+  }
+
+  if (!validateContents(ref1relation, "Reference 1 relation")) {
+    pass = false;
+  }
+
+  if (!validatePhoneNumber(ref1phone.value)) {
+    showError(ref1phone, "Please enter a 10-digit phone number.");
+    pass = false;
+  }
+
+  if (!validateEmail(ref1email.value)) {
+    showError(ref1email, "Please enter a valid email.");
+    pass = false;
+  }
+
+  if (!validateContents(ref2name, "Reference 2 name")) {
+    pass = false;
+  }
+
+  if (!validateContents(ref2relation, "Reference 2 relation")) {
+    pass = false;
+  }
+
+  if (!validatePhoneNumber(ref2phone.value)) {
+    showError(ref2phone, "Please enter a 10-digit phone number.");
+    pass = false;
+  }
+
+  if (!validateEmail(ref2email.value)) {
+    showError(ref2email, "Please enter a valid email.");
+    pass = false;
+  }
+
+  if (pass) {
+    volAppForm.submit()
+  } else {
+    var error = document.querySelector('.error-message');
+    error.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+function validateContents(input, fieldName) {
+  if (input.value.trim() === "") {
+      showError(input, fieldName + " cannot be empty.");
+      return false;
+  }
+  return true;
+}
+
+function validatePhoneNumber(phone) {
+  var phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+}
+
+function validateEmail(email) {
+  var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+}
+
+function validateDate(input, fieldName) {
+  if (input.value === "") {
+    showError(input, "Please select a " + fieldName + ".");
+    return false;
+  }
+  var currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  var selectedDate = new Date(input.value + "T00:00:00");
+
+  if (selectedDate < currentDate) {
+    showError(input, fieldName + " cannot be before the current date.");
+    return false;
+  }
+  return true;
+}
+
+function showError(input, message) {
+  var errorMessage = document.createElement('div');
+  errorMessage.className = 'error-message';
+  errorMessage.textContent = message;
+  input.parentNode.insertBefore(errorMessage, input.nextSibling);
+}
+
+function removeErrorMessages() {
+  var errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(function (errorMessage) {
+    errorMessage.parentNode.removeChild(errorMessage);
+  });
+}
+/* End Get Involved */
 
 /* Map Scripts - Start */
 /**

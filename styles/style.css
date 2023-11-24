@@ -525,205 +525,190 @@ form .btn2 {
 /* About Section - End */
 
 /* Get Involved Section - Start */
-.getinvolved {
-  margin: 20px;
-  text-align: left;
-  height: fit-content;
-}
-
-.getinvolved h1 {
-  font-family: var(--font-sans);
-  padding-left: 1%;
-  font-weight: bolder;
-}
-
-.getinvolved p {
-  font-size: large;
-  font-family: var(--font-serif);
-  padding: 1%;
-}
-
-.getinvolved button {
-  margin: 1%;
-  padding: 15px 25px;
-  margin: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(to right,
-      var(--color-primary),
-      var(--color-accent));
-  color: var(--color-secondary);
-}
-
-.getinvolved button:hover {
-  background: var(--color-accent);
-}
-
-.getinvolved-intro {
-  padding-left: 2%;
-  padding-right: 2%;
-  width: 97%;
-  margin: 1%;
-  box-sizing: border-box;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  display: auto;
-}
-
-.flex-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: 20px;
-  height: fit-content;
-  padding: 0;
-  margin: 0;
-}
-
-.flex-box h1 {
-  margin: 10px 20px;
-  font-size: 25px;
-}
-
-.flex-box p {
-  margin: 10px 20px;
-}
-
-/* Donation and Volunteer boxes for mobile */
-.donation-box {
-  background-color: var(--color-secondary);
-  color: var(--color-accent);
-  border-radius: 10px;
-  width: 100%;
-  height: fit-content;
-  padding: 5px;
-}
-
-.vol-box {
-  background-color: var(--color-secondary);
-  color: var(--color-accent);
-  border-radius: 10px;
-  width: 100%;
-  height: fit-content;
-  padding: 5px;
-}
-
-/* Donation and Volunteer boxes for desktop */
-@media screen and (min-width: 768px) {
-  .getinvolved h1 {
-    font-size: 300%;
+  .getinvolved {
+    border: 10px double #0e3f27;
     margin: 20px;
+    background-color: var(--color-secondary);
+    text-align: left;
+    color: black;
   }
-
+  
+  .getinvolved h1 {
+    font-family: var(--font-sans);
+    color: var(--color-primary);
+    padding-left: 1%;
+    font-size: 300%;
+    font-weight: bolder;
+  }
+  
+  .getinvolved p {
+    font-size: large;
+    color: var(--color-primary);
+    font-family: var(--font-serif);
+    padding: 1%;
+  }
+  
+  .getinvolved button {
+    margin: 1%;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+  
+  .getinvolved button:hover {
+    background: var(--color-accent);
+  }
+  
   .flex-box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 20px;
-    height: 100%;
-    padding: 0;
-    margin: 0;
   }
-
-  .donation-box {
-    background-color: var(--color-secondary);
-    color: var(--color-accent);
+  
+  .getinvolved-intro {
+    background-color: #fff;
     border-radius: 10px;
-    width: 50%;
-    height: 500px;
-    padding: 10px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 98%;
+    margin: 1%;
+    box-sizing: border-box;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+    display: auto;
+  }
+  
+  .donation-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 49%;
+    float: left;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    margin-left: 1%;
+    margin-right: 0.5%;
+    padding-bottom: 1%;
+  }
+  
+  .donation-box p {
+    margin-bottom: 10px;
   }
   
   .vol-box {
-    background-color: var(--color-secondary);
-    color: var(--color-accent);
+    background-color: #fff;
     border-radius: 10px;
-    width: 50%;
-    height: 500px;
-    padding: 10px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 49%;
+    float: left;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    margin-left: 0.5%;
+    margin-right: 1%;
+    padding-bottom: 1%;
+    
   }
-}
+  
+  .vol-box li,
+  p {
+    margin-bottom: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #vol-app {
+    max-width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 2%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2%;
+    box-sizing: border-box;
+    color: var(--color-primary);
+  }
 
-.donation-box p {
-  margin-bottom: 10px;
-}
+  #vol-app h1 {
+    font-family: var(--font-sans);
+    font-size: 200%;
+    font-weight: bolder;
+  }
 
-.vol-box li,
-p {
-  margin-bottom: 10px;
-}
+  #vol-app label {
+    font-size: large;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    margin: 1%;
+    display: block;
+  }
 
-/* Volunteer Application Form Styles */
-#vol-app {
-  max-width: 98%;
-  margin-left: 1%;
-  margin-right: 2%;
-  padding: 2%;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2%;
-  box-sizing: border-box;
-}
+  #vol-app input,
+  #vol-app select {
+    width: calc(100% - 20px);
+    padding: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 0%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
 
-#vol-app h1 {
-  font-family: var(--font-sans);
-  color: black;
-  font-size: 200%;
-  font-weight: bolder;
-}
+  #vol-app input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-#vol-app label {
-  font-size: large;
-  color: black;
-  font-family: var(--font-serif);
-  font-weight: bold;
-}
+  #vol-app input[type="submit"]:hover {
+    background: var(--color-accent);
+  }
 
-#vol-app input,
-select {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: #fff;
-}
+  #donorbox-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
+  }
 
-#vol-app input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  background-color: linear-gradient(to right,
-      var(--color-primary),
-      var(--color-accent));
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-}
+  #close-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    color: var(--color-secondary);
+  }
 
-#vol-app input[type="submit"]:hover {
-  background: var(--color-accent);
-}
-
-#vol-app input[type="checkbox"] {
-  margin-right: 5px;
-  vertical-align: middle;
-  display: inline;
-}
-
-#vol-app input[type="checkbox"]+label {
-  display: inline;
-  font-weight: normal;
-}
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    padding-left: 1%;
+  }
 
 /* Get Involved Section - End */
 
