@@ -510,7 +510,7 @@ form .btn2 {
   
   .getinvolved h1 {
     font-family: var(--font-sans);
-    color: black;
+    color: var(--color-primary);
     padding-left: 1%;
     font-size: 300%;
     font-weight: bolder;
@@ -518,7 +518,7 @@ form .btn2 {
   
   .getinvolved p {
     font-size: large;
-    color: black;
+    color: var(--color-primary);
     font-family: var(--font-serif);
     padding: 1%;
   }
@@ -529,11 +529,7 @@ form .btn2 {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(
-      to right,
-      var(--color-primary),
-      var(--color-accent)
-    );
+    background-color: var(--color-primary);
     color: var(--color-secondary);
   }
   
@@ -551,22 +547,21 @@ form .btn2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding-left: 2%;
     padding-right: 2%;
-    width: 97%;
+    width: 98%;
     margin: 1%;
     box-sizing: border-box;
-    padding-top: 1%;
+    padding-top: 0.5%;
     padding-bottom: 1%;
     display: auto;
   }
   
-  /* Donation Box Styles */
   .donation-box {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding-left: 2%;
     padding-right: 2%;
-    width: 48%;
+    width: 49%;
     float: left;
     margin-bottom: 1%;
     box-sizing: border-box;
@@ -579,20 +574,20 @@ form .btn2 {
     margin-bottom: 10px;
   }
   
-  /* Volunteer Box Styles */
   .vol-box {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding-left: 2%;
     padding-right: 2%;
-    width: 48%;
+    width: 49%;
     float: left;
     margin-bottom: 1%;
     box-sizing: border-box;
     margin-left: 0.5%;
     margin-right: 1%;
     padding-bottom: 1%;
+    
   }
   
   .vol-box li,
@@ -600,16 +595,14 @@ form .btn2 {
     margin-bottom: 10px;
   }
   
-  /* Additional styles for the hidden class */
   .hidden {
     display: none;
   }
   
-  /* Volunteer Application Form Styles */
   #vol-app {
     max-width: 98%;
     margin-left: 1%;
-    margin-right: 2%;
+    margin-right: 1%;
     padding: 2%;
     background-color: white;
     border: 1px solid #ccc;
@@ -617,64 +610,81 @@ form .btn2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 2%;
     box-sizing: border-box;
+    color: var(--color-primary);
   }
-  
+
   #vol-app h1 {
     font-family: var(--font-sans);
-    color: black;
     font-size: 200%;
     font-weight: bolder;
   }
-  
+
   #vol-app label {
     font-size: large;
-    color: black;
     font-family: var(--font-serif);
     font-weight: bold;
+    margin: 1%;
+    display: block;
   }
-  
+
   #vol-app input,
-  select {
+  #vol-app select {
     width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 0%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     background-color: #fff;
+    box-sizing: border-box;
   }
-  
+
   #vol-app input[type="submit"] {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: linear-gradient(
-      to right,
-      var(--color-primary),
-      var(--color-accent)
-    );
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     font-size: 18px;
   }
-  
+
   #vol-app input[type="submit"]:hover {
     background: var(--color-accent);
   }
-  
-  #vol-app input[type="checkbox"] {
-    margin-right: 5px;
-    vertical-align: middle;
-    display: inline;
+
+  #donorbox-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
   }
-  
-  #vol-app input[type="checkbox"] + label {
-    display: inline;
-    font-weight: normal;
+
+  #close-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    color: var(--color-secondary);
   }
+
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    padding-left: 1%;
+  }
+
 /* Get Involved Section - End */
   
 
