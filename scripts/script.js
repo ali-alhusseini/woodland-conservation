@@ -24,6 +24,7 @@ aboutButtons.forEach(function (button) {
     homepage.classList.add("hidden");
     aboutContent.classList.remove("hidden");
     getInvolved.classList.add("hidden");
+    mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
@@ -36,6 +37,7 @@ getInvolvedButtons.forEach(function (button) {
     homepage.classList.add("hidden");
     getInvolved.classList.remove("hidden");
     aboutContent.classList.add("hidden");
+    mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
@@ -61,6 +63,7 @@ galleryButtons.forEach(function (button) {
     homepage.classList.add("hidden");
     getInvolved.classList.add("hidden");
     aboutContent.classList.add("hidden");
+    mapContainer.classList.add("hidden");
     gallery.classList.remove("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
