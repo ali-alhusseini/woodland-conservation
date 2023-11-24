@@ -21,9 +21,14 @@ body {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Header Mobile - Start */
 .header-container {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -34,7 +39,6 @@ body {
   height: 3.5rem;
   padding: 0;
   background-color: var(--color-primary);
-  position: fixed;
   z-index: 1000;
 }
 
@@ -100,6 +104,7 @@ body {
   border-radius: 5px;
   font-weight: bold;
 }
+
 /* Header Mobile - End */
 
 /* Homepage Mobile - Start */
@@ -156,6 +161,7 @@ body {
   border-radius: 7px;
   height: 350px;
   overflow: hidden;
+  box-shadow: var(--color-primary) 0px 0px 10px;
 }
 
 .footer-container {
@@ -165,9 +171,10 @@ body {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  height: 100%;
   padding: 0;
+  bottom: 0;
   background-color: var(--color-primary);
+  position: sticky;
 }
 
 .footer-social {
@@ -259,12 +266,13 @@ body {
     border-radius: 7px;
   }
 }
+
 /* Header & Homepage Desktop - End */
 
 /* About Section - Start */
 .about-container {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -272,7 +280,7 @@ body {
 .about-header h1 {
   text-align: center;
   font-family: var(--font-sans);
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: 18px;
   font-weight: 500;
 }
@@ -290,22 +298,16 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .overlay-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--color-secondary);
   padding: 10px 20px;
   font-size: 10px;
   inline-size: 350px;
-  /*overflow-wrap: break-word;
-    font-size-adjust: 0.5; 
-    font-family: var(--font-sans);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center; */
 }
 
 .overlay-text h1 {
@@ -316,16 +318,18 @@ body {
   font-size: 15px;
   text-align: center;
 }
+
 .main-container {
   width: 100%;
   height: 100%;
   color: rgb(26, 26, 26);
   text-align: center;
+  color: var(--color-secondary);
 }
 
 .main-container h2 {
   font-family: var(--font-sans);
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-style: normal;
   font-weight: 450;
   line-height: normal;
@@ -343,12 +347,12 @@ body {
 .timeline-container {
   height: fit-content;
   width: 100%;
-  background-image: url("/assets/images/tim-foster-_jN46g5t2wk-unsplash.jpg");
+  background-image: url("/assets/images/forest-arial.jpg");
   background-size: 100%;
-  color: rgb(255, 255, 255);
+  color: var(--color-secondary);
   text-align: left;
-  padding-left: 20px;
 }
+
 .timeline-container img {
   height: fit-content;
   width: 100%;
@@ -356,34 +360,38 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .timeline-container h2 {
   font-family: var(--font-sans);
-  color: white;
+  color: var(--color-secondary);
   font-style: normal;
   font-weight: 450;
   line-height: normal;
   font-size: 15px;
   text-align: left;
+  padding-left: 20px;
 }
+
 .timeline-container p {
   text-align: center;
 }
 
 .faq-button-container {
-  color: rgb(0, 0, 0);
+  color: var(--color-secondary);
   text-align: center;
 }
+
 .faq-button {
   font-family: var(--font-serif);
   font-weight: bold;
   border-radius: 5px;
-  border: black;
+  border: var(--color-secondary);
   border-style: solid;
   background-color: var(--color-primary);
 }
 
 .faq-button a {
-  color: white;
+  color: var(--color-secondary);
   font-family: var(--font-serif);
   font-weight: bold;
   text-decoration: solid;
@@ -394,9 +402,9 @@ body {
   margin-bottom: 5px;
   width: 100%;
   height: fit-content;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-family: var(--font-sans);
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 450;
   line-height: normal;
@@ -405,7 +413,7 @@ body {
 
 .accordion {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-secondary);
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -422,7 +430,8 @@ body {
 
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: var(--color-secondary);
+  color: black;
   display: none;
   overflow: hidden;
 }
@@ -436,13 +445,19 @@ body {
 .contact-right {
   flex-basis: 60%;
 }
+
 .btn.btn2 {
   display: inline-block;
-  background: var(--color-black);
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 20px;
+  font-size: medium;
+  border: none;
+  
 }
 
 .btn.btn2:hover {
-  background: var(--color-grey);
+  background: var(--color-accent);
 }
 
 .contact-right form {
@@ -452,6 +467,7 @@ body {
   margin-right: auto;
   text-align: center;
 }
+
 form input,
 form textarea {
   width: 100%;
@@ -464,6 +480,7 @@ form textarea {
   font-size: 18px;
   border-radius: 6px;
 }
+
 form .btn2 {
   /* padding: 14px 60px; */
   font-size: 18px;
@@ -476,6 +493,7 @@ form .btn2 {
     font-size: 48px;
     font-weight: 500;
   }
+
   .overlay-text {
     font-size: 20px;
     inline-size: 450px;
@@ -485,8 +503,14 @@ form .btn2 {
     font-weight: 400;
     font-size: 48px;
   }
+
   .main-container h2 {
     font-size: 48px;
+  }
+
+  .main-container p{
+  padding-left: 300px;
+  padding-right: 300px;
   }
 
   .timeline-container h2 {
@@ -497,6 +521,7 @@ form .btn2 {
     font-size: 56px;
   }
 }
+
 /* About Section - End */
 
 /* Get Involved Section - Start */
@@ -686,9 +711,10 @@ form .btn2 {
   }
 
 /* Get Involved Section - End */
-  
+
 
 /* Map Section */
+
 /* Add padding above weather widgets */
 /* a.weatherwidget-io {
     padding-top: 20px;
@@ -723,6 +749,7 @@ div#map {
 
 /* Map Desktop stylings */
 @media only screen and (min-width: 768px) {
+
   /* Map Desktop Stylings - Start */
   img#satMap {
     display: block;
@@ -738,7 +765,7 @@ div#map {
   }
 
   /* Control size of map buttons relative to viewport */
-  div#mapButtons > button {
+  div#mapButtons>button {
     /* Add stuff for buttons? */
     width: 30%;
   }
@@ -761,11 +788,13 @@ div#map {
     left: 0;
     width: 50%;
   }
+
   /* Map Desktop Stylings - End */
 }
 
 /* Mobile stylings */
 @media only screen and (max-width: 767px) {
+
   /* Mobile Map Stylings */
   img#satMap {
     width: 100%;
@@ -773,7 +802,7 @@ div#map {
   }
 
   /* Controls size of map buttons relative to viewport */
-  div#mapButtons > button {
+  div#mapButtons>button {
     width: 100%;
   }
 
@@ -792,4 +821,10 @@ div#map {
   }
   /* Mobile Stylings - End */
 }
+
 /* Map Section - End */
+
+.my-gallary {
+  max-width: 80%;
+  margin: auto;
+}
