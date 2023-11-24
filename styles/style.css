@@ -729,6 +729,7 @@ select {
 
 
 /* Map Section */
+
 /* Add padding above weather widgets */
 /* a.weatherwidget-io {
     padding-top: 20px;
@@ -833,8 +834,12 @@ div#map {
     left: 0;
     width: 100%;
   }
-
   /* Mobile Stylings - End */
 }
 
 /* Map Section - End */
+
+.my-gallary {
+  max-width: 80%;
+  margin: auto;
+}

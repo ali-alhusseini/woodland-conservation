@@ -17,6 +17,7 @@ const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-container");
 const headerContainer = document.querySelector(".header-container");
+const mapContainer = document.querySelector(".map-container");
 
 aboutButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -48,6 +49,7 @@ mapButtons.forEach(function (button) {
     getInvolved.classList.add("hidden");
     aboutContent.classList.add("hidden");
     gallery.classList.add("hidden");
+    mapContainer.classList.remove("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
