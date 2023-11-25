@@ -282,7 +282,7 @@ body {
   font-family: var(--font-sans);
   color: var(--color-secondary);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .mission-container {
@@ -306,16 +306,16 @@ body {
   transform: translate(-50%, -50%);
   color: var(--color-secondary);
   padding: 10px 20px;
-  font-size: 10px;
+  font-size: 15px;
   inline-size: 350px;
 }
 
 .overlay-text h1 {
   font-family: var(--font-sans);
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   line-height: normal;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -325,23 +325,24 @@ body {
   color: rgb(26, 26, 26);
   text-align: center;
   color: var(--color-secondary);
+  margin-bottom: 30px;
 }
 
 .main-container h2 {
   font-family: var(--font-sans);
   color: var(--color-secondary);
   font-style: normal;
-  font-weight: 450;
+  font-weight: bold;
   line-height: normal;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
 }
 
 .main-container p {
   font-family: var(--font-sans);
-  text-align: center;
+  text-align: justified;
   padding: 0 20px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .timeline-container {
@@ -365,7 +366,7 @@ body {
   font-family: var(--font-sans);
   color: var(--color-secondary);
   font-style: normal;
-  font-weight: 450;
+  font-weight: bold;
   line-height: normal;
   font-size: 15px;
   text-align: left;
@@ -501,7 +502,13 @@ form .btn2 {
 
   .overlay-text h1 {
     font-weight: 400;
-    font-size: 48px;
+    font-size: 64px;
+    color: #ffffff;
+  }
+
+  .overlay-text p{
+    font-size: 24px;
+    font-weight: 400;
   }
 
   .main-container h2 {
@@ -511,6 +518,7 @@ form .btn2 {
   .main-container p{
   padding-left: 300px;
   padding-right: 300px;
+  font-size: 18px;
   }
 
   .timeline-container h2 {
