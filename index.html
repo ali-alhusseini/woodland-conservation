@@ -134,7 +134,22 @@
               First of its kind in Nova Scotia, the Woodland Conservation site
               is home to a natural burial site.
             </p>
-            <a href="#">Book Burial Time</a>
+            <a href="#" class="book-burial-button">Book Burial Time</a>
+            <!-- Book Time Popup -->
+            <div class="book-burial-container hidden">
+              <h2>Book Burial Time</h2>
+              <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <button type="submit" class="book-time-button">Book Now</button>
+              </form>
+            </div>
           </div>
           <h3>Support Our Cause</h3>
           <button class="nav-buttons">

@@ -72,6 +72,19 @@ galleryButtons.forEach(function (button) {
 });
 /* Header - End */
 
+/* Book Burial Time - Start */
+const bookBurialButton = document.querySelector(".book-burial-button");
+const bookBurialOverlay = document.querySelector(".book-burial-container");
+
+bookBurialButton.addEventListener("click", () => {
+  if (bookBurialOverlay.style.display === "block") {
+    bookBurialOverlay.style.display = "none";
+  } else {
+    bookBurialOverlay.style.display = "block";
+  }
+});
+/* Book Burial Time - End */
+
 /* About - Start */
 /* hideContent hides the about content when the faq button is clicked */
 function hideAboutContent() {

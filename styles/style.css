@@ -131,7 +131,23 @@ body {
   border-radius: 5px;
 }
 
-/* Header Mobile - End */
+.book-burial-container input {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+.book-burial-container label {
+  color: var(--color-secondary);
+}
+
+.book-time-button {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+}
 
 /* Homepage Mobile - Start */
 .homepage-container {
@@ -290,6 +306,15 @@ body {
     background-color: var(--color-secondary);
     color: var(--color-accent);
     transition: background-color 0.2s ease-in-out;
+  }
+
+  .book-burial-container input:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  .book-burial-container label {
+    color: var(--color-accent);
   }
 }
 
