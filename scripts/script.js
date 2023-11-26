@@ -70,9 +70,8 @@ galleryButtons.forEach(function (button) {
     headerContainer.style.position = "relative";
   });
 });
-/* Header - End */
 
-/* Book Burial Time - Start */
+/* Book Burial Time */
 const bookBurialButton = document.querySelector(".book-burial-button");
 const bookBurialOverlay = document.querySelector(".book-burial-container");
 
@@ -83,7 +82,7 @@ bookBurialButton.addEventListener("click", () => {
     bookBurialOverlay.style.display = "block";
   }
 });
-/* Book Burial Time - End */
+
 
 /* About - Start */
 /* hideContent hides the about content when the faq button is clicked */
