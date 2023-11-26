@@ -310,7 +310,7 @@ body {
   inline-size: 350px;
 }
 
-.overlay-text h1 {
+.overlay-text h2 {
   font-family: var(--font-sans);
   font-style: normal;
   font-weight: bold;
@@ -322,7 +322,6 @@ body {
 .main-container {
   width: 100%;
   height: 100%;
-  color: rgb(26, 26, 26);
   text-align: center;
   color: var(--color-secondary);
   margin-bottom: 30px;
@@ -340,41 +339,107 @@ body {
 
 .main-container p {
   font-family: var(--font-sans);
-  text-align: justified;
+  text-align:center;
   padding: 0 20px;
   font-size: 15px;
-}
-
-.timeline-container {
-  height: fit-content;
-  width: 100%;
-  background-image: url("/assets/images/forest-arial.jpg");
-  background-size: 100%;
-  color: var(--color-secondary);
-  text-align: left;
-}
-
-.timeline-container img {
-  height: fit-content;
-  width: 100%;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.timeline-container h2 {
+.main-container p:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.timeline-header {
   font-family: var(--font-sans);
   color: var(--color-secondary);
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 15px;
-  text-align: left;
-  padding-left: 20px;
+  font-size: 48px;
+  text-align: center;
+}
+.timeline {
+  position:sticky;
+  max-width: 300px;
+  margin: 0 0;
+  box-sizing: border-box;
 }
 
-.timeline-container p {
-  text-align: center;
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--color-primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timline::before{
+  content: '';
+}
+
+.timeline-container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--color-primary);
+  border: 4px solid var(--color-accent);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+
+.right {
+  left: 50%;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--color-secondary);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--color-secondary) transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: var(--color-secondary);
+  position: relative;
+  border-radius: 6px;
+}
+
+.timeline-content {
+  color: var(--color-primary);
+}
+
+.timeline-content:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 .faq-button-container {
@@ -489,6 +554,39 @@ form .btn2 {
   cursor: pointer;
 }
 
+@media screen and (min-width: 300px) {
+  .timeline-header {
+    font-size: 20px;
+  }
+  .timeline {
+    max-width: 1200px;
+    align-self: center;
+    margin: 0 auto;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-container {
+    width: auto;
+    position: relative;
+  }
+
+  .timeline-container::before {
+    left: 60px;
+    border: medium solid var(--color-secondary);
+    border-color: transparent var(--color-secondary) transparent transparent;
+  }
+
+  .right::after {
+    left: 15px;
+  }
+
+  .right {
+    left: 0%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .about-header h1 {
     font-size: 48px;
@@ -500,8 +598,9 @@ form .btn2 {
     inline-size: 450px;
   }
 
-  .overlay-text h1 {
+  .overlay-text h2 {
     font-weight: 400;
+    font-weight: bold;
     font-size: 64px;
     color: #ffffff;
   }
@@ -516,12 +615,14 @@ form .btn2 {
   }
 
   .main-container p{
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 100px;
+  padding-right: 100px;
   font-size: 18px;
   }
-
-  .timeline-container h2 {
+  .regulation-container {
+    margin-left: 250px;
+  }
+  .timeline-header {
     font-size: 48px;
   }
 
