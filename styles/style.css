@@ -176,11 +176,6 @@ body {
   font-weight: bold;
 }
 
-.nav-buttons::after {
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
-}
-
 .video-container {
   margin-top: 20px;
   width: 330px;
