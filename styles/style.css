@@ -456,6 +456,10 @@ body {
   background-color: var(--color-primary);
 }
 
+#back-button {
+  margin-top: 10px;
+}
+
 .faq-button a {
   color: var(--color-secondary);
   font-family: var(--font-serif);
@@ -628,6 +632,10 @@ form .btn2 {
 
   .faq-title {
     font-size: 56px;
+  }
+  #back-button {
+    margin-top: 10px;
+    margin-bottom: -200px;
   }
 }
 
