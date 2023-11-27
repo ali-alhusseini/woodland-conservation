@@ -72,7 +72,6 @@
   <!-- Header - End -->
 
   <!-- Homepage - Start -->
-  <div class="homepage-main-container">
     <div class="homepage-container">
       <div class="homepage-content">
         <div class="homepage-title">
@@ -90,15 +89,75 @@
             <a href="#" class="about-button">Learn More</a>
           </button>
         </div>
-      </div>
-      <div class="video-container">
-        <video autoplay muted loop controls width="1000px">
-          <source src="assets/videos/forest-drone.mp4" type="video/mp4" />
-        </video>
-      </div>
+        <div class="video-container">
+          <video autoplay muted loop controls width="1050px">
+            <source src="assets/videos/forest-drone.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <!-- Homepage Information Cards-->
+        <div class="homepage-cards">
+          <h3>What Makes Us Special</h3>
+          <div class="homepage-card">
+            <i class="fa-solid fa-leaf fa-beat"></i>
+            <h3>Nature</h3>
+            <p>
+              The Woodland Conservation site is home to many species of plants
+              and animals.
+            </p>
+          </div>
+          <div class="homepage-card">
+            <i class="fa-solid fa-person-hiking fa-beat"></i>
+            <h3>Trails</h3>
+            <p>
+              The Woodland Conservation site is home to many beautiful trails for
+              hiking.
+            </p>
+          </div>
+          <div class="homepage-card">
+            <i class="fa-solid fa-crow fa-beat"></i>
+            <h3>Wildlife</h3>
+            <p>
+              The Woodland Conservation site is home to many species of wildlife.
+            </p>
+          </div>  
+          <div class="homepage-card">
+            <i class="fa-solid fa-tree fa-beat"></i>
+            <h3>Trees</h3>
+            <p>
+              The Woodland Conservation site is home to many species of trees.
+            </p>
+          </div>
+          <div class="homepage-card">
+            <i class="fa-solid fa-person-digging fa-beat"></i>
+            <h3>Natural Burial Site</h3>
+            <p>
+              First of its kind in Nova Scotia, the Woodland Conservation site
+              is home to a natural burial site.
+            </p>
+            <a href="#" class="book-burial-button">Book Burial Time</a>
+            <!-- Book Time Popup -->
+            <div class="book-burial-container hidden">
+              <h2>Book Burial Time</h2>
+              <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <button type="submit" class="book-time-button">Book Now</button>
+              </form>
+            </div>
+          </div>
+          <h3>Support Our Cause</h3>
+          <button class="nav-buttons">
+            <a href="#" class="getinvolved-button">Donate Now</a>
+          </button>
+        </div>
+      </div>      
     </div>
-  </div>
-
   <!-- Homepage - End -->
 
   <div class="about-main-container hidden">
@@ -424,6 +483,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-social">
+        <h3>Connect with us</h3>
         <button class="footer-buttons">
           <a href="#">
             <i class="fab fa-instagram"></i>
@@ -444,14 +504,22 @@
         </button>
       </div>
       <div class="footer-content">
-        <div class="footer-title">
-          <h3>Contact Us</h3>
-        </div>
-        <div class="footer-text">
-          <p>Woodland Conservation</p>
+        <h3>Location</h3>
+        <div>
           <p>1234 Woodland Drive. Halifax, Nova Scotia B3H 4R2</p>
           <p>Phone: 902-123-4567</p>
         </div>
+      </div>
+      <div class="footer-legal">
+        <div class="footer-legal-copyright footer-text">Copyright © 2023 Woodland Conservation. All rights reserved.</div>
+        <ul role="list">
+          <li role="listitem">
+            <a href="/terms" aria-label="Terms of Use">Terms of Use</a>
+          </li>
+          <li role="listitem">
+            <a href="/sitemap" aria-label="Site Map">Site Map</a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>

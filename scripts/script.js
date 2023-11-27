@@ -12,7 +12,7 @@ var aboutButtons = document.querySelectorAll(".about-button");
 var getInvolvedButtons = document.querySelectorAll(".getinvolved-button");
 var mapButtons = document.querySelectorAll(".map-button");
 var galleryButtons = document.querySelectorAll(".gallery-button");
-const homepage = document.querySelector(".homepage-main-container");
+const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-container");
@@ -70,7 +70,19 @@ galleryButtons.forEach(function (button) {
     headerContainer.style.position = "relative";
   });
 });
-/* Header - End */
+
+/* Book Burial Time */
+const bookBurialButton = document.querySelector(".book-burial-button");
+const bookBurialOverlay = document.querySelector(".book-burial-container");
+
+bookBurialButton.addEventListener("click", () => {
+  if (bookBurialOverlay.style.display === "block") {
+    bookBurialOverlay.style.display = "none";
+  } else {
+    bookBurialOverlay.style.display = "block";
+  }
+});
+
 
 /* About - Start */
 /* hideContent hides the about content when the faq button is clicked */
