@@ -462,12 +462,31 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Map Scripts - Start */
 
 /**
+ * Mobile version
+ * 
  * This Event Listener resets the map page when the map button in the header
  * is clicked.
  * 
  * Author: Alexander Jaques
  */
 document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+  const mapMain = document.getElementById("mapMain");
+  if (mapMain.style.display === "none") {
+    mapMain.style.display = "block";
+    document.getElementById("mapVisit").style.display = "none";
+    document.getElementById("mapTT").style.display = "none";
+  }
+});
+
+/**
+ * Desktop version
+ * 
+ * This Event Listener resets the map page when the map button in the header
+ * is clicked.
+ * 
+ * Author: Alexander Jaques
+ */
+document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
   const mapMain = document.getElementById("mapMain");
   if (mapMain.style.display === "none") {
     mapMain.style.display = "block";
