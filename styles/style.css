@@ -344,6 +344,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .about-header h1 {
@@ -362,21 +363,35 @@ body {
 }
 
 .mission-container img {
-  height: 100%;
+  /* height: 100%;
   width: 100%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+  margin-top: 20px;
+  width: 330px;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .overlay-text {
+  color: var(--color-secondary);
+  padding: 10px 20px;
+  font-size: 15px;
+  inline-size: 150px;
+}
+
+.centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--color-secondary);
-  padding: 10px 20px;
-  font-size: 15px;
-  inline-size: 350px;
+}
+
+.flexbox {
+  display: flexbox;
+  align-self: center;
+  align-items: center;
 }
 
 .overlay-text h2 {
@@ -388,17 +403,25 @@ body {
   text-align: center;
 }
 
+.overlay-text p{
+  font-size: 10px;
+}
+
 .main-container {
-  width: 100%;
+  width: 330px;
   height: 100%;
   text-align: center;
   color: var(--color-secondary);
   margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 10px;
 }
 
 .main-container h2 {
   font-family: var(--font-sans);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -409,22 +432,23 @@ body {
 .main-container p {
   font-family: var(--font-sans);
   text-align:center;
-  padding: 0 20px;
+  padding: 20px 20px;
   font-size: 15px;
+  /* background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 10px; */
+}
+
+.timeline-main-container {
   background-color: var(--color-secondary);
   color: var(--color-primary);
   border-radius: 10px;
-}
-
-.main-container p:hover {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  cursor: pointer;
+  width: 330px;
 }
 
 .timeline-header {
   font-family: var(--font-sans);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -497,18 +521,15 @@ body {
 
 .timeline-content {
   padding: 20px 30px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   position: relative;
   border-radius: 6px;
-}
-
-.timeline-content {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .timeline-content:hover {
   color: var(--color-secondary);
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 .faq-button-container {
@@ -666,6 +687,12 @@ form .btn2 {
     font-weight: 500;
   }
 
+  .mission-container img {
+    width: 1125px;
+    height: 625px;
+    border-radius: 10px;
+  }
+
   .overlay-text {
     font-size: 20px;
     inline-size: 450px;
@@ -674,7 +701,7 @@ form .btn2 {
   .overlay-text h2 {
     font-weight: 400;
     font-weight: bold;
-    font-size: 64px;
+    font-size: 48px;
     color: #ffffff;
   }
 
@@ -683,6 +710,10 @@ form .btn2 {
     font-weight: 400;
   }
 
+  .main-container{
+    width: 1125px;
+    height: auto;
+  }
   .main-container h2 {
     font-size: 48px;
   }
@@ -691,6 +722,10 @@ form .btn2 {
   padding-left: 100px;
   padding-right: 100px;
   font-size: 18px;
+  }
+  .timeline-main-container {
+    width: 1125px;
+    height: auto;
   }
   .regulation-container {
     margin-left: 250px;
