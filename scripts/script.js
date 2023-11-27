@@ -312,66 +312,185 @@ function removeErrorMessages() {
 /* End Get Involved */
 
 /* Map Scripts - Start */
+
 /**
- * This function is called by the Lost and Talking Trees buttons.  The button
- * that is pressed is replaced by a button to return to the main map page.
- *
- * @param {*} id ref to either the Lost or Talking Trees button
- *
+ * This function is called by the Visit and Talking Trees buttons.  The button
+ * that is pressed replaces the contents of the current map page with the
+ * section related to the button.
+ * 
+ * @param {*} id ref to either the Visit or Talking Trees button
+ * 
  * Author: Alexander Jaques
  */
 function goToMapSubs(id) {
   document.getElementById("mapMain").style.display = "none";
-
-  if (id === "lost") {
-    document.getElementById(id).style.display = "none";
-    document.getElementById("mapPage1").style.display = "block";
-    document.getElementById("mapLost").style.display = "block";
-
-    // If coming from talking trees page, display button and hide contents
-    if (document.getElementById("talkingTrees").style.display == "none") {
-      document.getElementById("mapTT").style.display = "none";
-      document.getElementById("talkingTrees").style.display = "block";
-      document.getElementById("mapPage2").style.display = "none";
+  /* 
+  If visit button pressed, show visit page and hide contents of talking
+  trees 
+  */
+  if (id === "visit") {
+    document.getElementById("mapVisit").style.display = "block"
+    document.getElementById("mapTT").style.display = "none";
+    if (isHuntingSzn()) {
+      // if (false) {
+      getEmbed(1);
+    } else {
+      document.getElementById("visit").innerHTML = "Get Directions"
+      getEmbed(0);
     }
   }
-
+  /* 
+  If talking trees button pressed, show talking trees page and hide
+  contents of visit.
+  */
   if (id === "talkingTrees") {
-    document.getElementById(id).style.display = "none";
-    document.getElementById("mapPage2").style.display = "block";
-    document.getElementById("mapTT").style.display = "block";
-
-    // If coming from lost page, display button and hide contents
-    if (document.getElementById("lost").style.display == "none") {
-      document.getElementById("mapLost").style.display = "none";
-      document.getElementById("lost").style.display = "block";
-      document.getElementById("mapPage1").style.display = "none";
-    }
+    document.getElementById("mapTT").style.display = "block"
+    document.getElementById("mapVisit").style.display = "none";
   }
 }
 
 /**
- * This function is called by the map buttons to show the original buttons
- *
- * @param {*} id ref to either of the map buttons
- *
+ * This function is called by the map button to return to the main map page.
+ * 
  * Author: Alexander Jaques
  */
-function goToMapMain(id) {
+function goToMapMain() {
   document.getElementById("mapMain").style.display = "block";
+  document.getElementById("mapVisit").style.display = "none";
+  document.getElementById("mapTT").style.display = "none";
+}
 
-  if (id === "mapPage1") {
-    document.getElementById("mapLost").style.display = "none";
-    document.getElementById(id).style.display = "none";
-    document.getElementById("lost").style.display = "block";
+/**
+ * Needed for mobile and desktop weather widgets.
+ * 
+ * Obtained from weatherwidget.io
+ */
+!function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://weatherwidget.io/js/widget.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
   }
+}(document, 'script', 'weatherwidget-io-js');
 
-  if (id === "mapPage2") {
-    document.getElementById("mapTT").style.display = "none";
-    document.getElementById(id).style.display = "none";
-    document.getElementById("talkingTrees").style.display = "block";
+
+/**
+ * This function gets the current date and compares it with the start and 
+ * end of hunting season.
+ * 
+ * @returns false if it is not hunting season, true if it is
+ * 
+ * Author: Alexander Jaques
+ */
+let isHuntingSzn = () => {
+  const d = new Date(), endOfSzn = new Date();
+  let currMonth = d.getMonth() + 1;
+  // Set endOfSzn as Jan 15
+  endOfSzn.setMonth(0); endOfSzn.setDate(15);
+  /* 
+  If the current month is before Sept and after Jan 15, safe to visit
+  Else it is hunting season 
+  */
+  if (currMonth < 9 &&
+    (d.getMonth() > endOfSzn.getMonth() &&
+      d.getDate() > endOfSzn.getDate())) {
+    return false;
+  }
+  else {
+    return true;
   }
 }
+
+/**
+ * This function is called when it is not hunting season. The embedded map
+ * is inserted into the document to allow the user to get directions to
+ * the conservation.
+ * 
+ * @param {*} num 0 if not hunting season and 1 if it is.
+ * 
+ * Author: Alexander Jaques
+ */
+function getEmbed(num) {
+  if (num === 0) {
+    document.getElementById("insertVisitSection").innerHTML =
+      ` 
+      <h1>Get Directions</h1>
+      <div id="mapDesktop">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2839.5532752450276!2d-63.92626992361472!3d44.6266077889327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDTCsDM3JzM1LjgiTiA2M8KwNTUnMjUuMyJX!5e0!3m2!1sen!2sca!4v1700852088228!5m2!1sen!2sca"
+          width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div id="mapMobile">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2839.5532752450276!2d-63.92626992361472!3d44.6266077889327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDTCsDM3JzM1LjgiTiA2M8KwNTUnMjUuMyJX!5e0!3m2!1sen!2sca!4v1700852088228!5m2!1sen!2sca"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      `;
+  } else if (num === 1) {
+    document.getElementById("insertVisitSection").innerHTML =
+      `
+      <h1>Planning a visit?</h1>
+      <h3>It is currently hunting season.</h3>
+        <p>
+          We highly advise that you wait to visit between January 16th and August
+          31st.
+          <br>
+          We hope to see you on the trail then.
+        </p>
+      `;
+  }
+}
+
+/**
+ * This Event Listener checks to see if it is not hunting season,
+ * if it is not, the second button on the map page displays as
+ * "Get Directions".  If it is hunting season, the button is unchanged
+ * and displays "Planning to Visit?"
+ * 
+ * Author: Alexander Jaques
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  if (!isHuntingSzn()) {
+    // if (isHuntingSzn()) {
+    document.getElementById("visit").innerHTML = "Get Directions";
+  }
+});
+/* Map Scripts - Start */
+
+/**
+ * This Event Listener resets the map page when the map button in the header
+ * is clicked.
+ * 
+ * Author: Alexander Jaques
+ */
+document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+  const mapMain = document.getElementById("mapMain");
+  if (mapMain.style.display === "none") {
+    mapMain.style.display = "block";
+    document.getElementById("mapVisit").style.display = "none";
+    document.getElementById("mapTT").style.display = "none";
+  }
+});
+
+/* Only for presentation v */
+function mapPres(num) {
+  // if (isHuntingSzn()) {
+  if (num === 1) {
+    document.getElementById("visit").innerHTML = "Get Directions";
+    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(0)">For Presentation</button>';
+    getEmbed(0);
+  } else {
+    document.getElementById("visit").innerHTML = "Planning to Visit?";
+    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(1)">For Presentation</button>';
+    getEmbed(1);
+  }
+}
+/* Only for presentation ^ */
+
 /* Map Scripts - End */
 
 /* Gallery - Start */

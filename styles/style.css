@@ -824,14 +824,18 @@ form .btn2 {
 
 /* Map Section */
 
-/* Add padding above weather widgets */
-/* a.weatherwidget-io {
-    padding-top: 20px;
-} */
+/* Map Section - Start */
 
-/* Center map header */
-h1#mapHeader {
+div#map {
+  background-color: var(--color-primary);
+}
+
+/* Center map headers */
+h1#mapHeader,
+#mapVisit h1,
+#mapTT h1#tTSoon {
   text-align: center;
+  background-image: repeating-linear-gradient(var(--color-accent), var(--color-primary));
 }
 
 /* Change cursor over buttons */
@@ -840,10 +844,9 @@ button:hover {
 }
 
 /* Stylings for map buttons */
-button#lost,
+button#visit,
 button#talkingTrees,
-button#mapPage1,
-button#mapPage2 {
+button#mapBtn {
   height: 100px;
   background-color: var(--color-accent);
   color: var(--color-secondary);
@@ -851,37 +854,35 @@ button#mapPage2 {
   border-radius: 15px;
 }
 
-div#map {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+/* Center the content of Talking Trees */
+div#mapTT {
+  text-align: center;
 }
 
-/* Map Desktop stylings */
+/* Desktop stylings */
 @media only screen and (min-width: 768px) {
 
-  /* Map Desktop Stylings - Start */
+  /* Stylings for the satelite image of the conservation's path */
   img#satMap {
     display: block;
     width: 50%;
     margin: auto;
     border-radius: 15px;
-    float: left;
   }
 
   /* Styling for map buttons */
   div#mapButtons {
-    clear: right;
+    text-align: center;
   }
 
   /* Control size of map buttons relative to viewport */
   div#mapButtons>button {
-    /* Add stuff for buttons? */
     width: 30%;
   }
 
   /* Limit display size of desktop weather widget */
   div#weatherD {
-    width: 80%;
+    width: 100%;
   }
 
   /* Remove display of mobile weather widget on desktop */
@@ -889,23 +890,39 @@ div#map {
     display: none;
   }
 
-  /* Should line up on map */
-  div#mapMain svg {
-    position: absolute;
-    z-index: 1;
-    top: 2;
-    left: 0;
-    width: 50%;
+  /* Stylings for the talking tree image */
+  div#mapTT img {
+    width: 25%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
   }
 
-  /* Map Desktop Stylings - End */
+  /* Remove the mobile version of the embedded Google Maps map */
+  div#mapMobile {
+    display: none;
+  }
+
+  /* Center the embedded Google Maps map */
+  div#mapDesktop {
+    text-align: center;
+  }
+
+  /* Set everything inside the insertVisitSection div to center and 1.5rem text */
+  div#insertVisitSection *:not(h1) {
+    text-align: center;
+    font-size: 1.5rem;
+  }
 }
 
 /* Mobile stylings */
 @media only screen and (max-width: 767px) {
 
-  /* Mobile Map Stylings */
-  img#satMap {
+  /* Stylings for the map images */
+  img#satMap,
+  div#mapVisit img,
+  div#mapTT img {
     width: 100%;
     border-radius: 15px;
   }
@@ -913,22 +930,23 @@ div#map {
   /* Controls size of map buttons relative to viewport */
   div#mapButtons>button {
     width: 100%;
+    height: 50px;
   }
 
   /* Remove display of desktop weather widget on mobile */
-  div#weatherD {
+  div#weatherD,
+  div#mapDesktop {
     display: none;
   }
 
-  /* Should line up on map, if not tweak top and left */
-  div#mapMain svg {
-    position: absolute;
-    z-index: 1;
-    top: 2;
-    left: 0;
-    width: 100%;
+  /* Center the text of the mobile version of the visit section */
+  div#insertVisitSection {
+    text-align: center;
   }
-  /* Mobile Stylings - End */
+
+  .mapBreaks {
+    display: none;
+  }
 }
 
 /* Map Section - End */

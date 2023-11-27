@@ -349,85 +349,71 @@
   <!-- Map - Start -->
   <div class="map-container hidden">
     <div id="map">
-      <h1 id="mapHeader">Map</h1>
-
       <!-- Container for main map content -->
       <div id="mapMain">
+        <h1 id="mapHeader">Map</h1>
         <!-- Mobile Weather Widget -->
         <div id="weatherM">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
             data-label_1="FRENCH VILLAGE" data-label_2="WEATHER" data-font="Arial" data-mode="Current"
-            data-theme="original" data-basecolor="#125c39" data-accent="#0e3f27" data-textcolor="#f5f5f5">FRENCH VILLAGE
+            data-theme="original" data-basecolor="#125c39" data-accent="#0e3f27" data-textcolor="#f5f5f5">FRENCH
+            VILLAGE
             WEATHER</a>
-          <script>
-            !(function (d, s, id) {
-              var js,
-                fjs = d.getElementsByTagName(s)[0];
-              if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "https://weatherwidget.io/js/widget.min.js";
-                fjs.parentNode.insertBefore(js, fjs);
-              }
-            })(document, "script", "weatherwidget-io-js");
-          </script>
         </div>
 
+        <!-- Add spaces for desktop version -->
+        <div class="mapBreaks">
+          <br><br>
+        </div>
         <!-- Desktop Weather Widget -->
         <div id="weatherD">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
             data-label_1="FRENCH VILLAGE" data-label_2="WEATHER" data-font="Arial" data-theme="original"
             data-basecolor="#125c39" data-accent="#0e3f27" data-textcolor="#f5f5f5">FRENCH VILLAGE WEATHER</a>
-          <script>
-            !(function (d, s, id) {
-              var js,
-                fjs = d.getElementsByTagName(s)[0];
-              if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "https://weatherwidget.io/js/widget.min.js";
-                fjs.parentNode.insertBefore(js, fjs);
-              }
-            })(document, "script", "weatherwidget-io-js");
-          </script>
         </div>
-        <!-- Map -->
+
+        <!-- Add spaces for desktop version -->
+        <div class="mapBreaks">
+          <br><br>
+        </div>
+
+        <!-- Map Image -->
         <div>
-          <img src="./assets/images/satMap.png" alt="satMap" id="satMap" />
-          <!-- Test different color line for mobile visibility-->
-          <!-- svg for the path -->
-          <svg version="1.1" viewBox="0 0 550 323" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m132.29 100.54 2.6328-3.7581 2.6782-0.5541-0.21934 4.2828 11.671 10.586 16.208 9.2351 4.0717 11.959 4.1937 15.054 9.7892 15.33 3.4796 0.0429 17.624 0.11396 0.63179 2.2673 4.5015 13.794-0.3248 2.3547-2.8538 15.866 11.994 4.1783 9.1723 0.84875 5.7818 15.183 19.354 2.2796v0l11.861 6.5361 9.306 6.6931 2.5914 5.0052 4.1015 17.688 21.088 9.0572 2.7001 4.285 23.608 2.722 3.7348-2.155-3.5847-7.4979"
-              fill="none" stroke="#f5f5f5" opacity="0.75" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="1" id="path" />
-          </svg>
+          <img src="./assets/images/newSatMap.png" alt="satMap" id="satMap">
         </div>
       </div>
 
-      <!-- Container for lost section -->
-      <!-- Change to directions? -->
-      <div id="mapLost" style="display: none">
-        <h1>UNDER CONSTRUCTION</h1>
+      <!-- Container for visit section -->
+      <div id="mapVisit" style="display: none;">
+        <!-- If it is hunting season a disclaimer will show,
+        if it is not a map with directions will show -->
+        <div id="insertVisitSection">
+        </div>
+
+        <!-- Only for presentation v -->
+        <div id="mapPresentation" style="text-align: center;">
+          <button onclick="mapPres(1)">For Presentation</button>
+        </div>
+        <!-- Only for presentation ^ -->
       </div>
 
       <!-- Container for talking trees section -->
       <!-- Placeholder section maybe -->
-      <div id="mapTT" style="display: none">
-        <h1>UNDER CONSTRUCTION</h1>
+      <div id="mapTT" style="display: none;">
+        <h1 id="tTSoon">COMING AT A LATER DATE</h1>
+        <h1>Talking Trees</h1>
+        <img src="./assets/images/Talking_tree_-_panoramio.jpg" alt="Talking Tree">
+      </div>
+
+      <!-- Add spaces for desktop version -->
+      <div class="mapBreaks">
+        <br><br>
       </div>
 
       <!-- Buttons section for navigating within map section -->
       <div id="mapButtons">
-        <!-- Place holder buttons -->
-        <button id="lost" onclick="goToMapSubs(id)">Lost?</button>
-        <!-- Maybe try to combine map btns into 1 button, and swap others -->
-        <button id="mapPage1" style="display: none" onclick="goToMapMain(id)">
-          Map
-        </button>
-        <button id="mapPage2" style="display: none" onclick="goToMapMain(id)">
-          Map
-        </button>
+        <button id="mapBtn" onclick="goToMapMain()">Map</button>
+        <button id="visit" onclick="goToMapSubs(id)">Planning to Visit?</button>
         <button id="talkingTrees" onclick="goToMapSubs(id)">Talking Trees</button>
       </div>
     </div>
