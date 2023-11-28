@@ -12,7 +12,7 @@ var aboutButtons = document.querySelectorAll(".about-button");
 var getInvolvedButtons = document.querySelectorAll(".getinvolved-button");
 var mapButtons = document.querySelectorAll(".map-button");
 var galleryButtons = document.querySelectorAll(".gallery-button");
-const homepage = document.querySelector(".homepage-main-container");
+const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-container");
@@ -70,7 +70,19 @@ galleryButtons.forEach(function (button) {
     headerContainer.style.position = "relative";
   });
 });
-/* Header - End */
+
+/* Book Burial Time */
+const bookBurialButton = document.querySelector(".book-burial-button");
+const bookBurialOverlay = document.querySelector(".book-burial-container");
+
+bookBurialButton.addEventListener("click", () => {
+  if (bookBurialOverlay.style.display === "block") {
+    bookBurialOverlay.style.display = "none";
+  } else {
+    bookBurialOverlay.style.display = "block";
+  }
+});
+
 
 /* About - Start */
 /* hideContent hides the about content when the faq button is clicked */
@@ -462,12 +474,31 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Map Scripts - Start */
 
 /**
+ * Mobile version
+ * 
  * This Event Listener resets the map page when the map button in the header
  * is clicked.
  * 
  * Author: Alexander Jaques
  */
 document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+  const mapMain = document.getElementById("mapMain");
+  if (mapMain.style.display === "none") {
+    mapMain.style.display = "block";
+    document.getElementById("mapVisit").style.display = "none";
+    document.getElementById("mapTT").style.display = "none";
+  }
+});
+
+/**
+ * Desktop version
+ * 
+ * This Event Listener resets the map page when the map button in the header
+ * is clicked.
+ * 
+ * Author: Alexander Jaques
+ */
+document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
   const mapMain = document.getElementById("mapMain");
   if (mapMain.style.display === "none") {
     mapMain.style.display = "block";
