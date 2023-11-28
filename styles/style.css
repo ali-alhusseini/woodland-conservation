@@ -747,9 +747,8 @@ form .btn2 {
 
 /* Get Involved Section - Start */
   .getinvolved {
-    border: 10px double #0e3f27;
     margin: 20px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     text-align: left;
     color: black;
   }
