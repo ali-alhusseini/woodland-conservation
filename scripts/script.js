@@ -15,7 +15,7 @@ var galleryButtons = document.querySelectorAll(".gallery-button");
 const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
-const gallery = document.querySelector(".gallery-container");
+const gallery = document.querySelector(".gallery-parent-container");
 const headerContainer = document.querySelector(".header-container");
 const mapContainer = document.querySelector(".map-container");
 
@@ -65,6 +65,7 @@ galleryButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.remove("hidden");
+    Gallery.render();
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
@@ -525,8 +526,8 @@ function mapPres(num) {
 /* Map Scripts - End */
 
 /* Gallery - Start */
-const myGallery = cloudinary.galleryWidget({
-  container: "#my-gallery",
+const Gallery = cloudinary.galleryWidget({
+  container: ".gallery-container",
   //cloud name is a unique ID associated with a cloudinary account
   cloudName: "dxmmwd2wz",
   aspectRatio: "20:9",
@@ -540,8 +541,6 @@ const myGallery = cloudinary.galleryWidget({
   carouselStyle: "indicators",
   carouselLocation: "bottom",
 });
-
-myGallery.render();
 
 var myWidget = cloudinary.createUploadWidget(
   {
