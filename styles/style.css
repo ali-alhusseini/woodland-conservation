@@ -1060,10 +1060,38 @@ div#mapTT {
     display: none;
   }
 }
-
 /* Map Section - End */
 
-.my-gallary {
-  max-width: 80%;
-  margin: auto;
+/* Gallery Section */
+.gallery-parent-container {
+  margin: 20px 50px;
+}
+
+.gallery-upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+
+.gallery-upload-section h3 {
+  font-size: medium;
+}
+
+.gallery-button {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-parent-container {
+    margin: 20px 100px;
+  }
 }
