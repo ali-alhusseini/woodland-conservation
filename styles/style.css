@@ -1095,3 +1095,22 @@ div#mapTT {
     margin: 20px 100px;
   }
 }
+
+.description-box {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #125c39;
+  color: whitesmoke;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #000000;
+
+  /*
+  --color-primary: #125c39;
+  --color-secondary: whitesmoke;
+  --color-accent: #0e3f27; */
+}
+
+/* Gallery Section - End */
