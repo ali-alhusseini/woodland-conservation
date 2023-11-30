@@ -177,11 +177,11 @@ document.getElementById('apply-button').addEventListener('click', function () {
   volAppForm.classList.toggle('hidden');
 });
 
-document.getElementById('donate-button').addEventListener('click', function() {
+document.getElementById('donate-button').addEventListener('click', function () {
   donorboxContainer.classList.toggle('hidden');
 });
 
-document.getElementById('close-button').addEventListener('click', function() {
+document.getElementById('close-button').addEventListener('click', function () {
   donorboxContainer.classList.toggle('hidden');
 });
 
@@ -191,8 +191,8 @@ document.getElementById('submit-button').addEventListener('click', function (eve
   removeErrorMessages();
 
   if (dropdown.value === "") {
-      showError(dropdown, "Please select a preferred position.");
-      pass = false;
+    showError(dropdown, "Please select a preferred position.");
+    pass = false;
   }
 
   if (!validateContents(fname, "First Name")) {
@@ -202,7 +202,7 @@ document.getElementById('submit-button').addEventListener('click', function (eve
   if (!validateContents(lname, "Last Name")) {
     pass = false;
   }
-  
+
   if (!validatePhoneNumber(phone.value)) {
     showError(phone, "Please enter a 10-digit phone number.");
     pass = false;
@@ -277,8 +277,8 @@ document.getElementById('submit-button').addEventListener('click', function (eve
 
 function validateContents(input, fieldName) {
   if (input.value.trim() === "") {
-      showError(input, fieldName + " cannot be empty.");
-      return false;
+    showError(input, fieldName + " cannot be empty.");
+    return false;
   }
   return true;
 }
@@ -325,7 +325,6 @@ function removeErrorMessages() {
 /* End Get Involved */
 
 /* Map Scripts - Start */
-
 /**
  * This function is called by the Visit and Talking Trees buttons.  The button
  * that is pressed replaces the contents of the current map page with the
@@ -398,20 +397,20 @@ function goToMapMain() {
  * Author: Alexander Jaques
  */
 let isHuntingSzn = () => {
-  const d = new Date(), endOfSzn = new Date();
-  let currMonth = d.getMonth() + 1;
+  const currDate = new Date(), endOfSzn = new Date();
   // Set endOfSzn as Jan 15
   endOfSzn.setMonth(0); endOfSzn.setDate(15);
   /* 
   If the current month is before Sept and after Jan 15, safe to visit
   Else it is hunting season 
   */
-  if (currMonth < 9 &&
-    (d.getMonth() > endOfSzn.getMonth() &&
-      d.getDate() > endOfSzn.getDate())) {
+  if (currDate.getMonth() < 8 && currDate.getMonth() >= endOfSzn.getMonth()) {
+    if (currDate.getMonth() === endOfSzn.getMonth() &&
+      endOfSzn.getDate() >= currDate.getDate()) {
+      return true;
+    }
     return false;
-  }
-  else {
+  } else {
     return true;
   }
 }
@@ -468,7 +467,6 @@ function getEmbed(num) {
  */
 document.addEventListener("DOMContentLoaded", function () {
   if (!isHuntingSzn()) {
-    // if (isHuntingSzn()) {
     document.getElementById("visit").innerHTML = "Get Directions";
   }
 });
@@ -507,22 +505,6 @@ document.getElementsByClassName("map-button")[1].addEventListener('click', () =>
     document.getElementById("mapTT").style.display = "none";
   }
 });
-
-/* Only for presentation v */
-function mapPres(num) {
-  // if (isHuntingSzn()) {
-  if (num === 1) {
-    document.getElementById("visit").innerHTML = "Get Directions";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(0)">For Presentation</button>';
-    getEmbed(0);
-  } else {
-    document.getElementById("visit").innerHTML = "Planning to Visit?";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(1)">For Presentation</button>';
-    getEmbed(1);
-  }
-}
-/* Only for presentation ^ */
-
 /* Map Scripts - End */
 
 /* Gallery - Start */

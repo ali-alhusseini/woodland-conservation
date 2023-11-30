@@ -263,6 +263,7 @@ body {
 
 /* Homepage Desktop - Start */
 @media screen and (min-width: 768px) {
+
   /* Header */
   .main-title a:hover {
     background-color: var(--color-accent);
@@ -403,7 +404,7 @@ body {
   text-align: center;
 }
 
-.overlay-text p{
+.overlay-text p {
   font-size: 10px;
 }
 
@@ -431,7 +432,7 @@ body {
 
 .main-container p {
   font-family: var(--font-sans);
-  text-align:center;
+  text-align: center;
   padding: 20px 20px;
   font-size: 15px;
   /* background-color: var(--color-secondary);
@@ -455,8 +456,9 @@ body {
   font-size: 48px;
   text-align: center;
 }
+
 .timeline {
-  position:sticky;
+  position: sticky;
   max-width: 300px;
   margin: 0 0;
   box-sizing: border-box;
@@ -473,7 +475,7 @@ body {
   margin-left: -3px;
 }
 
-.timline::before{
+.timline::before {
   content: '';
 }
 
@@ -613,7 +615,7 @@ body {
   padding: 20px;
   font-size: medium;
   border: none;
-  
+
 }
 
 .btn.btn2:hover {
@@ -652,11 +654,13 @@ form .btn2 {
   .timeline-header {
     font-size: 20px;
   }
+
   .timeline {
     max-width: 1200px;
     align-self: center;
     margin: 0 auto;
   }
+
   .timeline::after {
     left: 31px;
   }
@@ -705,31 +709,35 @@ form .btn2 {
     color: #ffffff;
   }
 
-  .overlay-text p{
+  .overlay-text p {
     font-size: 24px;
     font-weight: 400;
   }
 
-  .main-container{
+  .main-container {
     width: 1125px;
     height: auto;
   }
+
   .main-container h2 {
     font-size: 48px;
   }
 
-  .main-container p{
-  padding-left: 100px;
-  padding-right: 100px;
-  font-size: 18px;
+  .main-container p {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 18px;
   }
+
   .timeline-main-container {
     width: 1125px;
     height: auto;
   }
+
   .regulation-container {
     margin-left: 250px;
   }
+
   .timeline-header {
     font-size: 48px;
   }
@@ -737,6 +745,7 @@ form .btn2 {
   .faq-title {
     font-size: 56px;
   }
+
   #back-button {
     margin-top: 10px;
     margin-bottom: -200px;
@@ -746,195 +755,193 @@ form .btn2 {
 /* About Section - End */
 
 /* Get Involved Section - Start */
-  .getinvolved {
-    border: 10px double #0e3f27;
-    margin: 20px;
-    background-color: var(--color-secondary);
-    text-align: left;
-    color: black;
-  }
-  
-  .getinvolved h1 {
-    font-family: var(--font-sans);
-    color: var(--color-primary);
-    padding-left: 1%;
-    font-size: 300%;
-    font-weight: bolder;
-  }
-  
-  .getinvolved p {
-    font-size: large;
-    color: var(--color-primary);
-    font-family: var(--font-serif);
-    padding: 1%;
-  }
-  
-  .getinvolved button {
-    margin: 1%;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-  }
-  
-  .getinvolved button:hover {
-    background: var(--color-accent);
-  }
-  
-  .flex-box {
-    display: flex;
-  }
-  
-  .getinvolved-intro {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding-left: 2%;
-    padding-right: 2%;
-    width: 98%;
-    margin: 1%;
-    box-sizing: border-box;
-    padding-top: 0.5%;
-    padding-bottom: 1%;
-    display: auto;
-  }
-  
-  .donation-box {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding-left: 2%;
-    padding-right: 2%;
-    width: 49%;
-    float: left;
-    margin-bottom: 1%;
-    box-sizing: border-box;
-    margin-left: 1%;
-    margin-right: 0.5%;
-    padding-bottom: 1%;
-  }
-  
-  .donation-box p {
-    margin-bottom: 10px;
-  }
-  
-  .vol-box {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding-left: 2%;
-    padding-right: 2%;
-    width: 49%;
-    float: left;
-    margin-bottom: 1%;
-    box-sizing: border-box;
-    margin-left: 0.5%;
-    margin-right: 1%;
-    padding-bottom: 1%;
-    
-  }
-  
-  .vol-box li,
-  p {
-    margin-bottom: 10px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  #vol-app {
-    max-width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-    padding: 2%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2%;
-    box-sizing: border-box;
-    color: var(--color-primary);
-  }
+.getinvolved {
+  border: 10px double #0e3f27;
+  margin: 20px;
+  background-color: var(--color-secondary);
+  text-align: left;
+  color: black;
+}
 
-  #vol-app h1 {
-    font-family: var(--font-sans);
-    font-size: 200%;
-    font-weight: bolder;
-  }
+.getinvolved h1 {
+  font-family: var(--font-sans);
+  color: var(--color-primary);
+  padding-left: 1%;
+  font-size: 300%;
+  font-weight: bolder;
+}
 
-  #vol-app label {
-    font-size: large;
-    font-family: var(--font-serif);
-    font-weight: bold;
-    margin: 1%;
-    display: block;
-  }
+.getinvolved p {
+  font-size: large;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  padding: 1%;
+}
 
-  #vol-app input,
-  #vol-app select {
-    width: calc(100% - 20px);
-    padding: 1%;
-    margin-left: 1%;
-    margin-bottom: 1%;
-    margin-top: 0%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #fff;
-    box-sizing: border-box;
-  }
+.getinvolved button {
+  margin: 1%;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
 
-  #vol-app input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-  }
+.getinvolved button:hover {
+  background: var(--color-accent);
+}
 
-  #vol-app input[type="submit"]:hover {
-    background: var(--color-accent);
-  }
+.flex-box {
+  display: flex;
+}
 
-  #donorbox-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    background-color: var(--color-secondary);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
-  }
+.getinvolved-intro {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 98%;
+  margin: 1%;
+  box-sizing: border-box;
+  padding-top: 0.5%;
+  padding-bottom: 1%;
+  display: auto;
+}
 
-  #close-button {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    cursor: pointer;
-    color: var(--color-secondary);
-  }
+.donation-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 49%;
+  float: left;
+  margin-bottom: 1%;
+  box-sizing: border-box;
+  margin-left: 1%;
+  margin-right: 0.5%;
+  padding-bottom: 1%;
+}
 
-  .error-message {
-    color: red;
-    margin-top: 5px;
-    font-size: 12px;
-    padding-left: 1%;
-  }
+.donation-box p {
+  margin-bottom: 10px;
+}
+
+.vol-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 49%;
+  float: left;
+  margin-bottom: 1%;
+  box-sizing: border-box;
+  margin-left: 0.5%;
+  margin-right: 1%;
+  padding-bottom: 1%;
+
+}
+
+.vol-box li,
+p {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#vol-app {
+  max-width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 2%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2%;
+  box-sizing: border-box;
+  color: var(--color-primary);
+}
+
+#vol-app h1 {
+  font-family: var(--font-sans);
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+#vol-app label {
+  font-size: large;
+  font-family: var(--font-serif);
+  font-weight: bold;
+  margin: 1%;
+  display: block;
+}
+
+#vol-app input,
+#vol-app select {
+  width: calc(100% - 20px);
+  padding: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  margin-top: 0%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#vol-app input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#vol-app input[type="submit"]:hover {
+  background: var(--color-accent);
+}
+
+#donorbox-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: var(--color-secondary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#close-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+  padding-left: 1%;
+}
 
 /* Get Involved Section - End */
 
-
-/* Map Section */
 
 /* Map Section - Start */
 
@@ -1060,6 +1067,7 @@ div#mapTT {
     display: none;
   }
 }
+
 /* Map Section - End */
 
 /* Gallery Section */
