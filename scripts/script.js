@@ -325,27 +325,25 @@ function removeErrorMessages() {
 /* End Get Involved */
 
 /* Map Scripts - Start */
-
 /**
  * This function is called by the Visit and Talking Trees buttons.  The button
  * that is pressed replaces the contents of the current map page with the
  * section related to the button.
  * 
  * @param {*} id ref to either the Visit or Talking Trees button
- * 
- * Author: Alexander Jaques
  */
 function goToMapSubs(id) {
+  const mapVisit = document.getElementById("mapVisit"),
+    mapTT = document.getElementById("mapTT");
   document.getElementById("mapMain").style.display = "none";
   /* 
   If visit button pressed, show visit page and hide contents of talking
   trees 
   */
   if (id === "visit") {
-    document.getElementById("mapVisit").style.display = "block"
-    document.getElementById("mapTT").style.display = "none";
+    mapVisit.style.display = "block"
+    mapTT.style.display = "none";
     if (isHuntingSzn()) {
-      // if (false) {
       getEmbed(1);
     } else {
       document.getElementById("visit").innerHTML = "Get Directions"
@@ -357,15 +355,13 @@ function goToMapSubs(id) {
   contents of visit.
   */
   if (id === "talkingTrees") {
-    document.getElementById("mapTT").style.display = "block"
-    document.getElementById("mapVisit").style.display = "none";
+    mapTT.style.display = "block"
+    mapVisit.style.display = "none";
   }
 }
 
 /**
  * This function is called by the map button to return to the main map page.
- * 
- * Author: Alexander Jaques
  */
 function goToMapMain() {
   document.getElementById("mapMain").style.display = "block";
@@ -394,24 +390,23 @@ function goToMapMain() {
  * end of hunting season.
  * 
  * @returns false if it is not hunting season, true if it is
- * 
- * Author: Alexander Jaques
  */
 let isHuntingSzn = () => {
-  const d = new Date(), endOfSzn = new Date();
-  let currMonth = d.getMonth() + 1;
+  const currDate = new Date(), endOfSzn = new Date();
   // Set endOfSzn as Jan 15
   endOfSzn.setMonth(0); endOfSzn.setDate(15);
   /* 
   If the current month is before Sept and after Jan 15, safe to visit
   Else it is hunting season 
   */
-  if (currMonth < 9 &&
-    (d.getMonth() > endOfSzn.getMonth() &&
-      d.getDate() > endOfSzn.getDate())) {
+  if (currDate.getMonth() < 8 && currDate.getMonth() >= endOfSzn.getMonth()) {
+    // Checks to see if it is the first 15 days of January
+    if (currDate.getMonth() === endOfSzn.getMonth() &&
+      endOfSzn.getDate() >= currDate.getDate()) {
+      return true;
+    }
     return false;
-  }
-  else {
+  } else {
     return true;
   }
 }
@@ -422,12 +417,12 @@ let isHuntingSzn = () => {
  * the conservation.
  * 
  * @param {*} num 0 if not hunting season and 1 if it is.
- * 
- * Author: Alexander Jaques
  */
 function getEmbed(num) {
+  const insertVisitSection = document.getElementById("insertVisitSection");
+
   if (num === 0) {
-    document.getElementById("insertVisitSection").innerHTML =
+    insertVisitSection.innerHTML =
       ` 
       <h1>Get Directions</h1>
       <div id="mapDesktop">
@@ -444,9 +439,13 @@ function getEmbed(num) {
       </div>
       `;
   } else if (num === 1) {
-    document.getElementById("insertVisitSection").innerHTML =
+    insertVisitSection.innerHTML =
       `
       <h1>Planning a visit?</h1>
+      <br><br><br><br><br><br><br><br>
+      <div class="mapBreaks">
+        <br><br><br>
+      </div>      
       <h3>It is currently hunting season.</h3>
         <p>
           We highly advise that you wait to visit between January 16th and August
@@ -454,6 +453,10 @@ function getEmbed(num) {
           <br>
           We hope to see you on the trail then.
         </p>
+      <br><br><br><br><br><br><br><br>
+      <div class="mapBreaks">
+        <br><br><br>
+      </div>
       `;
   }
 }
@@ -463,66 +466,41 @@ function getEmbed(num) {
  * if it is not, the second button on the map page displays as
  * "Get Directions".  If it is hunting season, the button is unchanged
  * and displays "Planning to Visit?"
- * 
- * Author: Alexander Jaques
  */
 document.addEventListener("DOMContentLoaded", function () {
   if (!isHuntingSzn()) {
-    // if (isHuntingSzn()) {
     document.getElementById("visit").innerHTML = "Get Directions";
   }
 });
-/* Map Scripts - Start */
 
 /**
- * Mobile version
- * 
- * This Event Listener resets the map page when the map button in the header
+ * This function resets the map when one of the two map header buttons
  * is clicked.
- * 
- * Author: Alexander Jaques
  */
-document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+function resetMap() {
   const mapMain = document.getElementById("mapMain");
   if (mapMain.style.display === "none") {
     mapMain.style.display = "block";
     document.getElementById("mapVisit").style.display = "none";
     document.getElementById("mapTT").style.display = "none";
-  }
-});
-
-/**
- * Desktop version
- * 
- * This Event Listener resets the map page when the map button in the header
- * is clicked.
- * 
- * Author: Alexander Jaques
- */
-document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
-  const mapMain = document.getElementById("mapMain");
-  if (mapMain.style.display === "none") {
-    mapMain.style.display = "block";
-    document.getElementById("mapVisit").style.display = "none";
-    document.getElementById("mapTT").style.display = "none";
-  }
-});
-
-/* Only for presentation v */
-function mapPres(num) {
-  // if (isHuntingSzn()) {
-  if (num === 1) {
-    document.getElementById("visit").innerHTML = "Get Directions";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(0)">For Presentation</button>';
-    getEmbed(0);
-  } else {
-    document.getElementById("visit").innerHTML = "Planning to Visit?";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(1)">For Presentation</button>';
-    getEmbed(1);
   }
 }
-/* Only for presentation ^ */
 
+/**
+ * This Event Listener calls to reset the map page when the map button in the
+ * mobile header is clicked.
+ */
+document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+  resetMap();
+});
+
+/**
+ * This Event Listener calls to reset the map page when the map button in the
+ * desktop header is clicked.
+ */
+document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
+  resetMap();
+});
 /* Map Scripts - End */
 
 /* Gallery - Start */
