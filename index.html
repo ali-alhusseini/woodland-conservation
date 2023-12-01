@@ -423,6 +423,16 @@
       <!-- Container for main map content -->
       <div id="mapMain">
         <h1 id="mapHeader">Map</h1>
+
+        <!-- Add spaces for desktop version -->
+        <div class="mapBreaks">
+          <br><br>
+        </div>
+        <!-- Add spaces for mobile version -->
+        <div class="mobileBreaks">
+          <br>
+        </div>
+
         <!-- Mobile Weather Widget -->
         <div id="weatherM">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
@@ -432,10 +442,6 @@
             WEATHER</a>
         </div>
 
-        <!-- Add spaces for desktop version -->
-        <div class="mapBreaks">
-          <br><br>
-        </div>
         <!-- Desktop Weather Widget -->
         <div id="weatherD">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
@@ -447,8 +453,12 @@
         <div class="mapBreaks">
           <br><br>
         </div>
+        <!-- Add spaces for mobile version -->
+        <div class="mobileBreaks">
+          <br>
+        </div>
 
-        <!-- Map Image -->
+        <!-- Map Image with path-->
         <div>
           <img src="./assets/images/newSatMap.png" alt="satMap" id="satMap">
         </div>
@@ -460,16 +470,9 @@
         if it is not a map with directions will show -->
         <div id="insertVisitSection">
         </div>
-
-        <!-- Only for presentation v -->
-        <div id="mapPresentation" style="text-align: center;">
-          <button onclick="mapPres(1)">For Presentation</button>
-        </div>
-        <!-- Only for presentation ^ -->
       </div>
 
       <!-- Container for talking trees section -->
-      <!-- Placeholder section maybe -->
       <div id="mapTT" style="display: none;">
         <h1 id="tTSoon">COMING AT A LATER DATE</h1>
         <h1>Talking Trees</h1>
@@ -479,6 +482,10 @@
       <!-- Add spaces for desktop version -->
       <div class="mapBreaks">
         <br><br>
+      </div>
+      <!-- Add spaces for mobile version -->
+      <div class="mobileBreaks">
+        <br>
       </div>
 
       <!-- Buttons section for navigating within map section -->

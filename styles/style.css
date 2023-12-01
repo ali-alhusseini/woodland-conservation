@@ -933,11 +933,10 @@ form .btn2 {
 
 /* Get Involved Section - End */
 
-
-/* Map Section */
-
 /* Map Section - Start */
 
+/* id stylings */
+/* Set backgrond for map section */
 div#map {
   background-color: var(--color-primary);
 }
@@ -950,8 +949,8 @@ h1#mapHeader,
   background-image: repeating-linear-gradient(var(--color-accent), var(--color-primary));
 }
 
-/* Change cursor over buttons */
-button:hover {
+/* Change cursor over map buttons */
+div#mapButtons>button:hover {
   cursor: pointer;
 }
 
@@ -971,9 +970,11 @@ div#mapTT {
   text-align: center;
 }
 
+/* queries */
 /* Desktop stylings */
 @media only screen and (min-width: 768px) {
 
+  /* desktop id stylings */
   /* Stylings for the satelite image of the conservation's path */
   img#satMap {
     display: block;
@@ -1026,11 +1027,18 @@ div#mapTT {
     text-align: center;
     font-size: 1.5rem;
   }
+
+  /* desktop class stylings */
+  /* Removes the breaks used in the mobile version for the desktop version */
+  div.mobileBreaks {
+    display: none;
+  }  
 }
 
 /* Mobile stylings */
 @media only screen and (max-width: 767px) {
 
+  /* mobile id stylings */
   /* Stylings for the map images */
   img#satMap,
   div#mapVisit img,
@@ -1056,6 +1064,8 @@ div#mapTT {
     text-align: center;
   }
 
+  /* mobile class stylings */
+  /* Removes the breaks used in the desktop version for the mobile version */
   .mapBreaks {
     display: none;
   }
