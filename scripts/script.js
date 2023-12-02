@@ -108,8 +108,6 @@ function showAboutContent() {
   });
 }
 
-// Code obtained from W3 schools
-// link: https://www.w3schools.com/howto/howto_js_accordion.asp
 /* This code is for the faq questions and hides/shows each panel when clicked */
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -133,12 +131,6 @@ const scriptURL =
   "https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec";
 const form = document.forms["submit-to-google-sheet"];
 const message = document.getElementById("message");
-// form.addEventListener('submit', e => {
-//     e.preventDefault()
-//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//       .then(response => console.log('Success!', response))
-//       .catch(error => console.error('Error!', error.message))
-//   })
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
