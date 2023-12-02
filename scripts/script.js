@@ -117,7 +117,7 @@ for (i = 0; i < acc.length; i++) {
     // toggle between adding and removing the active tab
     this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
+    // toggle between hiding and showing the active panel
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -127,6 +127,11 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+/**
+ * This code takes the question asked by the user and handles a form submission
+ * by using the fetch API to make a POST request to a Google Apps Script. If the
+ * request is succesful a message is then shown.
+ */
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec";
 const form = document.forms["submit-to-google-sheet"];
