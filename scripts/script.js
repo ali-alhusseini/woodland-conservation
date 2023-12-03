@@ -1,17 +1,25 @@
-/* Header - Start */
+/* Constants for burger button and nav overlay in mobile */
 const burgerButton = document.querySelector(".burger-button button");
 const overlay = document.querySelector("#overlay");
 
+/**
+ * This function is called when the user clicks on the burger button.  It
+ * toggles the overlay and sets the overflow of the body to hidden to prevent
+ * scrolling.
+ */
 burgerButton.addEventListener("click", () => {
   const isOverlayVisible = overlay.style.display === "block";
   overlay.style.display = isOverlayVisible ? "none" : "block";
   document.body.style.overflow = isOverlayVisible ? "auto" : "hidden";
 });
 
+/* Variables for the header buttons */
 var aboutButtons = document.querySelectorAll(".about-button");
 var getInvolvedButtons = document.querySelectorAll(".getinvolved-button");
 var mapButtons = document.querySelectorAll(".map-button");
 var galleryButtons = document.querySelectorAll(".gallery-button");
+
+/* Contstants for sections */
 const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
@@ -19,6 +27,10 @@ const gallery = document.querySelector(".gallery-parent-container");
 const headerContainer = document.querySelector(".header-container");
 const mapContainer = document.querySelector(".map-container");
 
+/**
+ * This event listener is called when the user clicks the about button and hides
+ * the homepage and shows the about page.
+ */
 aboutButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -32,6 +44,10 @@ aboutButtons.forEach(function (button) {
   });
 });
 
+/**
+ * This event listener is called when the user clicks the get involved button
+ * and hides the homepage and shows the get involved page.
+ */
 getInvolvedButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -45,6 +61,10 @@ getInvolvedButtons.forEach(function (button) {
   });
 });
 
+/**
+ * This event listener is called when the user clicks the map button and hides
+ * the homepage and shows the map page.
+ */
 mapButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -58,6 +78,10 @@ mapButtons.forEach(function (button) {
   });
 });
 
+/**
+ * This event listener is called when the user clicks the gallery button and hides
+ * the homepage and shows the gallery page.
+ */
 galleryButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -76,6 +100,10 @@ galleryButtons.forEach(function (button) {
 const bookBurialButton = document.querySelector(".book-burial-button");
 const bookBurialOverlay = document.querySelector(".book-burial-container");
 
+/**
+ * This event listener is called when the user clicks the book burial button
+ * and it shows or hides the book burial overlay.
+ */
 bookBurialButton.addEventListener("click", () => {
   if (bookBurialOverlay.style.display === "block") {
     bookBurialOverlay.style.display = "none";
