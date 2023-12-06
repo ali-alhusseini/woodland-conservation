@@ -18,7 +18,6 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
 }
 
 .hidden {
@@ -80,7 +79,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: var(--color-secondary);
-  z-index: 2;
+  z-index: 10;
 }
 
 .nav-menu {
