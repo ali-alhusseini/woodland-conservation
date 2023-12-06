@@ -26,6 +26,7 @@ const getInvolved = document.querySelector(".getinvolved");
 const gallery = document.querySelector(".gallery-parent-container");
 const headerContainer = document.querySelector(".header-container");
 const mapContainer = document.querySelector(".map-container");
+const faqContent = document.querySelector(".faq-container");
 
 /**
  * This event listener is called when the user clicks the about button and hides
@@ -38,6 +39,7 @@ aboutButtons.forEach(function (button) {
     getInvolved.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
@@ -55,6 +57,7 @@ getInvolvedButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
@@ -72,6 +75,7 @@ mapButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     gallery.classList.add("hidden");
     mapContainer.classList.remove("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
@@ -89,6 +93,7 @@ galleryButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.remove("hidden");
+    faqContent.classList.add("hidden")
     Gallery.render();
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
@@ -118,7 +123,6 @@ bookBurialButton.addEventListener("click", () => {
 function hideAboutContent() {
   const faqButton = document.getElementById("faq-button");
   const aboutContent = document.querySelector(".about-main-container");
-  const faqContent = document.querySelector(".faq-container");
   faqButton.addEventListener("click", () => {
     faqContent.classList.remove("hidden");
     aboutContent.classList.add("hidden");
@@ -129,7 +133,6 @@ function hideAboutContent() {
 function showAboutContent() {
   const aboutButton = document.getElementById("back-button");
   const aboutContent = document.querySelector(".about-main-container");
-  const faqContent = document.querySelector(".faq-container");
   aboutButton.addEventListener("click", () => {
     faqContent.classList.add("hidden");
     aboutContent.classList.remove("hidden");
