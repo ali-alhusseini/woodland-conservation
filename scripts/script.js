@@ -361,28 +361,29 @@ function removeErrorMessages() {
  * @param {*} id ref to either the Visit or Talking Trees button
  */
 function goToMapSubs(id) {
+ // Short forms of getting id elements due to more than 1 call
   const mapVisit = document.getElementById("mapVisit"),
     mapTT = document.getElementById("mapTT");
   document.getElementById("mapMain").style.display = "none";
   /* 
   If visit button pressed, show visit page and hide contents of talking
-  trees 
+  trees.
   */
-  if (id === "visit") {
+  if (id === "visitBtn") {
     mapVisit.style.display = "block"
     mapTT.style.display = "none";
     if (isHuntingSzn()) {
-      getEmbed(1);
+      getEmbed(0); // send falsy value for isSafe variable
     } else {
-      document.getElementById("visit").innerHTML = "Get Directions"
-      getEmbed(0);
+      document.getElementById("visitBtn").innerHTML = "Get Directions"
+      getEmbed(1); // send truthy value for isSafe variable
     }
   }
   /* 
   If talking trees button pressed, show talking trees page and hide
   contents of visit.
   */
-  if (id === "talkingTrees") {
+  if (id === "tTBtn") {
     mapTT.style.display = "block"
     mapVisit.style.display = "none";
   }
@@ -412,7 +413,6 @@ function goToMapMain() {
   }
 }(document, 'script', 'weatherwidget-io-js');
 
-
 /**
  * This function gets the current date and compares it with the start and 
  * end of hunting season.
@@ -421,6 +421,14 @@ function goToMapMain() {
  */
 let isHuntingSzn = () => {
   const currDate = new Date(), endOfSzn = new Date();
+    
+  /*
+  For testing outside of hunting season, uncomment the line below setting
+  the date and time to August 1st.  The second button on the page will say
+  Get Directions and the page will load the embed.
+  */
+  // currDate.setMonth(7); currDate.setDate(1);
+  
   // Set endOfSzn as Jan 15
   endOfSzn.setMonth(0); endOfSzn.setDate(15);
   /* 
@@ -440,16 +448,20 @@ let isHuntingSzn = () => {
 }
 
 /**
- * This function is called when it is not hunting season. The embedded map
- * is inserted into the document to allow the user to get directions to
- * the conservation.
+ * This function is called by the goToMapSubs function in the visitBtn
+ * section.  If it is hunting season the site will display a message
+ * saying to wait until after hunting season is over.  If it is not
+ * hunting season, then the site will load a Google Maps embed for
+ * desktop and mobile that will provide directions to the conservation.
  * 
- * @param {*} num 0 if not hunting season and 1 if it is.
+ * @param {*} num 0 (false) if not safe and 1 (true) if it is.
  */
 function getEmbed(num) {
+  let isSafe = num; // load isSafe with truthy or falsy value
+  // Short form of getting id element due to more than 1 call
   const insertVisitSection = document.getElementById("insertVisitSection");
 
-  if (num === 0) {
+  if (isSafe) {
     insertVisitSection.innerHTML =
       ` 
       <h1>Get Directions</h1>
@@ -466,7 +478,7 @@ function getEmbed(num) {
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       `;
-  } else if (num === 1) {
+  } else {
     insertVisitSection.innerHTML =
       `
       <h1>Planning a visit?</h1>
@@ -490,14 +502,14 @@ function getEmbed(num) {
 }
 
 /**
- * This Event Listener checks to see if it is not hunting season,
- * if it is not, the second button on the map page displays as
+ * This Event Listener checks to see if it is not hunting season when the page
+ * loads, if it is not, the second button on the map page displays as
  * "Get Directions".  If it is hunting season, the button is unchanged
  * and displays "Planning to Visit?"
  */
 document.addEventListener("DOMContentLoaded", function () {
   if (!isHuntingSzn()) {
-    document.getElementById("visit").innerHTML = "Get Directions";
+    document.getElementById("visitBtn").innerHTML = "Get Directions";
   }
 });
 

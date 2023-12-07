@@ -934,8 +934,7 @@ form .btn2 {
 /* Get Involved Section - End */
 
 /* Map Section - Start */
-
-/* id stylings */
+/* ID Stylings */
 /* Set backgrond for map section */
 div#map {
   background-color: var(--color-primary);
@@ -955,8 +954,8 @@ div#mapButtons>button:hover {
 }
 
 /* Stylings for map buttons */
-button#visit,
-button#talkingTrees,
+button#visitBtn,
+button#tTBtn,
 button#mapBtn {
   height: 100px;
   background-color: var(--color-accent);
@@ -970,11 +969,11 @@ div#mapTT {
   text-align: center;
 }
 
-/* queries */
-/* Desktop stylings */
+/* Media Queries */
+/* Desktop Stylings */
 @media only screen and (min-width: 768px) {
 
-  /* desktop id stylings */
+  /* Desktop ID Stylings */
   /* Stylings for the satelite image of the conservation's path */
   img#satMap {
     display: block;
@@ -1028,20 +1027,19 @@ div#mapTT {
     font-size: 1.5rem;
   }
 
-  /* desktop class stylings */
+  /* Desktop Class Stylings */
   /* Removes the breaks used in the mobile version for the desktop version */
   div.mobileBreaks {
     display: none;
   }  
 }
 
-/* Mobile stylings */
+/* Mobile Stylings */
 @media only screen and (max-width: 767px) {
 
-  /* mobile id stylings */
+  /* Mobile ID Stylings */
   /* Stylings for the map images */
   img#satMap,
-  div#mapVisit img,
   div#mapTT img {
     width: 100%;
     border-radius: 15px;
@@ -1064,7 +1062,7 @@ div#mapTT {
     text-align: center;
   }
 
-  /* mobile class stylings */
+  /* Mobile Class Stylings */
   /* Removes the breaks used in the desktop version for the mobile version */
   .mapBreaks {
     display: none;
