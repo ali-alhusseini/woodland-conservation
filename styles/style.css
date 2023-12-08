@@ -182,6 +182,39 @@ body {
   border-radius: 5px;
 }
 
+.homepage-card li {
+  margin: 10px;
+}
+
+.trail-descriptions {
+  font-size: small;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 2px 0 2px 5px;
+}
+
+.trail-easy {
+  background-color: rgb(144, 205, 53);
+  color: black;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.trail-hard {
+  background-color: rgb(240, 57, 57);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.trail-moderate {
+  background-color: rgb(234, 169, 50);
+  color: black;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
 .book-burial-container input {
   background-color: var(--color-accent);
   color: var(--color-secondary);
