@@ -1,3 +1,4 @@
+/* gloabl variable  */
 :root {
   --color-primary: #125c39;
   --color-secondary: whitesmoke;
@@ -20,6 +21,7 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Hide elements */
 .hidden {
   display: none;
 }
@@ -69,6 +71,7 @@ body {
   float: right;
 }
 
+/* Mobile navigation overlay */
 #overlay {
   display: none;
   position: fixed;
@@ -299,7 +302,6 @@ body {
   color: var(--color-primary);
   background-color: var(--color-secondary);
 }
-
 /* Footer Mobile - End */
 
 /* Homepage Desktop - Start */
