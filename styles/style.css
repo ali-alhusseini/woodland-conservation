@@ -381,6 +381,22 @@ body {
   }
 }
 
+/* 404 Error Page */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 10px;
+  margin-top: 3.5rem;
+  align-content: center;
+  text-align: center;
+}
+
 /* About Section - Start */
 .about-container {
   width: 100%;
