@@ -119,7 +119,10 @@ bookBurialButton.addEventListener("click", () => {
 
 
 /* About - Start */
-/* hideContent hides the about content when the faq button is clicked */
+/**
+ * This function hides the about content when the faq button is clicked
+ * Author: Riley O'Keefe
+ */
 function hideAboutContent() {
   const faqButton = document.getElementById("faq-button");
   const aboutContent = document.querySelector(".about-main-container");
@@ -129,7 +132,10 @@ function hideAboutContent() {
   });
 }
 
-/* shows about content when about back button is clicked */
+/**
+ * This function shows about content when about back button is clicked
+ * Author: Riley O'Keefe
+ */
 function showAboutContent() {
   const aboutButton = document.getElementById("back-button");
   const aboutContent = document.querySelector(".about-main-container");
@@ -139,10 +145,15 @@ function showAboutContent() {
   });
 }
 
-/* This code is for the faq questions and hides/shows each panel when clicked */
+/**
+ * This code is for the faq questions and hides/shows each panel when clicked
+ * var accordion: the question clicked
+ * var i: index of the question clicked
+ * Author: Riley O'Keefe
+ */
 var acc = document.getElementsByClassName("accordion");
 var i;
-
+/* Loop through all the questions and add an event listener to each */
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
     // toggle between adding and removing the active tab
@@ -162,14 +173,20 @@ for (i = 0; i < acc.length; i++) {
  * This code takes the question asked by the user and handles a form submission
  * by using the fetch API to make a POST request to a Google Apps Script. If the
  * request is succesful a message is then shown.
+ * Riley O'Keefe has the information on the Google Apps Script and where the questions are sent.
+ * Author: Riley O'Keefe
  */
+//scriptURL is the URL of the Google Apps Script
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec";
+//form is the form that the user fills out
 const form = document.forms["submit-to-google-sheet"];
+//message is the message that is shown when the form is submitted
 const message = document.getElementById("message");
+//when the form is submitted, the fetch API is used to make a POST request to the Google Apps Script
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  e.preventDefault(); //prevents the form from submitting normally
+  fetch(scriptURL, { method: "POST", body: new FormData(form) }) 
     .then((response) => {
       message.innerHTML = "Message sent successfully!";
       setTimeout(function () {
@@ -177,6 +194,7 @@ form.addEventListener("submit", (e) => {
       }, 5000);
       form.reset();
     })
+    //if there is an error, an error message is shown in the console
     .catch((error) => console.error("Error!", error.message));
 });
 /* End About script */
