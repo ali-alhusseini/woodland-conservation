@@ -182,6 +182,8 @@ form.addEventListener("submit", (e) => {
 /* End About script */
 
 /* Start Get Involved */
+
+/* Declare all variables at the start */
 var dropdown = document.getElementById('dropdown');
 var fname = document.getElementById('fname-for-app');
 var lname = document.getElementById('lname-for-app');
@@ -201,23 +203,111 @@ var ref2email = document.getElementById('ref2-email');
 var volAppForm = document.getElementById('vol-app');
 var donorboxContainer = document.getElementById('donorbox-container');
 
+/**
+ * A function that validates that an input field is not empty
+ * 
+ * @param {*} input - The section of input being validated
+ * @param {*} fieldName - String of the section of input being validated to put before the error
+ * @returns {false | true} - Returns false when there is an error, true when there is not
+ */
+function validateContents(input, fieldName) {
+  if (input.value.trim() === "") {
+      showError(input, fieldName + " cannot be empty.");
+      return false;
+  }
+  return true;
+}
+
+/**
+ * A function that validates that a phone number is 10 digits
+ * 
+ * @param {*} phone - Phone number input
+ * @returns {true | false}} - Returns true if test passed, false when failed
+ */
+function validatePhoneNumber(phone) {
+  var phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+}
+
+/**
+ * A function that validates that an email is valid
+ * 
+ * @param {*} email - Email input
+ * @returns {true | false}} - Returns true if test passed, false when failed
+ */
+function validateEmail(email) {
+  var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+}
+
+/**
+ * A function that validates that a date is not before the current date
+ * 
+ * @param {*} date - The section of input for the date
+ * @param {*} fieldName - String of the date being validated to put before the error
+ * @returns {false | true} - Returns false when there is an error, true when there is not
+ */
+function validateDate(date, fieldName) {
+  if (date.value === "") {
+    showError(date, "Please select a " + fieldName + ".");
+    return false;
+  }
+  var currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  var selectedDate = new Date(date.value + "T00:00:00");
+
+  if (selectedDate < currentDate) {
+    showError(date, fieldName + " cannot be before the current date.");
+    return false;
+  }
+  return true;
+}
+
+/**
+ * A function that displays appropriate error message when validation fails
+ * 
+ * @param {*} input - The section of input with an error
+ * @param {*} message - text to be displayed in the error message
+ */
+function showError(input, message) {
+  var errorMessage = document.createElement('div');
+  errorMessage.className = 'error-message';
+  errorMessage.textContent = message;
+  input.parentNode.insertBefore(errorMessage, input.nextSibling);
+}
+
+/**
+ * A function that removes error messages after they are fixed
+ */
+function removeErrorMessages() {
+  var errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(function (errorMessage) {
+    errorMessage.parentNode.removeChild(errorMessage);
+  });
+}
+
+/* Event listener to show the application form */
 document.getElementById('apply-button').addEventListener('click', function () {
   volAppForm.classList.toggle('hidden');
 });
 
+/* Event listener to show the donation widget */
 document.getElementById('donate-button').addEventListener('click', function() {
   donorboxContainer.classList.toggle('hidden');
 });
 
+/* Event listener to close the donation widget */
 document.getElementById('close-button').addEventListener('click', function() {
   donorboxContainer.classList.toggle('hidden');
 });
 
+/* Event listener to validate the application contents and submit the application */
 document.getElementById('submit-button').addEventListener('click', function (event) {
   event.preventDefault();
   var pass = true;
   removeErrorMessages();
 
+  /* Input validation */
   if (dropdown.value === "") {
       showError(dropdown, "Please select a preferred position.");
       pass = false;
@@ -303,53 +393,6 @@ document.getElementById('submit-button').addEventListener('click', function (eve
   }
 });
 
-function validateContents(input, fieldName) {
-  if (input.value.trim() === "") {
-      showError(input, fieldName + " cannot be empty.");
-      return false;
-  }
-  return true;
-}
-
-function validatePhoneNumber(phone) {
-  var phoneRegex = /^\d{10}$/;
-  return phoneRegex.test(phone);
-}
-
-function validateEmail(email) {
-  var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return emailRegex.test(email);
-}
-
-function validateDate(input, fieldName) {
-  if (input.value === "") {
-    showError(input, "Please select a " + fieldName + ".");
-    return false;
-  }
-  var currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0);
-  var selectedDate = new Date(input.value + "T00:00:00");
-
-  if (selectedDate < currentDate) {
-    showError(input, fieldName + " cannot be before the current date.");
-    return false;
-  }
-  return true;
-}
-
-function showError(input, message) {
-  var errorMessage = document.createElement('div');
-  errorMessage.className = 'error-message';
-  errorMessage.textContent = message;
-  input.parentNode.insertBefore(errorMessage, input.nextSibling);
-}
-
-function removeErrorMessages() {
-  var errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(function (errorMessage) {
-    errorMessage.parentNode.removeChild(errorMessage);
-  });
-}
 /* End Get Involved */
 
 /* Map Scripts - Start */

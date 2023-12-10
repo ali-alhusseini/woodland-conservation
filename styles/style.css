@@ -746,6 +746,8 @@ form .btn2 {
 /* About Section - End */
 
 /* Get Involved Section - Start */
+
+/* Entire section styling */
   .getinvolved {
     border: 10px double #0e3f27;
     margin: 20px;
@@ -754,6 +756,7 @@ form .btn2 {
     color: black;
   }
   
+  /* Entire section header styling */
   .getinvolved h1 {
     font-family: var(--font-sans);
     color: var(--color-primary);
@@ -761,7 +764,7 @@ form .btn2 {
     font-size: 300%;
     font-weight: bolder;
   }
-  
+  /* Entire section paragraph styling */
   .getinvolved p {
     font-size: large;
     color: var(--color-primary);
@@ -769,6 +772,7 @@ form .btn2 {
     padding: 1%;
   }
   
+  /* Entire section button styling */
   .getinvolved button {
     margin: 1%;
     padding: 15px 25px;
@@ -779,14 +783,17 @@ form .btn2 {
     color: var(--color-secondary);
   }
   
+  /* Entire section button hover styling */
   .getinvolved button:hover {
     background: var(--color-accent);
   }
   
+  /* Flex box to get donation box and volunteer box beside each other */
   .flex-box {
     display: flex;
   }
   
+  /* Introduction section styling */
   .getinvolved-intro {
     background-color: #fff;
     border-radius: 10px;
@@ -801,6 +808,7 @@ form .btn2 {
     display: auto;
   }
   
+  /* Donation section styling */
   .donation-box {
     background-color: #fff;
     border-radius: 10px;
@@ -816,10 +824,12 @@ form .btn2 {
     padding-bottom: 1%;
   }
   
+  /* Donation section paragraph styling */
   .donation-box p {
     margin-bottom: 10px;
   }
   
+  /* Volunteer section styling */
   .vol-box {
     background-color: #fff;
     border-radius: 10px;
@@ -836,15 +846,26 @@ form .btn2 {
     
   }
   
+  /* Volunteer section list and paragraph styling */
   .vol-box li,
   p {
     margin-bottom: 10px;
   }
   
+  /* Hide anything that shouldn't be shown on load */
   .hidden {
     display: none;
   }
+
+  /* Error validation styling */
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    padding-left: 1%;
+  }
   
+  /* Volunteer application styling */
   #vol-app {
     max-width: 98%;
     margin-left: 1%;
@@ -859,12 +880,14 @@ form .btn2 {
     color: var(--color-primary);
   }
 
+  /* Volunteer application header styling */
   #vol-app h1 {
     font-family: var(--font-sans);
     font-size: 200%;
     font-weight: bolder;
   }
 
+  /* Volunteer application label styling */
   #vol-app label {
     font-size: large;
     font-family: var(--font-serif);
@@ -873,8 +896,9 @@ form .btn2 {
     display: block;
   }
 
-  #vol-app input,
-  #vol-app select {
+  /* Volunteer application input and select styling */
+  #vol-app input, 
+  select {
     width: calc(100% - 20px);
     padding: 1%;
     margin-left: 1%;
@@ -887,6 +911,7 @@ form .btn2 {
     box-sizing: border-box;
   }
 
+  /* Volunteer application submit styling */
   #vol-app input[type="submit"] {
     display: block;
     width: 100%;
@@ -900,10 +925,12 @@ form .btn2 {
     font-size: 18px;
   }
 
+  /* Volunteer application submit hover styling */
   #vol-app input[type="submit"]:hover {
     background: var(--color-accent);
   }
 
+  /* Donation widget styling */
   #donorbox-container {
     position: fixed;
     top: 50%;
@@ -916,19 +943,13 @@ form .btn2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
   }
 
+  /* Close button on widget styling */
   #close-button {
     position: absolute;
     top: 30px;
     left: 30px;
     cursor: pointer;
     color: var(--color-secondary);
-  }
-
-  .error-message {
-    color: red;
-    margin-top: 5px;
-    font-size: 12px;
-    padding-left: 1%;
   }
 
 /* Get Involved Section - End */
