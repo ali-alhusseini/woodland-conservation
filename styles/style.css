@@ -18,7 +18,6 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 .hidden {
@@ -39,7 +38,8 @@ body {
   height: 3.5rem;
   padding: 0;
   background-color: var(--color-primary);
-  z-index: 1000;
+  z-index: 10;
+  top: 0;
 }
 
 .title-container {
@@ -79,7 +79,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: var(--color-secondary);
-  z-index: 2;
+  z-index: 10;
 }
 
 .nav-menu {
@@ -746,6 +746,8 @@ form .btn2 {
 /* About Section - End */
 
 /* Get Involved Section - Start */
+
+/* Entire section styling */
   .getinvolved {
     margin: 20px;
     background-color: var(--color-accent);
@@ -753,6 +755,7 @@ form .btn2 {
     color: black;
   }
   
+  /* Entire section header styling */
   .getinvolved h1 {
     font-family: var(--font-sans);
     color: var(--color-primary);
@@ -760,7 +763,7 @@ form .btn2 {
     font-size: 300%;
     font-weight: bolder;
   }
-  
+  /* Entire section paragraph styling */
   .getinvolved p {
     font-size: large;
     color: var(--color-primary);
@@ -768,6 +771,7 @@ form .btn2 {
     padding: 1%;
   }
   
+  /* Entire section button styling */
   .getinvolved button {
     margin: 1%;
     padding: 15px 25px;
@@ -778,14 +782,17 @@ form .btn2 {
     color: var(--color-secondary);
   }
   
+  /* Entire section button hover styling */
   .getinvolved button:hover {
     background: var(--color-accent);
   }
   
+  /* Flex box to get donation box and volunteer box beside each other */
   .flex-box {
     display: flex;
   }
   
+  /* Introduction section styling */
   .getinvolved-intro {
     background-color: #fff;
     border-radius: 10px;
@@ -800,6 +807,7 @@ form .btn2 {
     display: auto;
   }
   
+  /* Donation section styling */
   .donation-box {
     background-color: #fff;
     border-radius: 10px;
@@ -815,10 +823,12 @@ form .btn2 {
     padding-bottom: 1%;
   }
   
+  /* Donation section paragraph styling */
   .donation-box p {
     margin-bottom: 10px;
   }
   
+  /* Volunteer section styling */
   .vol-box {
     background-color: #fff;
     border-radius: 10px;
@@ -835,15 +845,26 @@ form .btn2 {
     
   }
   
+  /* Volunteer section list and paragraph styling */
   .vol-box li,
   p {
     margin-bottom: 10px;
   }
   
+  /* Hide anything that shouldn't be shown on load */
   .hidden {
     display: none;
   }
+
+  /* Error validation styling */
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    padding-left: 1%;
+  }
   
+  /* Volunteer application styling */
   #vol-app {
     max-width: 98%;
     margin-left: 1%;
@@ -858,12 +879,14 @@ form .btn2 {
     color: var(--color-primary);
   }
 
+  /* Volunteer application header styling */
   #vol-app h1 {
     font-family: var(--font-sans);
     font-size: 200%;
     font-weight: bolder;
   }
 
+  /* Volunteer application label styling */
   #vol-app label {
     font-size: large;
     font-family: var(--font-serif);
@@ -872,8 +895,9 @@ form .btn2 {
     display: block;
   }
 
-  #vol-app input,
-  #vol-app select {
+  /* Volunteer application input and select styling */
+  #vol-app input, 
+  select {
     width: calc(100% - 20px);
     padding: 1%;
     margin-left: 1%;
@@ -886,6 +910,7 @@ form .btn2 {
     box-sizing: border-box;
   }
 
+  /* Volunteer application submit styling */
   #vol-app input[type="submit"] {
     display: block;
     width: 100%;
@@ -899,10 +924,12 @@ form .btn2 {
     font-size: 18px;
   }
 
+  /* Volunteer application submit hover styling */
   #vol-app input[type="submit"]:hover {
     background: var(--color-accent);
   }
 
+  /* Donation widget styling */
   #donorbox-container {
     position: fixed;
     top: 50%;
@@ -915,6 +942,7 @@ form .btn2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
   }
 
+  /* Close button on widget styling */
   #close-button {
     position: absolute;
     top: 30px;
@@ -923,20 +951,11 @@ form .btn2 {
     color: var(--color-secondary);
   }
 
-  .error-message {
-    color: red;
-    margin-top: 5px;
-    font-size: 12px;
-    padding-left: 1%;
-  }
-
 /* Get Involved Section - End */
 
-
-/* Map Section */
-
 /* Map Section - Start */
-
+/* ID Stylings */
+/* Set backgrond for map section */
 div#map {
   background-color: var(--color-primary);
 }
@@ -949,14 +968,14 @@ h1#mapHeader,
   background-image: repeating-linear-gradient(var(--color-accent), var(--color-primary));
 }
 
-/* Change cursor over buttons */
-button:hover {
+/* Change cursor over map buttons */
+div#mapButtons>button:hover {
   cursor: pointer;
 }
 
 /* Stylings for map buttons */
-button#visit,
-button#talkingTrees,
+button#visitBtn,
+button#tTBtn,
 button#mapBtn {
   height: 100px;
   background-color: var(--color-accent);
@@ -970,9 +989,11 @@ div#mapTT {
   text-align: center;
 }
 
-/* Desktop stylings */
+/* Media Queries */
+/* Desktop Stylings */
 @media only screen and (min-width: 768px) {
 
+  /* Desktop ID Stylings */
   /* Stylings for the satelite image of the conservation's path */
   img#satMap {
     display: block;
@@ -1025,14 +1046,20 @@ div#mapTT {
     text-align: center;
     font-size: 1.5rem;
   }
+
+  /* Desktop Class Stylings */
+  /* Removes the breaks used in the mobile version for the desktop version */
+  div.mobileBreaks {
+    display: none;
+  }  
 }
 
-/* Mobile stylings */
+/* Mobile Stylings */
 @media only screen and (max-width: 767px) {
 
+  /* Mobile ID Stylings */
   /* Stylings for the map images */
   img#satMap,
-  div#mapVisit img,
   div#mapTT img {
     width: 100%;
     border-radius: 15px;
@@ -1055,14 +1082,57 @@ div#mapTT {
     text-align: center;
   }
 
+  /* Mobile Class Stylings */
+  /* Removes the breaks used in the desktop version for the mobile version */
   .mapBreaks {
     display: none;
   }
 }
-
 /* Map Section - End */
 
-.my-gallary {
-  max-width: 80%;
-  margin: auto;
+/* Gallery Section */
+.gallery-parent-container {
+  margin: 20px 50px;
 }
+
+.gallery-upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+
+.gallery-upload-section h3 {
+  font-size: medium;
+}
+
+.gallery-button {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-parent-container {
+    margin: 20px 100px;
+  }
+}
+
+.description-box {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #125c39;
+  color: whitesmoke;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #000000;
+}
+/* Gallery Section - End */

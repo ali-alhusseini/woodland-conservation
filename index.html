@@ -43,7 +43,7 @@
       <div class="menu-container">
         <div class="burger-button">
           <button>
-            <img src="assets/images/burger.svg" alt="menu burger" />
+            <img src="assets/images/burger.svg" alt="display navigation menu" />
           </button>
         </div>
         <!-- Mobile Navigation Menu -->
@@ -276,7 +276,9 @@
   <!-- About - End -->
 
 
-  <!-- Get Involved section - Start -->
+  <!-- Get Involved section - This section is dedicated to give users the ability to get involved with the Woodland Conservation Project. -->
+  <!-- This section includes a brief introduction to the section, a section dedicated towards donations, and a section to apply to become -->
+  <!-- a volunteer.-->
   <div class="getinvolved hidden" id="getInvolved">
     <div class="getinvolved-intro">
       <h1>Get Involved</h1>
@@ -301,13 +303,14 @@
           future. Click the button below to donate now and be a part of the movement towards a greener, healthier world.
           Together, we can make a significant and lasting impact on the well-being of our planet.</p>
         <p>Click the button below to donate now!</p>
-        <button class="nav-buttons" id="donate-button">
+        <button id="donate-button">
           <a>Donate</a>
         </button>
         <div class="hidden" id="donorbox-container">
           <div id="close-button">
             X
           </div>
+          <!-- Widget for the donation box. Mike Warren has the information to the account that the money gets sent to -->
           <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
           <iframe src="https://donorbox.org/embed/support-the-woodland-conservation-project" name="donorbox"
             allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="535px"
@@ -323,7 +326,7 @@
           a crucial role in our shared mission of conserving and protecting the environment. Join us on this rewarding
           journey and make a difference today!</p>
         <p>Click the button below to apply to become a Woodland Conservation Project volunteer!</p>
-        <button class="nav-buttons" id="apply-button">
+        <button id="apply-button">
           <a>Apply to be a Volunteer</a>
         </button>
         <div class="vol-box hidden">
@@ -337,6 +340,7 @@
         </div>
       </div>
     </div>
+    <!-- Mike Warren currently has the information to where the application gets sent via email -->
     <form class="hidden" id="vol-app" action="https://formspree.io/f/mjvqqvwq" method="POST">
       <h1>Fill out the following application to be considered for a volunteer position:</h1>
       <label>Preferred Position:</label>
@@ -397,12 +401,31 @@
       </button>
     </form>
   </div>
-  <!-- Get Involved - End -->
+  <!-- Get Involved Section - End -->
 
   <!-- Gallery - Start -->
-  <div class="gallery-container hidden">
-    <button id="upload_widget" class="nav-buttons">Upload Photo for Review</button>
-    <div id="my-gallery"></div>
+  <!-- Author: John Wanamaker / Cloudinary -->
+  <div class="gallery-parent-container hidden">
+    <!-- Start Welcome Box-->
+    <div class="description-box ">
+      <h1>Welcome to our Gallery!</h1>
+      <p>Evidence of the beauty of our conservation site, captured
+      by passionate individuals like You! We encourage everyone 
+      to upload your image to be reviewed to our gallery below!</p>
+    </div>
+    <!-- End Welcome Box-->
+
+    <!-- Visual gallery Start -->
+    <div class="gallery-container"></div>
+    <!-- Visual gallery End -->
+
+    <!-- Upload Widget Section Start -->
+    <div class="gallery-upload-section">
+      <h3>Upload a photo for review and a chance to be featured on the website!</h3>
+        <!--Have to do inline CSS to edit Cloudinary upload button/widget-->
+        <button id="upload_widget" style = "color: var(--color-secondary); font-family: var(--font-sans); border-radius: 5px; background-color: var(--color-primary); margin: 1%; padding: 15px 25px; font-size: 18px; font-weight: bold;">Upload Photo</button>
+    </div>
+    <!-- Upload Widget Section Start -->
   </div>
   <!-- Gallery - End -->
 
@@ -412,6 +435,16 @@
       <!-- Container for main map content -->
       <div id="mapMain">
         <h1 id="mapHeader">Map</h1>
+
+        <!-- Add spaces for desktop version -->
+        <div class="mapBreaks">
+          <br><br>
+        </div>
+        <!-- Add spaces for mobile version -->
+        <div class="mobileBreaks">
+          <br>
+        </div>
+
         <!-- Mobile Weather Widget -->
         <div id="weatherM">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
@@ -421,10 +454,6 @@
             WEATHER</a>
         </div>
 
-        <!-- Add spaces for desktop version -->
-        <div class="mapBreaks">
-          <br><br>
-        </div>
         <!-- Desktop Weather Widget -->
         <div id="weatherD">
           <a class="weatherwidget-io" href="https://forecast7.com/en/44d63n63d91/french-village/"
@@ -436,8 +465,12 @@
         <div class="mapBreaks">
           <br><br>
         </div>
+        <!-- Add spaces for mobile version -->
+        <div class="mobileBreaks">
+          <br>
+        </div>
 
-        <!-- Map Image -->
+        <!-- Map Image with path-->
         <div>
           <img src="./assets/images/newSatMap.png" alt="satMap" id="satMap">
         </div>
@@ -449,16 +482,9 @@
         if it is not a map with directions will show -->
         <div id="insertVisitSection">
         </div>
-
-        <!-- Only for presentation v -->
-        <div id="mapPresentation" style="text-align: center;">
-          <button onclick="mapPres(1)">For Presentation</button>
-        </div>
-        <!-- Only for presentation ^ -->
       </div>
 
       <!-- Container for talking trees section -->
-      <!-- Placeholder section maybe -->
       <div id="mapTT" style="display: none;">
         <h1 id="tTSoon">COMING AT A LATER DATE</h1>
         <h1>Talking Trees</h1>
@@ -469,12 +495,16 @@
       <div class="mapBreaks">
         <br><br>
       </div>
+      <!-- Add spaces for mobile version -->
+      <div class="mobileBreaks">
+        <br>
+      </div>
 
       <!-- Buttons section for navigating within map section -->
       <div id="mapButtons">
         <button id="mapBtn" onclick="goToMapMain()">Map</button>
-        <button id="visit" onclick="goToMapSubs(id)">Planning to Visit?</button>
-        <button id="talkingTrees" onclick="goToMapSubs(id)">Talking Trees</button>
+        <button id="visitBtn" onclick="goToMapSubs(id)">Planning to Visit?</button>
+        <button id="tTBtn" onclick="goToMapSubs(id)">Talking Trees</button>
       </div>
     </div>
   </div>

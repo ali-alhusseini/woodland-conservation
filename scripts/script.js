@@ -1,24 +1,37 @@
-/* Header - Start */
+/* Constants for burger button and nav overlay in mobile */
 const burgerButton = document.querySelector(".burger-button button");
 const overlay = document.querySelector("#overlay");
 
+/**
+ * This function is called when the user clicks on the burger button.  It
+ * toggles the overlay and sets the overflow of the body to hidden to prevent
+ * scrolling.
+ */
 burgerButton.addEventListener("click", () => {
   const isOverlayVisible = overlay.style.display === "block";
   overlay.style.display = isOverlayVisible ? "none" : "block";
   document.body.style.overflow = isOverlayVisible ? "auto" : "hidden";
 });
 
+/* Variables for the header buttons */
 var aboutButtons = document.querySelectorAll(".about-button");
 var getInvolvedButtons = document.querySelectorAll(".getinvolved-button");
 var mapButtons = document.querySelectorAll(".map-button");
 var galleryButtons = document.querySelectorAll(".gallery-button");
+
+/* Contstants for sections */
 const homepage = document.querySelector(".homepage-container");
 const aboutContent = document.querySelector(".about-main-container");
 const getInvolved = document.querySelector(".getinvolved");
-const gallery = document.querySelector(".gallery-container");
+const gallery = document.querySelector(".gallery-parent-container");
 const headerContainer = document.querySelector(".header-container");
 const mapContainer = document.querySelector(".map-container");
+const faqContent = document.querySelector(".faq-container");
 
+/**
+ * This event listener is called when the user clicks the about button and hides
+ * the homepage and shows the about page.
+ */
 aboutButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -26,12 +39,17 @@ aboutButtons.forEach(function (button) {
     getInvolved.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
   });
 });
 
+/**
+ * This event listener is called when the user clicks the get involved button
+ * and hides the homepage and shows the get involved page.
+ */
 getInvolvedButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -39,12 +57,17 @@ getInvolvedButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.add("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
   });
 });
 
+/**
+ * This event listener is called when the user clicks the map button and hides
+ * the homepage and shows the map page.
+ */
 mapButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -52,12 +75,17 @@ mapButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     gallery.classList.add("hidden");
     mapContainer.classList.remove("hidden");
+    faqContent.classList.add("hidden");
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
   });
 });
 
+/**
+ * This event listener is called when the user clicks the gallery button and hides
+ * the homepage and shows the gallery page.
+ */
 galleryButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     homepage.classList.add("hidden");
@@ -65,6 +93,8 @@ galleryButtons.forEach(function (button) {
     aboutContent.classList.add("hidden");
     mapContainer.classList.add("hidden");
     gallery.classList.remove("hidden");
+    faqContent.classList.add("hidden")
+    Gallery.render();
     overlay.style.display = "none";
     document.body.style.overflow = "auto";
     headerContainer.style.position = "relative";
@@ -75,6 +105,10 @@ galleryButtons.forEach(function (button) {
 const bookBurialButton = document.querySelector(".book-burial-button");
 const bookBurialOverlay = document.querySelector(".book-burial-container");
 
+/**
+ * This event listener is called when the user clicks the book burial button
+ * and it shows or hides the book burial overlay.
+ */
 bookBurialButton.addEventListener("click", () => {
   if (bookBurialOverlay.style.display === "block") {
     bookBurialOverlay.style.display = "none";
@@ -89,7 +123,6 @@ bookBurialButton.addEventListener("click", () => {
 function hideAboutContent() {
   const faqButton = document.getElementById("faq-button");
   const aboutContent = document.querySelector(".about-main-container");
-  const faqContent = document.querySelector(".faq-container");
   faqButton.addEventListener("click", () => {
     faqContent.classList.remove("hidden");
     aboutContent.classList.add("hidden");
@@ -100,15 +133,12 @@ function hideAboutContent() {
 function showAboutContent() {
   const aboutButton = document.getElementById("back-button");
   const aboutContent = document.querySelector(".about-main-container");
-  const faqContent = document.querySelector(".faq-container");
   aboutButton.addEventListener("click", () => {
     faqContent.classList.add("hidden");
     aboutContent.classList.remove("hidden");
   });
 }
 
-// Code obtained from W3 schools
-// link: https://www.w3schools.com/howto/howto_js_accordion.asp
 /* This code is for the faq questions and hides/shows each panel when clicked */
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -118,7 +148,7 @@ for (i = 0; i < acc.length; i++) {
     // toggle between adding and removing the active tab
     this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
+    // toggle between hiding and showing the active panel
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -128,16 +158,15 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+/**
+ * This code takes the question asked by the user and handles a form submission
+ * by using the fetch API to make a POST request to a Google Apps Script. If the
+ * request is succesful a message is then shown.
+ */
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbx5TF5aAW5ElVEHYEs6IBTwJk4duccv4jfD5lekOrJ-szqaJz8kBTB_Rg3g0yfCJwct/exec";
 const form = document.forms["submit-to-google-sheet"];
 const message = document.getElementById("message");
-// form.addEventListener('submit', e => {
-//     e.preventDefault()
-//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//       .then(response => console.log('Success!', response))
-//       .catch(error => console.error('Error!', error.message))
-//   })
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
@@ -153,6 +182,8 @@ form.addEventListener("submit", (e) => {
 /* End About script */
 
 /* Start Get Involved */
+
+/* Declare all variables at the start */
 var dropdown = document.getElementById('dropdown');
 var fname = document.getElementById('fname-for-app');
 var lname = document.getElementById('lname-for-app');
@@ -172,23 +203,111 @@ var ref2email = document.getElementById('ref2-email');
 var volAppForm = document.getElementById('vol-app');
 var donorboxContainer = document.getElementById('donorbox-container');
 
+/**
+ * A function that validates that an input field is not empty
+ * 
+ * @param {*} input - The section of input being validated
+ * @param {*} fieldName - String of the section of input being validated to put before the error
+ * @returns {false | true} - Returns false when there is an error, true when there is not
+ */
+function validateContents(input, fieldName) {
+  if (input.value.trim() === "") {
+      showError(input, fieldName + " cannot be empty.");
+      return false;
+  }
+  return true;
+}
+
+/**
+ * A function that validates that a phone number is 10 digits
+ * 
+ * @param {*} phone - Phone number input
+ * @returns {true | false}} - Returns true if test passed, false when failed
+ */
+function validatePhoneNumber(phone) {
+  var phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+}
+
+/**
+ * A function that validates that an email is valid
+ * 
+ * @param {*} email - Email input
+ * @returns {true | false}} - Returns true if test passed, false when failed
+ */
+function validateEmail(email) {
+  var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+}
+
+/**
+ * A function that validates that a date is not before the current date
+ * 
+ * @param {*} date - The section of input for the date
+ * @param {*} fieldName - String of the date being validated to put before the error
+ * @returns {false | true} - Returns false when there is an error, true when there is not
+ */
+function validateDate(date, fieldName) {
+  if (date.value === "") {
+    showError(date, "Please select a " + fieldName + ".");
+    return false;
+  }
+  var currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  var selectedDate = new Date(date.value + "T00:00:00");
+
+  if (selectedDate < currentDate) {
+    showError(date, fieldName + " cannot be before the current date.");
+    return false;
+  }
+  return true;
+}
+
+/**
+ * A function that displays appropriate error message when validation fails
+ * 
+ * @param {*} input - The section of input with an error
+ * @param {*} message - text to be displayed in the error message
+ */
+function showError(input, message) {
+  var errorMessage = document.createElement('div');
+  errorMessage.className = 'error-message';
+  errorMessage.textContent = message;
+  input.parentNode.insertBefore(errorMessage, input.nextSibling);
+}
+
+/**
+ * A function that removes error messages after they are fixed
+ */
+function removeErrorMessages() {
+  var errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(function (errorMessage) {
+    errorMessage.parentNode.removeChild(errorMessage);
+  });
+}
+
+/* Event listener to show the application form */
 document.getElementById('apply-button').addEventListener('click', function () {
   volAppForm.classList.toggle('hidden');
 });
 
+/* Event listener to show the donation widget */
 document.getElementById('donate-button').addEventListener('click', function() {
   donorboxContainer.classList.toggle('hidden');
 });
 
+/* Event listener to close the donation widget */
 document.getElementById('close-button').addEventListener('click', function() {
   donorboxContainer.classList.toggle('hidden');
 });
 
+/* Event listener to validate the application contents and submit the application */
 document.getElementById('submit-button').addEventListener('click', function (event) {
   event.preventDefault();
   var pass = true;
   removeErrorMessages();
 
+  /* Input validation */
   if (dropdown.value === "") {
       showError(dropdown, "Please select a preferred position.");
       pass = false;
@@ -274,97 +393,47 @@ document.getElementById('submit-button').addEventListener('click', function (eve
   }
 });
 
-function validateContents(input, fieldName) {
-  if (input.value.trim() === "") {
-      showError(input, fieldName + " cannot be empty.");
-      return false;
-  }
-  return true;
-}
-
-function validatePhoneNumber(phone) {
-  var phoneRegex = /^\d{10}$/;
-  return phoneRegex.test(phone);
-}
-
-function validateEmail(email) {
-  var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return emailRegex.test(email);
-}
-
-function validateDate(input, fieldName) {
-  if (input.value === "") {
-    showError(input, "Please select a " + fieldName + ".");
-    return false;
-  }
-  var currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0);
-  var selectedDate = new Date(input.value + "T00:00:00");
-
-  if (selectedDate < currentDate) {
-    showError(input, fieldName + " cannot be before the current date.");
-    return false;
-  }
-  return true;
-}
-
-function showError(input, message) {
-  var errorMessage = document.createElement('div');
-  errorMessage.className = 'error-message';
-  errorMessage.textContent = message;
-  input.parentNode.insertBefore(errorMessage, input.nextSibling);
-}
-
-function removeErrorMessages() {
-  var errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(function (errorMessage) {
-    errorMessage.parentNode.removeChild(errorMessage);
-  });
-}
 /* End Get Involved */
 
 /* Map Scripts - Start */
-
 /**
  * This function is called by the Visit and Talking Trees buttons.  The button
  * that is pressed replaces the contents of the current map page with the
  * section related to the button.
  * 
  * @param {*} id ref to either the Visit or Talking Trees button
- * 
- * Author: Alexander Jaques
  */
 function goToMapSubs(id) {
+ // Short forms of getting id elements due to more than 1 call
+  const mapVisit = document.getElementById("mapVisit"),
+    mapTT = document.getElementById("mapTT");
   document.getElementById("mapMain").style.display = "none";
   /* 
   If visit button pressed, show visit page and hide contents of talking
-  trees 
+  trees.
   */
-  if (id === "visit") {
-    document.getElementById("mapVisit").style.display = "block"
-    document.getElementById("mapTT").style.display = "none";
+  if (id === "visitBtn") {
+    mapVisit.style.display = "block"
+    mapTT.style.display = "none";
     if (isHuntingSzn()) {
-      // if (false) {
-      getEmbed(1);
+      getEmbed(0); // send falsy value for isSafe variable
     } else {
-      document.getElementById("visit").innerHTML = "Get Directions"
-      getEmbed(0);
+      document.getElementById("visitBtn").innerHTML = "Get Directions"
+      getEmbed(1); // send truthy value for isSafe variable
     }
   }
   /* 
   If talking trees button pressed, show talking trees page and hide
   contents of visit.
   */
-  if (id === "talkingTrees") {
-    document.getElementById("mapTT").style.display = "block"
-    document.getElementById("mapVisit").style.display = "none";
+  if (id === "tTBtn") {
+    mapTT.style.display = "block"
+    mapVisit.style.display = "none";
   }
 }
 
 /**
  * This function is called by the map button to return to the main map page.
- * 
- * Author: Alexander Jaques
  */
 function goToMapMain() {
   document.getElementById("mapMain").style.display = "block";
@@ -387,46 +456,56 @@ function goToMapMain() {
   }
 }(document, 'script', 'weatherwidget-io-js');
 
-
 /**
  * This function gets the current date and compares it with the start and 
  * end of hunting season.
  * 
  * @returns false if it is not hunting season, true if it is
- * 
- * Author: Alexander Jaques
  */
 let isHuntingSzn = () => {
-  const d = new Date(), endOfSzn = new Date();
-  let currMonth = d.getMonth() + 1;
+  const currDate = new Date(), endOfSzn = new Date();
+    
+  /*
+  For testing outside of hunting season, uncomment the line below setting
+  the date and time to August 1st.  The second button on the page will say
+  Get Directions and the page will load the embed.
+  */
+  // currDate.setMonth(7); currDate.setDate(1);
+  
   // Set endOfSzn as Jan 15
   endOfSzn.setMonth(0); endOfSzn.setDate(15);
   /* 
   If the current month is before Sept and after Jan 15, safe to visit
   Else it is hunting season 
   */
-  if (currMonth < 9 &&
-    (d.getMonth() > endOfSzn.getMonth() &&
-      d.getDate() > endOfSzn.getDate())) {
+  if (currDate.getMonth() < 8 && currDate.getMonth() >= endOfSzn.getMonth()) {
+    // Checks to see if it is the first 15 days of January
+    if (currDate.getMonth() === endOfSzn.getMonth() &&
+      endOfSzn.getDate() >= currDate.getDate()) {
+      return true;
+    }
     return false;
-  }
-  else {
+  } else {
     return true;
   }
 }
 
 /**
- * This function is called when it is not hunting season. The embedded map
- * is inserted into the document to allow the user to get directions to
- * the conservation.
+ * This function is called by the goToMapSubs function in the visitBtn
+ * section.  If it is hunting season the site will display a message
+ * saying to wait until after hunting season is over.  If it is not
+ * hunting season, then the site will load a Google Maps embed for
+ * desktop and mobile that will provide directions to the conservation.
  * 
- * @param {*} num 0 if not hunting season and 1 if it is.
- * 
- * Author: Alexander Jaques
+ * @param {*} num 0 (false) if not safe and 1 (true) if it is.
  */
 function getEmbed(num) {
-  if (num === 0) {
-    document.getElementById("insertVisitSection").innerHTML =
+  let isSafe = num; // load isSafe with truthy or falsy value
+  // Short form of getting id element due to more than 1 call
+  const insertVisitSection = document.getElementById("insertVisitSection");
+
+  if (isSafe) {
+    insertVisitSection.innerHTML =
       ` 
       <h1>Get Directions</h1>
       <div id="mapDesktop">
@@ -442,10 +521,14 @@ function getEmbed(num) {
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       `;
-  } else if (num === 1) {
-    document.getElementById("insertVisitSection").innerHTML =
+  } else {
+    insertVisitSection.innerHTML =
       `
       <h1>Planning a visit?</h1>
+      <br><br><br><br><br><br><br><br>
+      <div class="mapBreaks">
+        <br><br><br>
+      </div>      
       <h3>It is currently hunting season.</h3>
         <p>
           We highly advise that you wait to visit between January 16th and August
@@ -453,80 +536,59 @@ function getEmbed(num) {
           <br>
           We hope to see you on the trail then.
         </p>
+      <br><br><br><br><br><br><br><br>
+      <div class="mapBreaks">
+        <br><br><br>
+      </div>
       `;
   }
 }
 
 /**
- * This Event Listener checks to see if it is not hunting season,
- * if it is not, the second button on the map page displays as
+ * This Event Listener checks to see if it is not hunting season when the page
+ * loads, if it is not, the second button on the map page displays as
  * "Get Directions".  If it is hunting season, the button is unchanged
  * and displays "Planning to Visit?"
- * 
- * Author: Alexander Jaques
  */
 document.addEventListener("DOMContentLoaded", function () {
   if (!isHuntingSzn()) {
-    // if (isHuntingSzn()) {
-    document.getElementById("visit").innerHTML = "Get Directions";
+    document.getElementById("visitBtn").innerHTML = "Get Directions";
   }
 });
-/* Map Scripts - Start */
 
 /**
- * Mobile version
- * 
- * This Event Listener resets the map page when the map button in the header
+ * This function resets the map when one of the two map header buttons
  * is clicked.
- * 
- * Author: Alexander Jaques
  */
-document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+function resetMap() {
   const mapMain = document.getElementById("mapMain");
   if (mapMain.style.display === "none") {
     mapMain.style.display = "block";
     document.getElementById("mapVisit").style.display = "none";
     document.getElementById("mapTT").style.display = "none";
-  }
-});
-
-/**
- * Desktop version
- * 
- * This Event Listener resets the map page when the map button in the header
- * is clicked.
- * 
- * Author: Alexander Jaques
- */
-document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
-  const mapMain = document.getElementById("mapMain");
-  if (mapMain.style.display === "none") {
-    mapMain.style.display = "block";
-    document.getElementById("mapVisit").style.display = "none";
-    document.getElementById("mapTT").style.display = "none";
-  }
-});
-
-/* Only for presentation v */
-function mapPres(num) {
-  // if (isHuntingSzn()) {
-  if (num === 1) {
-    document.getElementById("visit").innerHTML = "Get Directions";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(0)">For Presentation</button>';
-    getEmbed(0);
-  } else {
-    document.getElementById("visit").innerHTML = "Planning to Visit?";
-    document.getElementById("mapPresentation").innerHTML = '<button onclick="mapPres(1)">For Presentation</button>';
-    getEmbed(1);
   }
 }
-/* Only for presentation ^ */
 
+/**
+ * This Event Listener calls to reset the map page when the map button in the
+ * mobile header is clicked.
+ */
+document.getElementsByClassName("map-button")[0].addEventListener('click', () => {
+  resetMap();
+});
+
+/**
+ * This Event Listener calls to reset the map page when the map button in the
+ * desktop header is clicked.
+ */
+document.getElementsByClassName("map-button")[1].addEventListener('click', () => {
+  resetMap();
+});
 /* Map Scripts - End */
 
 /* Gallery - Start */
-const myGallery = cloudinary.galleryWidget({
-  container: "#my-gallery",
+const Gallery = cloudinary.galleryWidget({
+  container: ".gallery-container",
   //cloud name is a unique ID associated with a cloudinary account
   cloudName: "dxmmwd2wz",
   aspectRatio: "20:9",
@@ -540,8 +602,6 @@ const myGallery = cloudinary.galleryWidget({
   carouselStyle: "indicators",
   carouselLocation: "bottom",
 });
-
-myGallery.render();
 
 var myWidget = cloudinary.createUploadWidget(
   {
