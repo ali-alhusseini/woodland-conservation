@@ -749,9 +749,8 @@ form .btn2 {
 
 /* Entire section styling */
   .getinvolved {
-    border: 10px double #0e3f27;
     margin: 20px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     text-align: left;
     color: black;
   }
@@ -950,6 +949,40 @@ form .btn2 {
     left: 30px;
     cursor: pointer;
     color: var(--color-secondary);
+  }
+
+  /* Add media query for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    /* Styling to make the donation and volunteer boxes full size in mobile */
+    .donation-box,
+    .vol-box {
+      width: 98%;
+    }
+
+    /* Styling to correctly allign the volunteer box in mobile */
+    .vol-box {
+      margin-left: 1%;
+    }
+
+    /* Styling to stack all boxes in mobile */
+    .flex-box {
+      display: inline-block;
+    }
+
+    /* Styling to enlarge buttons on mobile */
+    .getinvolved button {
+      padding: 15px 25px;
+    }
+
+    /* Styling to shrink header font size on mobile */
+    .getinvolved h1 {
+      font-size: 200%; 
+    }
+  
+    /* Styling to shrink paragraph font size on mobile */
+    .getinvolved p {
+      font-size: medium;
+    }
   }
 
 /* Get Involved Section - End */
