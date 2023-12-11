@@ -196,6 +196,9 @@
     </div>
   <!-- Homepage - End -->
 
+  <!-- About Section - Start - Author: Riley O'Keefe-->
+  <!-- This section contains the mission statement, info about the park, a timeline and a FAQ section -->
+  <!-- for users to ask any question, as well view commonly asked questions -->
   <div class="about-main-container hidden">
     <div class="about-container" id="aboutContent">
       <div class="about-header">
@@ -237,6 +240,7 @@
           and the sustenance of all life that calls this sanctuary home."<br>
         </p>
       </div>
+      <!-- Timline portion of website -->
       <div class="timeline-main-container flexbox">
         <h2 class="timeline-header">TIMELINE</h2>
         <div class="timeline">
@@ -264,6 +268,7 @@
           education, pleasure, and recreation of the public.
         </p>
       </div>
+      <!-- button to go to FAQ section -->
       <div class="faq-button-container">
         <p>
           Have Questions? take a look at our
@@ -274,6 +279,7 @@
       </div>
     </div>
   </div>
+  <!-- FAQ portion of about section -->
   <div class="faq-container hidden" id="faqContent">
     <button class="nav-buttons" id="back-button">
       <a onclick="showAboutContent()" href="#aboutContent" id="back-button">back to About</a>
@@ -298,6 +304,7 @@
     <div class="additional-questions-container">
       <p>Still haven't answered your question, feel free to send us one below.</p>
     </div>
+    <!-- small form for users to send questions to a google sheet -->
     <div class="contact-right">
       <form name="submit-to-google-sheet">
         <input type="text" name="Name" placeholder="Your Name" required>
@@ -312,7 +319,9 @@
   <!-- About - End -->
 
 
-  <!-- Get Involved section - Start -->
+  <!-- Get Involved section - This section is dedicated to give users the ability to get involved with the Woodland Conservation Project. -->
+  <!-- This section includes a brief introduction to the section, a section dedicated towards donations, and a section to apply to become -->
+  <!-- a volunteer.-->
   <div class="getinvolved hidden" id="getInvolved">
     <div class="getinvolved-intro">
       <h1>Get Involved</h1>
@@ -337,13 +346,14 @@
           future. Click the button below to donate now and be a part of the movement towards a greener, healthier world.
           Together, we can make a significant and lasting impact on the well-being of our planet.</p>
         <p>Click the button below to donate now!</p>
-        <button class="nav-buttons" id="donate-button">
+        <button id="donate-button">
           <a>Donate</a>
         </button>
         <div class="hidden" id="donorbox-container">
           <div id="close-button">
             X
           </div>
+          <!-- Widget for the donation box. Mike Warren has the information to the account that the money gets sent to -->
           <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
           <iframe src="https://donorbox.org/embed/support-the-woodland-conservation-project" name="donorbox"
             allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="535px"
@@ -359,20 +369,12 @@
           a crucial role in our shared mission of conserving and protecting the environment. Join us on this rewarding
           journey and make a difference today!</p>
         <p>Click the button below to apply to become a Woodland Conservation Project volunteer!</p>
-        <button class="nav-buttons" id="apply-button">
+        <button id="apply-button">
           <a>Apply to be a Volunteer</a>
         </button>
-        <div class="vol-box hidden">
-          <h1>Volunteer Opportunities</h1>
-          <ul>
-            <li>Trail maintenance</li>
-            <li>Tree planting</li>
-            <li>Wildlife monitoring</li>
-            <li>Education programs</li>
-          </ul>
-        </div>
       </div>
     </div>
+    <!-- Mike Warren currently has the information to where the application gets sent via email -->
     <form class="hidden" id="vol-app" action="https://formspree.io/f/mjvqqvwq" method="POST">
       <h1>Fill out the following application to be considered for a volunteer position:</h1>
       <label>Preferred Position:</label>
@@ -433,19 +435,19 @@
       </button>
     </form>
   </div>
-  <!-- Get Involved - End -->
+  <!-- Get Involved Section - End -->
 
   <!-- Gallery - Start -->
   <!-- Author: John Wanamaker / Cloudinary -->
   <div class="gallery-parent-container hidden">
-    <!-- Start Welcome Box-->
+    <!-- Welcome Box Start -->
     <div class="description-box ">
       <h1>Welcome to our Gallery!</h1>
       <p>Evidence of the beauty of our conservation site, captured
       by passionate individuals like You! We encourage everyone 
       to upload your image to be reviewed to our gallery below!</p>
     </div>
-    <!-- End Welcome Box-->
+    <!-- Welcome Box End -->
 
     <!-- Visual gallery Start -->
     <div class="gallery-container"></div>
@@ -457,7 +459,7 @@
         <!--Have to do inline CSS to edit Cloudinary upload button/widget-->
         <button id="upload_widget" style = "color: var(--color-secondary); font-family: var(--font-sans); border-radius: 5px; background-color: var(--color-primary); margin: 1%; padding: 15px 25px; font-size: 18px; font-weight: bold;">Upload Photo</button>
     </div>
-    <!-- Upload Widget Section Start -->
+    <!-- Upload Widget Section End -->
   </div>
   <!-- Gallery - End -->
 

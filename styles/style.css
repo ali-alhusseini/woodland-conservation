@@ -397,7 +397,8 @@ body {
   text-align: center;
 }
 
-/* About Section - Start */
+/* About Section - Start - Author: Riley O'Keefe*/
+/* main container styling */
 .about-container {
   width: 100%;
   height: auto;
@@ -406,6 +407,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* page header styling */
 .about-header h1 {
   text-align: center;
   font-family: var(--font-sans);
@@ -414,6 +416,7 @@ body {
   font-weight: bold;
 }
 
+/* styling for mission statement */
 .mission-container {
   height: fit-content;
   position: relative;
@@ -421,11 +424,8 @@ body {
   width: 100%;
 }
 
+/* styling for the mission statement image*/
 .mission-container img {
-  /* height: 100%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto; */
   margin-top: 20px;
   width: 330px;
   height: 320px;
@@ -433,6 +433,7 @@ body {
   overflow: hidden;
 }
 
+/* styling for the mission statement text */
 .overlay-text {
   color: var(--color-secondary);
   padding: 10px 20px;
@@ -440,6 +441,7 @@ body {
   inline-size: 150px;
 }
 
+/* styling to center the text on the image */
 .centered {
   position: absolute;
   top: 50%;
@@ -447,12 +449,13 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/* styling used to align all items on the about page */
 .flexbox {
-  display: flexbox;
   align-self: center;
   align-items: center;
 }
 
+/* styling for the mision statement header*/
 .overlay-text h2 {
   font-family: var(--font-sans);
   font-style: normal;
@@ -462,10 +465,12 @@ body {
   text-align: center;
 }
 
+/* styling for the mission statement text */
 .overlay-text p{
   font-size: 10px;
 }
 
+/* generic styling used for history and rules, regulations and ordinances sections */
 .main-container {
   width: 330px;
   height: 100%;
@@ -478,6 +483,7 @@ body {
   border-radius: 10px;
 }
 
+/* syling for header belonging to history and rules sections */
 .main-container h2 {
   font-family: var(--font-sans);
   color: var(--color-primary);
@@ -488,16 +494,15 @@ body {
   text-align: center;
 }
 
+/* styling for history and rules sections text */
 .main-container p {
   font-family: var(--font-sans);
   text-align:center;
   padding: 20px 20px;
   font-size: 15px;
-  /* background-color: var(--color-secondary);
-  color: var(--color-primary);
-  border-radius: 10px; */
 }
 
+/* styling for the main container of the timeline*/
 .timeline-main-container {
   background-color: var(--color-secondary);
   color: var(--color-primary);
@@ -505,6 +510,7 @@ body {
   width: 330px;
 }
 
+/* styling for timeline header */
 .timeline-header {
   font-family: var(--font-sans);
   color: var(--color-primary);
@@ -514,6 +520,8 @@ body {
   font-size: 48px;
   text-align: center;
 }
+
+/* styling for the timline container */
 .timeline {
   position:sticky;
   max-width: 300px;
@@ -521,6 +529,7 @@ body {
   box-sizing: border-box;
 }
 
+/* creating the vertical line for the timeline */
 .timeline::after {
   content: '';
   position: absolute;
@@ -536,6 +545,7 @@ body {
   content: '';
 }
 
+/* styling for timeline container */
 .timeline-container {
   padding: 10px 40px;
   position: relative;
@@ -543,6 +553,7 @@ body {
   width: 50%;
 }
 
+/* creating circles for each event in the timeline */
 .timeline-container::after {
   content: '';
   position: absolute;
@@ -556,11 +567,12 @@ body {
   z-index: 1;
 }
 
-
+/* styling for right side of the timeline */
 .right {
   left: 50%;
 }
 
+/* styling for the arrow indicating direction of timeline */
 .right::before {
   content: " ";
   height: 0;
@@ -574,10 +586,12 @@ body {
   border-color: transparent var(--color-secondary) transparent transparent;
 }
 
+/* adjusting the positioning of the arrow */
 .right::after {
   left: -16px;
 }
 
+/* styling for the content within each timeline event */
 .timeline-content {
   padding: 20px 30px;
   background-color: var(--color-primary);
@@ -586,16 +600,19 @@ body {
   color: var(--color-secondary);
 }
 
+/* styling when hovering over a timeline event */
 .timeline-content:hover {
   color: var(--color-secondary);
   background-color: var(--color-accent);
 }
 
+/* styling for the button container */
 .faq-button-container {
   color: var(--color-secondary);
   text-align: center;
 }
 
+/* styling for the FAQ button */
 .faq-button {
   font-family: var(--font-serif);
   font-weight: bold;
@@ -605,10 +622,12 @@ body {
   background-color: var(--color-primary);
 }
 
+/* back-button styling for navigating back to about page */
 #back-button {
   margin-top: 10px;
 }
 
+/* styling for the FAQ button text */  
 .faq-button a {
   color: var(--color-secondary);
   font-family: var(--font-serif);
@@ -616,6 +635,7 @@ body {
   text-decoration: solid;
 }
 
+/* styling for the FAQ title */
 .faq-title {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -630,6 +650,7 @@ body {
   text-align: center;
 }
 
+/* styling for the accordion buttons */
 .accordion {
   background-color: var(--color-primary);
   color: var(--color-secondary);
@@ -642,11 +663,13 @@ body {
   transition: 0.4s;
 }
 
+/* styling for active accordion buttons or on hover */
 .active,
 .accordion:hover {
   background-color: var(--color-accent);
 }
 
+/* styling for the panel content */
 .panel {
   padding: 0 18px;
   background-color: var(--color-secondary);
@@ -655,16 +678,19 @@ body {
   overflow: hidden;
 }
 
+/* styling for additional questions text */
 .additional-questions-container p {
   text-align: center;
   font-size: 24px;
   font-family: var(--font-sans);
 }
 
+/* styling for the contact form section */
 .contact-right {
   flex-basis: 60%;
 }
 
+/* styling for the submit button */
 .btn.btn2 {
   display: inline-block;
   background: var(--color-primary);
@@ -675,10 +701,12 @@ body {
   
 }
 
+/* styling for the submit button on hover */
 .btn.btn2:hover {
   background: var(--color-accent);
 }
 
+/* styling for the contact form */
 .contact-right form {
   width: 50%;
   position: relative;
@@ -687,6 +715,7 @@ body {
   text-align: center;
 }
 
+/* styling for  form input and text area */
 form input,
 form textarea {
   width: 100%;
@@ -700,6 +729,7 @@ form textarea {
   border-radius: 6px;
 }
 
+/* styling in the submit button in the form */
 form .btn2 {
   /* padding: 14px 60px; */
   font-size: 18px;
@@ -707,6 +737,8 @@ form .btn2 {
   cursor: pointer;
 }
 
+/* Media query for smaller screens with a minimum width of 300px */
+/* this code makes the about section responsive for mobile friendliness */
 @media screen and (min-width: 300px) {
   .timeline-header {
     font-size: 20px;
@@ -740,6 +772,7 @@ form .btn2 {
   }
 }
 
+/* media query for screens with a minimum width of 758px */
 @media screen and (min-width: 768px) {
   .about-header h1 {
     font-size: 48px;
@@ -805,14 +838,16 @@ form .btn2 {
 /* About Section - End */
 
 /* Get Involved Section - Start */
+
+/* Entire section styling */
   .getinvolved {
-    border: 10px double #0e3f27;
     margin: 20px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     text-align: left;
     color: black;
   }
   
+  /* Entire section header styling */
   .getinvolved h1 {
     font-family: var(--font-sans);
     color: var(--color-primary);
@@ -820,7 +855,7 @@ form .btn2 {
     font-size: 300%;
     font-weight: bolder;
   }
-  
+  /* Entire section paragraph styling */
   .getinvolved p {
     font-size: large;
     color: var(--color-primary);
@@ -828,6 +863,7 @@ form .btn2 {
     padding: 1%;
   }
   
+  /* Entire section button styling */
   .getinvolved button {
     margin: 1%;
     padding: 15px 25px;
@@ -838,14 +874,17 @@ form .btn2 {
     color: var(--color-secondary);
   }
   
+  /* Entire section button hover styling */
   .getinvolved button:hover {
     background: var(--color-accent);
   }
   
+  /* Flex box to get donation box and volunteer box beside each other */
   .flex-box {
     display: flex;
   }
   
+  /* Introduction section styling */
   .getinvolved-intro {
     background-color: #fff;
     border-radius: 10px;
@@ -860,6 +899,7 @@ form .btn2 {
     display: auto;
   }
   
+  /* Donation section styling */
   .donation-box {
     background-color: #fff;
     border-radius: 10px;
@@ -875,10 +915,12 @@ form .btn2 {
     padding-bottom: 1%;
   }
   
+  /* Donation section paragraph styling */
   .donation-box p {
     margin-bottom: 10px;
   }
   
+  /* Volunteer section styling */
   .vol-box {
     background-color: #fff;
     border-radius: 10px;
@@ -895,15 +937,26 @@ form .btn2 {
     
   }
   
+  /* Volunteer section list and paragraph styling */
   .vol-box li,
   p {
     margin-bottom: 10px;
   }
   
+  /* Hide anything that shouldn't be shown on load */
   .hidden {
     display: none;
   }
+
+  /* Error validation styling */
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    padding-left: 1%;
+  }
   
+  /* Volunteer application styling */
   #vol-app {
     max-width: 98%;
     margin-left: 1%;
@@ -918,12 +971,14 @@ form .btn2 {
     color: var(--color-primary);
   }
 
+  /* Volunteer application header styling */
   #vol-app h1 {
     font-family: var(--font-sans);
     font-size: 200%;
     font-weight: bolder;
   }
 
+  /* Volunteer application label styling */
   #vol-app label {
     font-size: large;
     font-family: var(--font-serif);
@@ -932,8 +987,9 @@ form .btn2 {
     display: block;
   }
 
-  #vol-app input,
-  #vol-app select {
+  /* Volunteer application input and select styling */
+  #vol-app input, 
+  select {
     width: calc(100% - 20px);
     padding: 1%;
     margin-left: 1%;
@@ -946,6 +1002,7 @@ form .btn2 {
     box-sizing: border-box;
   }
 
+  /* Volunteer application submit styling */
   #vol-app input[type="submit"] {
     display: block;
     width: 100%;
@@ -959,10 +1016,12 @@ form .btn2 {
     font-size: 18px;
   }
 
+  /* Volunteer application submit hover styling */
   #vol-app input[type="submit"]:hover {
     background: var(--color-accent);
   }
 
+  /* Donation widget styling */
   #donorbox-container {
     position: fixed;
     top: 50%;
@@ -975,6 +1034,7 @@ form .btn2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
   }
 
+  /* Close button on widget styling */
   #close-button {
     position: absolute;
     top: 30px;
@@ -983,11 +1043,38 @@ form .btn2 {
     color: var(--color-secondary);
   }
 
-  .error-message {
-    color: red;
-    margin-top: 5px;
-    font-size: 12px;
-    padding-left: 1%;
+  /* Add media query for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    /* Styling to make the donation and volunteer boxes full size in mobile */
+    .donation-box,
+    .vol-box {
+      width: 98%;
+    }
+
+    /* Styling to correctly allign the volunteer box in mobile */
+    .vol-box {
+      margin-left: 1%;
+    }
+
+    /* Styling to stack all boxes in mobile */
+    .flex-box {
+      display: inline-block;
+    }
+
+    /* Styling to enlarge buttons on mobile */
+    .getinvolved button {
+      padding: 15px 25px;
+    }
+
+    /* Styling to shrink header font size on mobile */
+    .getinvolved h1 {
+      font-size: 200%; 
+    }
+  
+    /* Styling to shrink paragraph font size on mobile */
+    .getinvolved p {
+      font-size: medium;
+    }
   }
 
 /* Get Involved Section - End */
@@ -1129,11 +1216,15 @@ div#mapTT {
 }
 /* Map Section - End */
 
-/* Gallery Section */
+/* Gallery Section - Start */
+/* Author: John Wanamaker */
+
+/* Container that holds the whole page */
 .gallery-parent-container {
   margin: 20px 50px;
 }
 
+/* Helps properly algin the upload widget */
 .gallery-upload-section {
   display: flex;
   justify-content: center;
@@ -1144,10 +1235,13 @@ div#mapTT {
   margin: 20px;
 }
 
+/* Sets the font size to medium for h3*/
 .gallery-upload-section h3 {
   font-size: medium;
 }
 
+/* Styling for the upload button */
+/* API Seems to only allow inline CSS so currently not being used */
 .gallery-button {
   background-color: var(--color-primary);
   color: var(--color-secondary);
@@ -1156,12 +1250,15 @@ div#mapTT {
   border-radius: 5px;
 }
 
+/* Media query for when screens are less than 768px in width */
+/* Also known as mobile friendly */
 @media screen and (min-width: 768px) {
   .gallery-parent-container {
     margin: 20px 100px;
   }
 }
 
+/* The label that welcomes the users to the gallery page */
 .description-box {
   width: 80%;
   margin: 20px auto;
