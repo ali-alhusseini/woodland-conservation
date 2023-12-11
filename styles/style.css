@@ -190,7 +190,7 @@ body {
 }
 
 .trail-descriptions {
-  font-size: small;
+  font-size: 0.7rem;
   background-color: var(--color-accent);
   color: var(--color-secondary);
   border-radius: 5px;
@@ -200,7 +200,7 @@ body {
 
 .trail-easy {
   background-color: rgb(144, 205, 53);
-  color: black;
+  color: var(--color-accent);
   border-radius: 12px;
   padding: 0 5px;
 }
@@ -214,7 +214,7 @@ body {
 
 .trail-moderate {
   background-color: rgb(234, 169, 50);
-  color: black;
+  color: var(--color-accent);
   border-radius: 5px;
   padding: 0 5px;
 }
