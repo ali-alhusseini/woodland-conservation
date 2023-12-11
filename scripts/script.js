@@ -605,15 +605,17 @@ document.getElementsByClassName("map-button")[1].addEventListener('click', () =>
 /* Map Scripts - End */
 
 /* Gallery - Start */
+/* Author: John Wanamaker & Cloudinary */
 const Gallery = cloudinary.galleryWidget({
   container: ".gallery-container",
   //cloud name is a unique ID associated with a cloudinary account
   cloudName: "dxmmwd2wz",
   aspectRatio: "20:9",
-  //must tag photo in cloudinary to gallery-image to display in gallery
+  //must tag photo in cloudinary to "rvd" to display in gallery
   mediaAssets: [
     { tag: "rvd" },
-    // {tag: 'gallery-videos', mediaType: 'video'},
+    //use this tag below if you want to incorperate videos
+    // {tag: "rvd", mediaType: 'video'},
   ],
 
   //comment out these two lines for a different view with small pictures on the side
@@ -621,6 +623,7 @@ const Gallery = cloudinary.galleryWidget({
   carouselLocation: "bottom",
 });
 
+//create the upload widget
 var myWidget = cloudinary.createUploadWidget(
   {
     cloudName: "dxmmwd2wz",
@@ -633,6 +636,7 @@ var myWidget = cloudinary.createUploadWidget(
   }
 );
 
+//allows the widget to open when the user clicks the button
 document.getElementById("upload_widget").addEventListener(
   "click",
   function () {

@@ -1157,11 +1157,15 @@ div#mapTT {
 }
 /* Map Section - End */
 
-/* Gallery Section */
+/* Gallery Section - Start */
+/* Author: John Wanamaker */
+
+/* Container that holds the whole page */
 .gallery-parent-container {
   margin: 20px 50px;
 }
 
+/* Helps properly algin the upload widget */
 .gallery-upload-section {
   display: flex;
   justify-content: center;
@@ -1172,10 +1176,13 @@ div#mapTT {
   margin: 20px;
 }
 
+/* Sets the font size to medium for h3*/
 .gallery-upload-section h3 {
   font-size: medium;
 }
 
+/* Styling for the upload button */
+/* API Seems to only allow inline CSS so currently not being used */
 .gallery-button {
   background-color: var(--color-primary);
   color: var(--color-secondary);
@@ -1185,12 +1192,15 @@ div#mapTT {
   margin: 3px;
 }
 
+/* Media query for when screens are less than 768px in width */
+/* Also known as mobile friendly */
 @media screen and (min-width: 768px) {
   .gallery-parent-container {
     margin: 20px 100px;
   }
 }
 
+/* The label that welcomes the users to the gallery page */
 .description-box {
   width: 80%;
   margin: 20px auto;
