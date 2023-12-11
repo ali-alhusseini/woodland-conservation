@@ -1,3 +1,4 @@
+/* gloabl variable  */
 :root {
   --color-primary: #125c39;
   --color-secondary: whitesmoke;
@@ -20,6 +21,7 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Hide elements */
 .hidden {
   display: none;
 }
@@ -69,6 +71,7 @@ body {
   float: right;
 }
 
+/* Mobile navigation overlay */
 #overlay {
   display: none;
   position: fixed;
@@ -182,6 +185,47 @@ body {
   border-radius: 5px;
 }
 
+.homepage-card li {
+  margin: 10px;
+}
+
+.trail-descriptions {
+  font-size: 0.7rem;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px;
+}
+
+.trail-easy {
+  background-color: rgb(144, 205, 53);
+  color: var(--color-accent);
+  border-radius: 12px;
+  padding: 0 5px;
+}
+
+.trail-hard {
+  background-color: rgb(240, 57, 57);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.trail-moderate {
+  background-color: rgb(234, 169, 50);
+  color: var(--color-accent);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.trail-distance {
+  background-color: rgb(96, 70, 214);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
 .book-burial-container input {
   background-color: var(--color-accent);
   color: var(--color-secondary);
@@ -258,7 +302,6 @@ body {
   color: var(--color-primary);
   background-color: var(--color-secondary);
 }
-
 /* Footer Mobile - End */
 
 /* Homepage Desktop - Start */
@@ -336,6 +379,22 @@ body {
   .book-burial-container label {
     color: var(--color-accent);
   }
+}
+
+/* 404 Error Page */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 10px;
+  margin-top: 3.5rem;
+  align-content: center;
+  text-align: center;
 }
 
 /* About Section - Start - Author: Riley O'Keefe*/
@@ -1189,7 +1248,6 @@ div#mapTT {
   padding: 15px;
   border: none;
   border-radius: 5px;
-  margin: 3px;
 }
 
 /* Media query for when screens are less than 768px in width */
