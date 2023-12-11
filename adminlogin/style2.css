@@ -1,8 +1,10 @@
+/* Set the font family for the entire body of the document */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
 }
 
+/* Style for the login container */
 .login-container {
     max-width: 300px;
     margin: 0 auto;
@@ -13,19 +15,23 @@ body {
     box-shadow: 0 0 5px #aaa;
 }
 
+/* Style for the main heading (h1) inside the login container */
 h1 {
     text-align: center;
 }
 
+/* Style for the form inside the login container */
 form {
     text-align: center;
 }
 
+/* Style for labels within the form */
 label {
     display: block;
     margin-bottom: 10px;
 }
 
+/* Style for text and password input fields */
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -35,6 +41,7 @@ input[type="password"] {
     border-radius: 3px;
 }
 
+/* Style for the submit button */
 input[type="submit"] {
     width: 100%;
     padding: 10px;

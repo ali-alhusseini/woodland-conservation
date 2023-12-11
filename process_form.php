@@ -1,4 +1,6 @@
 <?php
+// This was an attempt to have a regular HTML form get forwarded to a specified
+// email address.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
