@@ -1,3 +1,14 @@
+/**
+ * This is the main script file for the website. 
+ * 
+ * Authors:
+ *  Riley O'Keefe: About and FAQ Section
+ *  John Wanamaker: Gallery Section
+ *  Mike Warren: Get Involved and Donate Sections
+ *  Alex Jaques: Map Section
+ *  Ali Alhusseini: Homepage, Header, and Footer
+ */
+
 /* Constants for burger button and nav overlay in mobile */
 const burgerButton = document.querySelector(".burger-button button");
 const overlay = document.querySelector("#overlay");

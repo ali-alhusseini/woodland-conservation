@@ -1,3 +1,14 @@
+/**
+* This is the main style file for the website. 
+*
+* @Authors:
+*   Riley O'Keefe: About and FAQ Section
+*   John Wanamaker: Gallery Section
+*   Mike Warren: Get Involved and Donate Sections
+*   Alex Jaques: Map Section
+*   Ali Alhusseini: Homepage, Header, and Footer
+*/
+
 /* gloabl variable  */
 :root {
   --color-primary: #125c39;
